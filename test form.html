@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrepreneurial Mindset Development Program - Application</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #bd1e2d, #2d2d7c);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    header img {
+      height: 140px;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 600px) {
+      header img {
+        position: static;
+        display: block;
+        margin: 0 auto 1rem;
+        height: 120px;
+      }
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2d2d7c;
+    }
+    form label {
+      display: block;
+      margin: 20px 0 5px;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+    form button {
+      background: #2d2d7c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="NEW_MBSC_LOGO.png" alt="MBSC Logo" />
+    <h1>Entrepreneurial Mindset Development Program</h1>
+    <p>Empowering the next generation of entrepreneurs through a transformative experience rooted in innovation, purpose, and impact.</p>
+  </header>
+
+  <div class="container">
+    <form>
+      <h2>Personal Information</h2>
+      <label>First Name *</label><input type="text" required>
+      <label>Last Name *</label><input type="text" required>
+      <label>Email Address *</label><input type="email" required>
+      <label>Mobile Number *</label><input type="text" required>
+      <label>Nationality *</label><input type="text" required>
+      <label>Gender *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <label>City of Residence *</label><input type="text" required>
+      <label>Date of Birth *</label><input type="date" required>
+
+      <h2>Academic & Professional Info</h2>
+      <label>Highest Academic Qualification *</label><input type="text" required>
+      <label>Current Job Title *</label><input type="text" required>
+      <label>Start Date *</label><input type="date" required>
+      <label>End Date</label><input type="date">
+      <label>Years of Experience *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2-4</option>
+        <option>5+</option>
+      </select>
+      <label>LinkedIn Profile *</label><input type="url" required>
+      <label>Resume *</label><input type="file" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+      <h2>Entrepreneurial Insight</h2>
+      <label>Video Biography *</label><input type="file" accept="video/*" required>
+      <label>Tell us about your business *</label><textarea required></textarea>
+      <label>Team Size *</label><input type="number" required>
+      <label>Your Role *</label><textarea required></textarea>
+      <label>Social Impact *</label><textarea required></textarea>
+      <label>Online Presence *</label><input type="url" required>
+      <label>SDGs Alignment *</label><textarea required></textarea>
+      <label>Upload Financial Documents *</label><input type="file" accept=".pdf" required>
+      <label>Program Goals *</label><textarea required></textarea>
+
+      <h2>Additional Questions</h2>
+      <label>Available During Program Dates? *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <label>Previous Entrepreneurship Program? *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <label>How Did You Hear About This Program? *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Website</option>
+        <option>Referral</option>
+        <option>Social Media</option>
+        <option>Email</option>
+      </select>
+      <label>Disability Declaration *</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <label><input type="checkbox" required> I declare that all the information provided is true and correct.</label>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Prince Mohammed Bin Salman College. All rights reserved.
+  </footer>
+</body>
+</html>
