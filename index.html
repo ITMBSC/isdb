@@ -567,6 +567,41 @@
       <label for="videoBiographyLink">Video Biography Link (Loom URL) *</label>
       <input type="url" id="videoBiographyLink" placeholder="https://www.loom.com/share/..." required>
 
+      <label>Tell us about your business *</label>
+      <textarea id="businessDescription" rows="4" required></textarea>
+
+      <label>Describe your role in the business, including your main responsibilities *</label>
+      <textarea id="businessRole" rows="4" required></textarea>
+
+      <label>What is your business’s current team size? *</label>
+      <input type="number" id="teamSize" min="0" required>
+
+      <label>What is the social impact of your business, if any? *</label>
+      <textarea id="socialImpact" rows="3" required></textarea>
+
+      <label>Official Website or Online Presence *</label>
+      <input type="url" id="businessWebsite" required>
+
+      <label>Please tell us about any impact, meaningful difference, or initiatives you have led *</label>
+      <textarea id="businessImpact" rows="4" required></textarea>
+
+      <label>Have you received any awards at the local, national, or international level? *</label>
+      <textarea id="businessAwards" rows="4" required></textarea>
+
+      <label>Upload your Business Registration Certificate (PDF) *</label>
+      <div class="upload-wrapper">
+        <input type="text" id="businessCertUrl" class="clickable" readonly placeholder="No file uploaded">
+        <button type="button"
+          onclick="uploadFile('businessCertUrl', 'Business Registration Certificate')">Upload</button>
+      </div>
+
+      <label>Is your business aligned with the UN Sustainable Development Goals (SDGs)? *</label>
+      <textarea id="businessSdgs" rows="4" required></textarea>
+
+      <label>What would you like to gain from this program? *</label>
+      <textarea id="programExpectations" rows="4" required></textarea>
+
+
 
       <h2>Miscellaneous</h2>
 
