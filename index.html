@@ -17,24 +17,45 @@
     header {
       background: linear-gradient(90deg, #bd1e2d, #2d2d7c);
       color: white;
+      padding: 1.5rem 1rem;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .mbsc-logo {
+      max-height: 150px;
+      max-width: 200px;
+    }
+
+    .isdb-logo {
+      max-height: 150px;
+      max-width: 200px;
+    }
+
+    .header-content {
       text-align: center;
-      padding: 2rem 1rem;
-      position: relative;
+      flex: 1 1 300px;
+      padding: 0 20px;
     }
 
-    header img {
-      height: 140px;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-    }
-
-    header h1 {
+    .header-content h1 {
       margin: 0;
       font-size: 1.8rem;
     }
 
-    header p {
+    .header-content p {
       margin-top: 0.5rem;
       font-size: 1rem;
       max-width: 600px;
@@ -42,12 +63,21 @@
       margin-right: auto;
     }
 
-    @media (max-width: 600px) {
-      header img {
-        position: static;
-        display: block;
-        margin: 0 auto 1rem;
-        height: 120px;
+    @media (max-width: 768px) {
+      .header-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mbsc-logo,
+      .isdb-logo {
+        margin: 10px auto;
+        max-height: 150px;
+      }
+
+      .header-content {
+        padding: 10px 0;
       }
     }
 
@@ -99,7 +129,6 @@
       padding: 10px;
       font-style: italic;
       cursor: pointer;
-      /* allow click */
     }
 
     .upload-wrapper input[readonly].clickable {
@@ -139,17 +168,24 @@
     }
   </style>
 
+
 </head>
 
 <body>
   <header>
-    <img src="NEW_MBSC_LOGO.png" alt="MBSC Logo" />
-    <h1>Entrepreneurial Mindset Development Program</h1>
-    <p>
-      Empowering the next generation of entrepreneurs through a transformative
-      experience rooted in innovation, purpose, and impact.
-    </p>
+    <div class="header-row">
+      <img src="NEW_MBSC_LOGO.png" alt="MBSC Logo" class="logo mbsc-logo" />
+      <div class="header-content">
+        <h1>Entrepreneurial Mindset Development Program</h1>
+        <p>Empowering the next generation of entrepreneurs through a transformative experience rooted in innovation,
+          purpose, and impact.</p>
+      </div>
+      <img src="isdb_logo.png" alt="IsDB Logo" class="logo isdb-logo" />
+    </div>
   </header>
+
+
+
 
   <div class="container">
     <form id="applicationForm">
