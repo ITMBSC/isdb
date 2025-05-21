@@ -328,14 +328,38 @@
         <option>Proficient</option>
       </select>
 
+      <!-- Experience Information Section -->
       <h2>Work Experience</h2>
-      <label>Company Name *</label><input type="text" id="companyName" required />
-      <label>Job Title *</label><input type="text" id="jobTitle" required />
-      <label>Location of Work *</label><input type="text" id="workLocation" required />
-      <label>Start Date *</label><input type="date" id="workStartDate" required />
-      <label>End Date</label><input type="date" id="workEndDate" />
-      <label><input type="checkbox" id="currentlyWorking" /> Currently Working
-        Here</label>
+      <div id="experienceListContainer"></div>
+
+      <template id="experienceTemplate">
+        <div class="experience-entry">
+          <label>Company Name *</label>
+          <input type="text" class="companyName" required>
+
+          <label>Job Title *</label>
+          <input type="text" class="jobTitle" required>
+
+          <label>Location of Work *</label>
+          <input type="text" class="workLocation" required>
+
+          <label>Start Date *</label>
+          <input type="date" class="workStartDate" required>
+
+          <label>End Date</label>
+          <input type="date" class="workEndDate">
+
+          <label>
+            <input type="checkbox" class="currentlyWorking"> Currently Working Here
+          </label>
+
+          <button type="button" class="removeExperienceBtn styled-btn">Remove Entry</button>
+          <hr />
+        </div>
+      </template>
+
+      <button type="button" id="addExperienceBtn" class="styled-btn">Add Experience Entry</button>
+
       <label>Years of Experience *</label>
       <select id="experienceYears" required>
         <option value="">Select</option>
@@ -807,6 +831,42 @@
 
       return list;
     }
+
+    const experienceList = [];
+
+    const addExperienceBtn = document.getElementById("addExperienceBtn");
+    const experienceContainer = document.getElementById("experienceListContainer");
+    const experienceTemplate = document.getElementById("experienceTemplate");
+
+    addExperienceBtn.addEventListener("click", () => {
+      const clone = experienceTemplate.content.cloneNode(true);
+
+      clone.querySelector(".removeExperienceBtn").addEventListener("click", (e) => {
+        e.target.closest(".experience-entry").remove();
+      });
+
+      experienceContainer.appendChild(clone);
+    });
+
+    // Function to collect data
+    function collectExperienceEntries() {
+      const entries = experienceContainer.querySelectorAll(".experience-entry");
+      const list = [];
+
+      entries.forEach(entry => {
+        list.push({
+          companyName: entry.querySelector(".companyName").value.trim(),
+          jobTitle: entry.querySelector(".jobTitle").value.trim(),
+          location: entry.querySelector(".workLocation").value.trim(),
+          startDate: entry.querySelector(".workStartDate").value,
+          endDate: entry.querySelector(".workEndDate").value,
+          currentlyWorking: entry.querySelector(".currentlyWorking").checked
+        });
+      });
+
+      return list;
+    }
+
   </script>
 </body>
 
