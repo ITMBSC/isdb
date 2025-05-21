@@ -266,6 +266,53 @@
 
       <!-- Academic Information Section -->
       <h2>Academic Information</h2>
+      <!-- Static first entry (not removable) -->
+      <div class="academic-entry static-entry">
+        <label>Educational Institution *</label>
+        <input type="text" class="academicInstitution" required>
+
+        <label>Level of Education *</label>
+        <select class="educationLevel" required>
+          <option value="">Select</option>
+          <option>High School</option>
+          <option>Diploma</option>
+          <option>Bachelor</option>
+          <option>Masters</option>
+          <option>PhD</option>
+        </select>
+
+        <label>Field/Major *</label>
+        <input type="text" class="fieldMajor" required>
+
+        <label>Location of Study *</label>
+        <input type="text" class="studyLocation" required>
+
+        <label>Start Date *</label>
+        <input type="date" class="educationStartDate" required>
+
+        <label>End Date *</label>
+        <input type="date" class="educationEndDate" required>
+
+        <label>GPA Scale *</label>
+        <select class="gpaScale" required>
+          <option value="">Select</option>
+          <option>4.0 Scale</option>
+          <option>5.0 Scale</option>
+          <option>100 (Percentage)</option>
+          <option>10-Point Scale</option>
+          <option>Letter Grade (A to F)</option>
+          <option>UK Scale</option>
+          <option>UK Masters Scale</option>
+          <option>Others</option>
+        </select>
+
+        <label>GPA Score *</label>
+        <input type="number" step="0.01" class="gpaScore" required>
+
+        <hr />
+      </div>
+
+      <!-- Where additional entries go -->
       <div id="academicListContainer"></div>
 
       <template id="academicTemplate">
@@ -330,6 +377,19 @@
 
       <!-- Experience Information Section -->
       <h2>Work Experience</h2>
+
+      <!-- Initial static entry -->
+      <div class="experience-entry">
+        <label>Company Name *</label><input type="text" class="companyName" required />
+        <label>Job Title *</label><input type="text" class="jobTitle" required />
+        <label>Location of Work *</label><input type="text" class="workLocation" required />
+        <label>Start Date *</label><input type="date" class="workStartDate" required />
+        <label>End Date</label><input type="date" class="workEndDate" />
+        <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
+        <hr />
+      </div>
+
+      <!-- Where additional entries go -->
       <div id="experienceListContainer"></div>
 
       <template id="experienceTemplate">
