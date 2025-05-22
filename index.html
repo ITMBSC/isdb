@@ -208,7 +208,7 @@
         </p>
       </div>
 
-      <img src="isdb_logo.png" alt="IsDB Logo" class="logo isdb-logo" />
+      <img src="isDB_logo.png" alt="IsDB Logo" class="logo isdb-logo" />
     </div>
   </header>
 
@@ -590,41 +590,93 @@
     const endpoint =
       "https://prod-94.westeurope.logic.azure.com:443/workflows/d49d7e8b4f65499ab91f5666a92dfeb4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q1hpWBhaibt1SIv4sOZ5g3T7gWjNs5PRRbSzhhGEcaU";
 
-    document
-      .getElementById("applicationForm")
-      .addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const form = e.target;
+    document.getElementById("applicationForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-        const data = {
-          // You’ll populate this based on your finalized schema
-          resumeUrl: document.getElementById("resumeUrl").value,
-        };
+      // 1. Collect and structure all form data
+      const data = collectFormData();
 
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
+      // 2. Submit data to Power Automate
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
 
-          if (response.ok || response.status === 0) {
-            alert("Thank you! Your application has been submitted.");
-            form.reset();
-            document.getElementById("resumeUrl").value = "";
-          } else {
-            alert("Something went wrong. Please try again.");
-            console.error("Server responded with status:", response.status);
-          }
-        } catch (error) {
-          console.error("Submission error:", error);
-          alert(
-            "Submission failed. Please check your connection and try again."
-          );
+        if (response.ok || response.status === 0) {
+          alert("Thank you! Your application has been submitted.");
+          // Placeholder for hiding form / showing thank you
+        } else {
+          console.error("Server responded with status:", response.status);
+          alert("Something went wrong. Please try again.");
         }
-      });
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert("Submission failed. Please check your connection and try again.");
+      }
+    });
+
+    function collectFormData() {
+      return {
+        // Personal
+        fullName: document.getElementById("fullName").value.trim(),
+        dob: document.getElementById("dob").value,
+        gender: document.getElementById("gender").value,
+        nationality: document.getElementById("nationality").value,
+        idNumber: document.getElementById("idNumber").value.trim(),
+        idExpiry: document.getElementById("idExpiry").value,
+        passportCountry: document.getElementById("passportCountry").value,
+        passportExpiry: document.getElementById("passportExpiry").value,
+
+        // Contact
+        buildingCode: document.getElementById("buildingCode").value.trim(),
+        street: document.getElementById("street").value.trim(),
+        district: document.getElementById("district").value.trim(),
+        unitCode: document.getElementById("unitCode").value.trim(),
+        city: document.getElementById("city").value.trim(),
+        state: document.getElementById("state").value.trim(),
+        postalCode: document.getElementById("postalCode").value.trim(),
+        additionalNumber: document.getElementById("additionalNumber").value.trim(),
+        country: document.getElementById("country").value,
+
+        // Uploads
+        resumeUrl: document.getElementById("resumeUrl").value,
+        idDocUrl: document.getElementById("idOrPassportUrl").value,
+        businessCertUrl: document.getElementById("businessCertUrl").value,
+
+        // Academic
+        academicList: collectAcademicEntries(),
+        englishProficiency: document.getElementById("englishProficiency").value,
+
+        // Experience
+        experienceList: collectExperienceEntries(),
+        experienceYears: document.getElementById("experienceYears").value,
+        linkedinProfile: document.getElementById("linkedinProfile").value,
+
+        // Video Section
+        videoUrl: document.getElementById("videoBiographyLink").value.trim(),
+
+        // Business Insight
+        businessDescription: document.getElementById("businessDescription").value.trim(),
+        teamSize: document.getElementById("teamSize").value,
+        yourRole: document.getElementById("businessRole").value.trim(),
+        socialImpact: document.getElementById("businessImpact").value.trim(),
+        onlinePresence: document.getElementById("businessWebsite").value.trim(),
+        sdgAlignment: document.getElementById("businessSdgs").value.trim(),
+        programGoals: document.getElementById("programExpectations").value.trim(),
+
+        // Miscellaneous
+        availableDuringProgram: document.getElementById("availableDuringProgram").value,
+        participatedBefore: document.getElementById("enrolledInEntrepreneurship").value,
+        heardAboutProgram: document.getElementById("howDidYouHear").value,
+        hasDisability: document.getElementById("hasDisability").value,
+        agreeDeclaration: document.getElementById("declaration").checked
+      };
+    }
+
 
     const countryList = [
       "Saudi Arabia",
@@ -925,13 +977,13 @@
 
     // Function to collect data
     function collectExperienceEntries() {
-      const entries = experienceContainer.querySelectorAll(".experience-entry");
+      const entries = document.querySelectorAll(".experience-entry");
       const list = [];
 
       entries.forEach(entry => {
         list.push({
-          companyName: entry.querySelector(".companyName").value.trim(),
-          jobTitle: entry.querySelector(".jobTitle").value.trim(),
+          company: entry.querySelector(".companyName").value.trim(),
+          title: entry.querySelector(".jobTitle").value.trim(),
           location: entry.querySelector(".workLocation").value.trim(),
           startDate: entry.querySelector(".workStartDate").value,
           endDate: entry.querySelector(".workEndDate").value,
@@ -941,6 +993,7 @@
 
       return list;
     }
+
 
   </script>
 </body>
