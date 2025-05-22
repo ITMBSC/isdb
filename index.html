@@ -24,60 +24,74 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .logo {
-      flex-shrink: 0;
       object-fit: contain;
     }
 
     .mbsc-logo {
-      max-height: 150px;
-      max-width: 200px;
+      max-height: 100px;
+      max-width: 160px;
     }
 
     .isdb-logo {
-      max-height: 150px;
+      max-height: 100px;
       max-width: 200px;
     }
 
     .header-content {
+      flex: 1 1 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      flex: 1 1 300px;
-      padding: 0 20px;
+      margin-top: 1rem;
     }
 
     .header-content h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .header-content p {
       margin-top: 0.5rem;
       font-size: 1rem;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem 0 1.5rem;
+      }
+
       .header-row {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        justify-content: center;
       }
 
       .mbsc-logo,
       .isdb-logo {
-        margin: 10px auto;
-        max-height: 150px;
+        height: 80px;
+        max-width: 130px;
+        margin: 0.5rem 0;
       }
 
       .header-content {
-        padding: 10px 0;
+        margin-top: 0.5rem;
+      }
+
+      .header-content h1 {
+        font-size: 1.4rem;
+      }
+
+      .header-content p {
+        font-size: 0.95rem;
+        margin: 0.5rem auto 0;
+        max-width: 90%;
       }
     }
 
@@ -179,23 +193,24 @@
     }
   </style>
 
-
 </head>
 
 <body>
   <header>
     <div class="header-row">
       <img src="NEW_MBSC_LOGO.png" alt="MBSC Logo" class="logo mbsc-logo" />
+
       <div class="header-content">
         <h1>Entrepreneurial Mindset Development Program</h1>
-        <p>Empowering the next generation of entrepreneurs through a transformative experience rooted in innovation,
-          purpose, and impact.</p>
+        <p>
+          Empowering the next generation of entrepreneurs through a transformative
+          experience rooted in innovation, purpose, and impact.
+        </p>
       </div>
-      <img src="isDB_logo.png" alt="IsDB Logo" class="logo isdb-logo" />
+
+      <img src="isdb_logo.png" alt="IsDB Logo" class="logo isdb-logo" />
     </div>
   </header>
-
-
 
 
   <div class="container">
