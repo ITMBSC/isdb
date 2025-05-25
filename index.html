@@ -239,8 +239,6 @@
       <label>Nationality *</label>
       <select id="nationality" required></select>
 
-      <label>City of Residence *</label><input type="text" id="city" required />
-
       <label>ID Number *</label>
       <input type="text" id="idNumber" required>
 
@@ -639,7 +637,7 @@
 
     function collectFormData() {
       return {
-        // Personal
+        // Personal Info
         fullName: document.getElementById("fullName").value.trim(),
         email: document.getElementById("email").value.trim(),
         phone: document.getElementById("phone").value.trim(),
@@ -652,7 +650,7 @@
         passportCountry: document.getElementById("passportCountry").value,
         passportExpiry: document.getElementById("passportExpiry").value,
 
-        // Contact
+        // Address Info (including city)
         buildingCode: document.getElementById("buildingCode").value.trim(),
         street: document.getElementById("street").value.trim(),
         district: document.getElementById("district").value.trim(),
@@ -668,36 +666,40 @@
         idDocUrl: document.getElementById("idDocUrl").value,
         businessCertUrl: document.getElementById("businessCertUrl").value,
 
-
-        // Academic
+        // Academic Info
         academicList: collectAcademicEntries(),
         englishProficiency: document.getElementById("englishProficiency").value,
 
-        // Experience
+        // Experience Info
         experienceList: collectExperienceEntries(),
         experienceYears: document.getElementById("experienceYears").value,
-        linkedinProfile: document.getElementById("linkedinProfile").value,
+        linkedinProfile: document.getElementById("linkedinProfile").value.trim(),
 
-        // Video Section
+        // Video
         videoUrl: document.getElementById("videoBiographyLink").value.trim(),
 
         // Business Insight
         businessDescription: document.getElementById("businessDescription").value.trim(),
-        teamSize: document.getElementById("teamSize").value,
         yourRole: document.getElementById("businessRole").value.trim(),
-        socialImpact: document.getElementById("businessImpact").value.trim(),
+        teamSize: document.getElementById("teamSize").value,
+        socialImpact: document.getElementById("socialImpact").value.trim(),
         onlinePresence: document.getElementById("businessWebsite").value.trim(),
         sdgAlignment: document.getElementById("businessSdgs").value.trim(),
         programGoals: document.getElementById("programExpectations").value.trim(),
+        businessImpact: document.getElementById("businessImpact").value.trim(),
+        businessAwards: document.getElementById("businessAwards").value.trim(),
 
         // Miscellaneous
         availableDuringProgram: document.getElementById("availableDuringProgram").value,
         participatedBefore: document.getElementById("enrolledInEntrepreneurship").value,
         heardAboutProgram: document.getElementById("howDidYouHear").value,
         hasDisability: document.getElementById("hasDisability").value,
+
+        // Declaration
         agreeDeclaration: document.getElementById("declaration").checked
       };
     }
+
 
 
     const countryList = [
