@@ -244,10 +244,10 @@
 
       <label>Upload ID or Passport (PDF or Image) *</label>
       <div class="upload-wrapper">
-        <input type="text" id="idOrPassportUrl" class="clickable" readonly placeholder="No file uploaded">
-        <button type="button" onclick="uploadFile('idOrPassportUrl', 'ID or Passport')">Upload</button>
+        <input type="text" id="idDocDisplay" placeholder="No file uploaded" readonly>
+        <button type="button" onclick="uploadFile('idDocUrl', 'idDocDisplay', 'ID/Passport')">Upload</button>
       </div>
-
+      <input type="hidden" id="idDocUrl" name="idDocUrl">
 
       <h2>Contact Information</h2>
       <label>Building Code *</label><input type="text" id="buildingCode" placeholder="Building Code" required />
@@ -447,7 +447,7 @@
       <label>Resume (PDF only) *</label>
       <div class="upload-wrapper">
         <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
-        <button type="button" onclick="uploadResume()">Upload</button>
+        <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume')">Upload</button>
       </div>
       <input type="hidden" id="resumeUrl" name="resumeUrl">
 
@@ -500,10 +500,11 @@
 
       <label>Upload your Business Registration Certificate (PDF) *</label>
       <div class="upload-wrapper">
-        <input type="text" id="businessCertUrl" class="clickable" readonly placeholder="No file uploaded">
+        <input type="text" id="businessCertDisplay" placeholder="No file uploaded" readonly>
         <button type="button"
-          onclick="uploadFile('businessCertUrl', 'Business Registration Certificate')">Upload</button>
+          onclick="uploadFile('businessCertUrl', 'businessCertDisplay', 'Business Certificate')">Upload</button>
       </div>
+      <input type="hidden" id="businessCertUrl" name="businessCertUrl">
 
       <label>Is your business aligned with the UN Sustainable Development Goals (SDGs)? *</label>
       <textarea id="businessSdgs" rows="4" required></textarea>
@@ -571,27 +572,23 @@
   <script>
     const filestackClient = filestack.init("ALTBAwlAkT2WmD9xeo3c5z");
 
-    function uploadResume() {
-      filestackClient.picker({
-        accept: ['.pdf'],
+    function uploadFile(hiddenFieldId, displayFieldId, fileLabel) {
+      const client = filestack.init('ALTBAwlAkT2WmD9xeo3c5z'); // Replace with your API key
+      client.picker({
         maxFiles: 1,
+        accept: ['.pdf'],
         onUploadDone: function (result) {
           const file = result.filesUploaded[0];
-          const resumeUrl = file.url;
-          const resumeName = file.filename;
+          const fileName = file.filename;
+          const fileUrl = file.url;
 
-          document.getElementById("resumeUrl").value = resumeUrl;
-
-          const displayInput = document.getElementById("resumeDisplay");
-          displayInput.value = resumeName || "Resume.pdf";
-          displayInput.classList.add("clickable");
-
-          // Allow opening the link on input click
-          displayInput.onclick = () => window.open(resumeUrl, "_blank");
+          document.getElementById(hiddenFieldId).value = fileUrl;
+          document.getElementById(displayFieldId).value = fileLabel + " Uploaded";
+          document.getElementById(displayFieldId).classList.add("clickable");
+          document.getElementById(displayFieldId).onclick = () => window.open(fileUrl, "_blank");
         }
       }).open();
     }
-
 
     const endpoint =
       "https://prod-94.westeurope.logic.azure.com:443/workflows/d49d7e8b4f65499ab91f5666a92dfeb4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q1hpWBhaibt1SIv4sOZ5g3T7gWjNs5PRRbSzhhGEcaU";
@@ -650,8 +647,9 @@
 
         // Uploads
         resumeUrl: document.getElementById("resumeUrl").value,
-        idDocUrl: document.getElementById("idOrPassportUrl").value,
+        idDocUrl: document.getElementById("idDocUrl").value,
         businessCertUrl: document.getElementById("businessCertUrl").value,
+
 
         // Academic
         academicList: collectAcademicEntries(),
