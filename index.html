@@ -807,6 +807,119 @@
         idDocDisplayField.classList.add("field-error");
       }
 
+      // Building Code validation (letters, digits, dashes, slashes)
+      const buildingCodeField = document.getElementById("buildingCode");
+      const buildingCode = buildingCodeField.value.trim();
+      buildingCodeField.classList.remove("field-error");
+
+      if (!buildingCode) {
+        errors.push("Building Code is required.");
+        buildingCodeField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\-\/]{3,15}$/.test(buildingCode)) {
+        errors.push("Building Code must be 3–15 characters (letters, numbers, dashes, slashes).");
+        buildingCodeField.classList.add("field-error");
+      }
+
+      // Street validation (letters, numbers, spaces, dashes, apostrophes)
+      const streetField = document.getElementById("street");
+      const street = streetField.value.trim();
+      streetField.classList.remove("field-error");
+
+      if (!street) {
+        errors.push("Street is required.");
+        streetField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\s\-\'\,\.]{3,50}$/.test(street)) {
+        errors.push("Street must be 3–50 characters and can include letters, numbers, dashes, apostrophes, commas, and periods.");
+        streetField.classList.add("field-error");
+      }
+
+      // District validation
+      const districtField = document.getElementById("district");
+      const district = districtField.value.trim();
+      districtField.classList.remove("field-error");
+
+      if (!district) {
+        errors.push("District is required.");
+        districtField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\s\-\'\,\.]{3,50}$/.test(district)) {
+        errors.push("District must be 3–50 characters and can include letters, numbers, dashes, apostrophes, commas, and periods.");
+        districtField.classList.add("field-error");
+      }
+
+      // Unit Code validation
+      const unitCodeField = document.getElementById("unitCode");
+      const unitCode = unitCodeField.value.trim();
+      unitCodeField.classList.remove("field-error");
+
+      if (!unitCode) {
+        errors.push("Unit Code is required.");
+        unitCodeField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\-]{1,15}$/.test(unitCode)) {
+        errors.push("Unit Code must be 1–15 characters and can include letters, numbers, and dashes.");
+        unitCodeField.classList.add("field-error");
+      }
+
+      // City validation
+      const cityField = document.getElementById("city");
+      const city = cityField.value.trim();
+      cityField.classList.remove("field-error");
+
+      if (!city) {
+        errors.push("City is required.");
+        cityField.classList.add("field-error");
+      } else if (!/^[a-zA-Z\s\'\-]{2,50}$/.test(city)) {
+        errors.push("City must be 2–50 characters and can include letters, spaces, apostrophes, and hyphens.");
+        cityField.classList.add("field-error");
+      }
+
+      // State validation
+      const stateField = document.getElementById("state");
+      const state = stateField.value.trim();
+      stateField.classList.remove("field-error");
+
+      if (!state) {
+        errors.push("State is required.");
+        stateField.classList.add("field-error");
+      } else if (!/^[a-zA-Z\s\'\-]{2,50}$/.test(state)) {
+        errors.push("State must be 2–50 characters and can include letters, spaces, apostrophes, and hyphens.");
+        stateField.classList.add("field-error");
+      }
+
+      // Postal code validation
+      const postalCodeField = document.getElementById("postalCode");
+      const postalCode = postalCodeField.value.trim();
+      postalCodeField.classList.remove("field-error");
+
+      if (!postalCode) {
+        errors.push("Postal code is required.");
+        postalCodeField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(postalCode)) {
+        errors.push("Postal code must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
+        postalCodeField.classList.add("field-error");
+      }
+
+      // Additional number validation
+      const additionalNumberField = document.getElementById("additionalNumber");
+      const additionalNumber = additionalNumberField.value.trim();
+      additionalNumberField.classList.remove("field-error");
+
+      if (!additionalNumber) {
+        errors.push("Additional number is required.");
+        additionalNumberField.classList.add("field-error");
+      } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(additionalNumber)) {
+        errors.push("Additional number must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
+        additionalNumberField.classList.add("field-error");
+      }
+
+      // Country validation
+      const countryField = document.getElementById("country");
+      const country = countryField.value;
+      countryField.classList.remove("field-error");
+
+      if (!country) {
+        errors.push("Country selection is required.");
+        countryField.classList.add("field-error");
+      }
 
 
       // Display errors in summary block
