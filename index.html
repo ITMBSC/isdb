@@ -711,6 +711,103 @@
         genderField.classList.add("field-error");
       }
 
+      // Nationality validation
+      const nationalityField = document.getElementById("nationality");
+      const nationality = nationalityField.value;
+      nationalityField.classList.remove("field-error");
+
+      if (!nationality) {
+        errors.push("Nationality is required.");
+        nationalityField.classList.add("field-error");
+      }
+
+      // ID Number validation
+      const idNumberField = document.getElementById("idNumber");
+      const idNumber = idNumberField.value.trim();
+      idNumberField.classList.remove("field-error");
+
+      if (!idNumber) {
+        errors.push("ID Number is required.");
+        idNumberField.classList.add("field-error");
+      } else if (!/^\d+$/.test(idNumber)) {
+        errors.push("ID Number must contain digits only.");
+        idNumberField.classList.add("field-error");
+      } else if (idNumber.length < 7 || idNumber.length > 13) {
+        errors.push("ID Number must be between 7 and 13 digits.");
+        idNumberField.classList.add("field-error");
+      }
+
+      // ID Expiry Date validation
+      const idExpiryField = document.getElementById("idExpiry");
+      const idExpiry = idExpiryField.value;
+      idExpiryField.classList.remove("field-error");
+
+      if (!idExpiry) {
+        errors.push("ID Expiry Date is required.");
+        idExpiryField.classList.add("field-error");
+      } else {
+        const expiryDate = new Date(idExpiry);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (expiryDate <= today) {
+          errors.push("ID Expiry Date must be in the future.");
+          idExpiryField.classList.add("field-error");
+        }
+      }
+
+      // Passport Number validation
+      const passportNumberField = document.getElementById("passportNumber");
+      const passportNumber = passportNumberField.value.trim();
+      passportNumberField.classList.remove("field-error");
+
+      if (!passportNumber) {
+        errors.push("Passport Number is required.");
+        passportNumberField.classList.add("field-error");
+      } else if (!/^[A-Za-z0-9]{5,15}$/.test(passportNumber)) {
+        errors.push("Passport Number must be 5–15 characters, letters and/or digits.");
+        passportNumberField.classList.add("field-error");
+      }
+
+      // Passport Country validation
+      const passportCountryField = document.getElementById("passportCountry");
+      const passportCountry = passportCountryField.value;
+      passportCountryField.classList.remove("field-error");
+
+      if (!passportCountry) {
+        errors.push("Please select your passport country.");
+        passportCountryField.classList.add("field-error");
+      }
+
+      // Passport Expiry Date validation
+      const passportExpiryField = document.getElementById("passportExpiry");
+      const passportExpiry = passportExpiryField.value;
+      passportExpiryField.classList.remove("field-error");
+
+      if (!passportExpiry) {
+        errors.push("Passport expiry date is required.");
+        passportExpiryField.classList.add("field-error");
+      } else {
+        const expiryDate = new Date(passportExpiry);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Normalize for comparison
+
+        if (expiryDate <= today) {
+          errors.push("Passport expiry date must be in the future.");
+          passportExpiryField.classList.add("field-error");
+        }
+      }
+
+      // ID Document Upload validation
+      const idDocDisplayField = document.getElementById("idDocDisplay");
+      idDocDisplayField.classList.remove("field-error");
+
+      if (!document.getElementById("idDocUrl").value) {
+        errors.push("Please upload your ID document.");
+        idDocDisplayField.classList.add("field-error");
+      }
+
+
 
       // Display errors in summary block
       const errorSummary = document.getElementById("errorSummary");
