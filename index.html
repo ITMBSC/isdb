@@ -359,7 +359,7 @@
         </select>
 
         <label>GPA Score *</label>
-        <input type="number" step="0.01" class="gpaScore">
+        <input type="text" class="gpaScore">
 
         <hr />
       </div>
@@ -408,7 +408,7 @@
           </select>
 
           <label>GPA Score *</label>
-          <input type="number" step="0.01" class="gpaScore">
+          <input type="text" class="gpaScore">
 
           <button type="button" class="removeAcademicBtn styled-btn">Remove Entry</button>
           <hr />
@@ -920,6 +920,122 @@
         errors.push("Country selection is required.");
         countryField.classList.add("field-error");
       }
+
+      const academicEntries = document.querySelectorAll(".academic-entry");
+      academicEntries.forEach((entry, index) => {
+
+        // Institution validation
+        const institutionField = entry.querySelector(".academicInstitution");
+        const institution = institutionField.value.trim();
+        institutionField.classList.remove("field-error");
+
+        if (!institution) {
+          errors.push(`Institution is required.`);
+          institutionField.classList.add("field-error");
+        } else if (!/^[a-zA-Z\s\-']+$/.test(institution)) {
+          errors.push(`Institution name contains invalid characters.`);
+          institutionField.classList.add("field-error");
+        }
+
+        // Education Level validation
+        const levelField = entry.querySelector(".educationLevel");
+        const level = levelField.value;
+        levelField.classList.remove("field-error");
+
+        if (!level) {
+          errors.push(`Education level is required.`);
+          levelField.classList.add("field-error");
+        }
+
+        // Field/Major validation
+        const majorField = entry.querySelector(".fieldMajor");
+        const major = majorField.value.trim();
+        majorField.classList.remove("field-error");
+
+        if (!major) {
+          errors.push(`Field/Major is required.`);
+          majorField.classList.add("field-error");
+        } else if (major.length < 2 || major.length > 100) {
+          errors.push(`Field/Major must be between 2 and 100 characters.`);
+          majorField.classList.add("field-error");
+        }
+
+        // Location of Study validation
+        const locationField = entry.querySelector(".studyLocation");
+        const location = locationField.value.trim();
+        locationField.classList.remove("field-error");
+
+        if (!location) {
+          errors.push(`Location of Study is required.`);
+          locationField.classList.add("field-error");
+        } else if (location.length < 2 || location.length > 100) {
+          errors.push(`Location of Study must be between 2 and 100 characters.`);
+          locationField.classList.add("field-error");
+        }
+
+        // Start Date and End Date validation
+        const startDateField = entry.querySelector(".educationStartDate");
+        const endDateField = entry.querySelector(".educationEndDate");
+        const startDate = startDateField.value;
+        const endDate = endDateField.value;
+
+        startDateField.classList.remove("field-error");
+        endDateField.classList.remove("field-error");
+
+        if (!startDate) {
+          errors.push(`Start Date is required.`);
+          startDateField.classList.add("field-error");
+        }
+
+        if (!endDate) {
+          errors.push(`End Date is required.`);
+          endDateField.classList.add("field-error");
+        }
+
+        if (startDate && endDate) {
+          const start = new Date(startDate);
+          const end = new Date(endDate);
+          if (start >= end) {
+            errors.push(`End Date must be after Start Date.`);
+            startDateField.classList.add("field-error");
+            endDateField.classList.add("field-error");
+          }
+        }
+
+        // GPA Scale validation
+        const gpaScaleField = entry.querySelector(".gpaScale");
+        gpaScaleField.classList.remove("field-error");
+        if (!gpaScaleField.value) {
+          errors.push(`GPA Scale is required.`);
+          gpaScaleField.classList.add("field-error");
+        }
+
+        // GPA Score validation
+        const gpaScoreField = entry.querySelector(".gpaScore");
+        const gpaScore = gpaScoreField.value.trim();
+        gpaScoreField.classList.remove("field-error");
+
+        if (!gpaScore) {
+          errors.push(`GPA Score is required.`);
+          gpaScoreField.classList.add("field-error");
+        } else if (gpaScore.length < 1 || gpaScore.length > 15) {
+          errors.push(`GPA Score must be between 1 and 15 characters.`);
+          gpaScoreField.classList.add("field-error");
+        }
+
+      });
+
+
+      // English Proficiency validation
+      const englishProficiencyField = document.getElementById("englishProficiency");
+      const englishProficiency = englishProficiencyField.value;
+      englishProficiencyField.classList.remove("field-error");
+
+      if (!englishProficiency) {
+        errors.push("English proficiency level is required.");
+        englishProficiencyField.classList.add("field-error");
+      }
+
 
 
       // Display errors in summary block
