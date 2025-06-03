@@ -472,7 +472,7 @@
         <option>5–10 years</option>
         <option>More than 10 years</option>
       </select>
-      <label>LinkedIn Profile *</label><input type="url" id="linkedinProfile" />
+      <label>LinkedIn Profile *</label><input type="text" id="linkedinProfile" />
       <label>Resume (PDF only) *</label>
       <div class="upload-wrapper">
         <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
@@ -948,6 +948,144 @@
       if (!englishProficiency) {
         errors.push("English proficiency level is required.");
         englishProficiencyField.classList.add("field-error");
+      }
+
+      // Experience Entries Validation
+      const experienceEntries = document.querySelectorAll(".experience-entry");
+      experienceEntries.forEach(entry => {
+
+        // Company validation
+        const companyField = entry.querySelector(".companyName");
+        const company = companyField.value.trim();
+        companyField.classList.remove("field-error");
+
+        if (!company) {
+          errors.push("Company name is required.");
+          companyField.classList.add("field-error");
+        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(company)) {
+          errors.push("Company name must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+          companyField.classList.add("field-error");
+        }
+
+        // Job Title validation
+        const jobTitleField = entry.querySelector(".jobTitle");
+        const jobTitle = jobTitleField.value.trim();
+        jobTitleField.classList.remove("field-error");
+
+        if (!jobTitle) {
+          errors.push("Job Title is required.");
+          jobTitleField.classList.add("field-error");
+        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(jobTitle)) {
+          errors.push("Job Title must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+          jobTitleField.classList.add("field-error");
+        }
+
+        // Location of Work validation
+        const locationField = entry.querySelector(".workLocation");
+        const location = locationField.value.trim();
+        locationField.classList.remove("field-error");
+
+        if (!location) {
+          errors.push("Location of Work is required.");
+          locationField.classList.add("field-error");
+        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(location)) {
+          errors.push("Location of Work must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+          locationField.classList.add("field-error");
+        }
+
+        // Start Date validation
+        const startDateField = entry.querySelector(".workStartDate");
+        const startDate = startDateField.value;
+        startDateField.classList.remove("field-error");
+
+        if (!startDate) {
+          errors.push("Work Start Date is required.");
+          startDateField.classList.add("field-error");
+        }
+
+        // End Date (conditionally validated)
+        const endDateFieldContainer = entry.querySelector(".endDateContainer");
+        const endDateField = entry.querySelector(".workEndDate");
+        const endDate = endDateField.value;
+        const currentlyWorking = entry.querySelector(".currentlyWorking").checked;
+
+        endDateField.classList.remove("field-error");
+
+        if (!currentlyWorking) {
+          if (!endDate) {
+            errors.push("Work End Date is required unless 'Currently Working' is selected.");
+            endDateField.classList.add("field-error");
+          } else if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
+            errors.push("Work End Date must be after the Start Date.");
+            endDateField.classList.add("field-error");
+          }
+        }
+
+
+      });
+
+
+      // Years of experience validation
+      const yearsOfExperienceField = document.getElementById("experienceYears");
+      if (!yearsOfExperienceField.value) {
+        errors.push("Years of experience is required.");
+        yearsOfExperienceField.classList.add("field-error");
+      } else {
+        yearsOfExperienceField.classList.remove("field-error");
+      }
+
+
+      // Linkedin validation
+      const linkedinProfileField = document.getElementById("linkedinProfile");
+      const linkedinProfile = linkedinProfileField.value.trim();
+      const linkedinRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/i;
+
+      if (!linkedinProfile) {
+        errors.push("LinkedIn profile is required.");
+        linkedinProfileField.classList.add("field-error");
+      } else if (!linkedinRegex.test(linkedinProfile)) {
+        errors.push("Please enter a valid LinkedIn profile URL.");
+        linkedinProfileField.classList.add("field-error");
+      } else {
+        linkedinProfileField.classList.remove("field-error");
+      }
+
+      // Resume Upload (same pattern as ID upload)
+      const resumeUrl = document.getElementById("resumeUrl").value;
+      const resumeDisplay = document.getElementById("resumeDisplay");
+
+      if (!resumeUrl) {
+        errors.push("Please upload your Resume (PDF only).");
+        resumeDisplay.classList.add("field-error");
+      } else {
+        resumeDisplay.classList.remove("field-error");
+      }
+
+      // Miscellaneous dropdowns
+      const miscFields = [
+        { id: "availableDuringProgram", label: "Availability during the program" },
+        { id: "enrolledInEntrepreneurship", label: "Previous participation status" },
+        { id: "howDidYouHear", label: "How did you hear about the program" },
+        { id: "hasDisability", label: "Disability status" },
+      ];
+
+      miscFields.forEach(field => {
+        const element = document.getElementById(field.id);
+        if (!element.value) {
+          errors.push(`${field.label} is required.`);
+          element.classList.add("field-error");
+        } else {
+          element.classList.remove("field-error");
+        }
+      });
+
+      // Declaration checkbox
+      const agreeDeclaration = document.getElementById("declaration");
+      if (!agreeDeclaration.checked) {
+        errors.push("You must agree to the declaration.");
+        agreeDeclaration.classList.add("field-error");
+      } else {
+        agreeDeclaration.classList.remove("field-error");
       }
 
 
