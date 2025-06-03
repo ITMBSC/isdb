@@ -421,7 +421,11 @@
         <label>Job Title *</label><input type="text" class="jobTitle" />
         <label>Location of Work *</label><input type="text" class="workLocation" />
         <label>Start Date *</label><input type="date" class="workStartDate" />
-        <label>End Date</label><input type="date" class="workEndDate" />
+        <div class="endDateContainer">
+          <label>End Date</label>
+          <input type="date" class="workEndDate" />
+        </div>
+
         <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
         <hr />
       </div>
@@ -443,8 +447,11 @@
           <label>Start Date *</label>
           <input type="date" class="workStartDate">
 
-          <label>End Date</label>
-          <input type="date" class="workEndDate">
+          <div class="endDateContainer">
+            <label>End Date</label>
+            <input type="date" class="workEndDate" />
+          </div>
+
 
           <label>
             <input type="checkbox" class="currentlyWorking"> Currently Working Here
@@ -1345,14 +1352,45 @@
     const experienceContainer = document.getElementById("experienceListContainer");
     const experienceTemplate = document.getElementById("experienceTemplate");
 
+    // Setup logic for a single entry
+    function setupExperienceEntry(entry) {
+      const checkbox = entry.querySelector(".currentlyWorking");
+      const endDateField = entry.querySelector(".endDateContainer");
+
+      function toggleEndDate() {
+        if (checkbox.checked) {
+          endDateField.style.display = "none";
+          const input = endDateField.querySelector(".workEndDate");
+          if (input) input.value = "Current"; // Set value to "Current"
+        } else {
+          endDateField.style.display = "block";
+          const input = endDateField.querySelector(".workEndDate");
+          if (input && input.value === "Current") input.value = ""; // Reset if needed
+        }
+      }
+
+      if (checkbox && endDateField) {
+        checkbox.addEventListener("change", toggleEndDate);
+        toggleEndDate(); // Initialize state
+      }
+    }
+
+
+    // 1️⃣ Initialize existing (static) entry
+    document.querySelectorAll(".experience-entry").forEach(setupExperienceEntry);
+
+    // 2️⃣ Initialize for new entries
     addExperienceBtn.addEventListener("click", () => {
       const clone = experienceTemplate.content.cloneNode(true);
 
+      // Add remove button logic
       clone.querySelector(".removeExperienceBtn").addEventListener("click", (e) => {
         e.target.closest(".experience-entry").remove();
       });
 
+      // Append and setup toggle
       experienceContainer.appendChild(clone);
+      setupExperienceEntry(experienceContainer.lastElementChild);
     });
 
     // Function to collect data
@@ -1361,18 +1399,22 @@
       const list = [];
 
       entries.forEach(entry => {
+        const checkbox = entry.querySelector(".currentlyWorking").checked;
+        const endDate = checkbox ? "Current" : entry.querySelector(".workEndDate").value;
+
         list.push({
           company: entry.querySelector(".companyName").value.trim(),
           title: entry.querySelector(".jobTitle").value.trim(),
           location: entry.querySelector(".workLocation").value.trim(),
           startDate: entry.querySelector(".workStartDate").value,
-          endDate: entry.querySelector(".workEndDate").value,
-          currentlyWorking: entry.querySelector(".currentlyWorking").checked
+          endDate: endDate,
+          currentlyWorking: checkbox
         });
       });
 
       return list;
     }
+
 
 
   </script>
