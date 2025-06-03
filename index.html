@@ -287,34 +287,19 @@
       <input type="hidden" id="idDocUrl" name="idDocUrl">
 
       <h2>Address Information</h2>
-      <label>Building Code *</label><input type="text" id="buildingCode" placeholder="Building Code" />
-      <label>Street *</label><input type="text" id="street" placeholder="Street" />
-      <label>District *</label><input type="text" id="district" placeholder="District" />
-
       <div style="display: flex; gap: 10px">
-        <div style="flex: 1">
-          <label>Unit Code *</label><input type="text" id="unitCode" placeholder="Unit Code" />
-        </div>
         <div style="flex: 1">
           <label>City *</label><input type="text" id="city" placeholder="City" />
         </div>
-      </div>
-
-      <div style="display: flex; gap: 10px">
         <div style="flex: 1">
-          <label>State *</label><input type="text" id="state" placeholder="State" />
-        </div>
-        <div style="flex: 1">
-          <label>Postal Code *</label><input type="text" id="postalCode" placeholder="Postal Code" />
+          <label>Country *</label>
+          <select id="country">
+            <option value="">-- Select Country --</option>
+          </select>
         </div>
       </div>
 
-      <label>Additional Number</label><input type="text" id="additionalNumber" placeholder="Additional Number" />
-
-      <label>Country *</label>
-      <select id="country">
-        <option value="">-- Select Country --</option>
-      </select>
+      <label>Postal Code *</label><input type="text" id="postalCode" placeholder="Postal Code" />
 
       <!-- Academic Information Section -->
       <h2>Academic Information</h2>
@@ -807,58 +792,6 @@
         idDocDisplayField.classList.add("field-error");
       }
 
-      // Building Code validation (letters, digits, dashes, slashes)
-      const buildingCodeField = document.getElementById("buildingCode");
-      const buildingCode = buildingCodeField.value.trim();
-      buildingCodeField.classList.remove("field-error");
-
-      if (!buildingCode) {
-        errors.push("Building Code is required.");
-        buildingCodeField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\-\/]{3,15}$/.test(buildingCode)) {
-        errors.push("Building Code must be 3–15 characters (letters, numbers, dashes, slashes).");
-        buildingCodeField.classList.add("field-error");
-      }
-
-      // Street validation (letters, numbers, spaces, dashes, apostrophes)
-      const streetField = document.getElementById("street");
-      const street = streetField.value.trim();
-      streetField.classList.remove("field-error");
-
-      if (!street) {
-        errors.push("Street is required.");
-        streetField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\s\-\'\,\.]{3,50}$/.test(street)) {
-        errors.push("Street must be 3–50 characters and can include letters, numbers, dashes, apostrophes, commas, and periods.");
-        streetField.classList.add("field-error");
-      }
-
-      // District validation
-      const districtField = document.getElementById("district");
-      const district = districtField.value.trim();
-      districtField.classList.remove("field-error");
-
-      if (!district) {
-        errors.push("District is required.");
-        districtField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\s\-\'\,\.]{3,50}$/.test(district)) {
-        errors.push("District must be 3–50 characters and can include letters, numbers, dashes, apostrophes, commas, and periods.");
-        districtField.classList.add("field-error");
-      }
-
-      // Unit Code validation
-      const unitCodeField = document.getElementById("unitCode");
-      const unitCode = unitCodeField.value.trim();
-      unitCodeField.classList.remove("field-error");
-
-      if (!unitCode) {
-        errors.push("Unit Code is required.");
-        unitCodeField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\-]{1,15}$/.test(unitCode)) {
-        errors.push("Unit Code must be 1–15 characters and can include letters, numbers, and dashes.");
-        unitCodeField.classList.add("field-error");
-      }
-
       // City validation
       const cityField = document.getElementById("city");
       const city = cityField.value.trim();
@@ -872,17 +805,14 @@
         cityField.classList.add("field-error");
       }
 
-      // State validation
-      const stateField = document.getElementById("state");
-      const state = stateField.value.trim();
-      stateField.classList.remove("field-error");
+      // Country validation
+      const countryField = document.getElementById("country");
+      const country = countryField.value;
+      countryField.classList.remove("field-error");
 
-      if (!state) {
-        errors.push("State is required.");
-        stateField.classList.add("field-error");
-      } else if (!/^[a-zA-Z\s\'\-]{2,50}$/.test(state)) {
-        errors.push("State must be 2–50 characters and can include letters, spaces, apostrophes, and hyphens.");
-        stateField.classList.add("field-error");
+      if (!country) {
+        errors.push("Country selection is required.");
+        countryField.classList.add("field-error");
       }
 
       // Postal code validation
@@ -896,29 +826,6 @@
       } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(postalCode)) {
         errors.push("Postal code must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
         postalCodeField.classList.add("field-error");
-      }
-
-      // Additional number validation
-      const additionalNumberField = document.getElementById("additionalNumber");
-      const additionalNumber = additionalNumberField.value.trim();
-      additionalNumberField.classList.remove("field-error");
-
-      if (!additionalNumber) {
-        errors.push("Additional number is required.");
-        additionalNumberField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(additionalNumber)) {
-        errors.push("Additional number must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
-        additionalNumberField.classList.add("field-error");
-      }
-
-      // Country validation
-      const countryField = document.getElementById("country");
-      const country = countryField.value;
-      countryField.classList.remove("field-error");
-
-      if (!country) {
-        errors.push("Country selection is required.");
-        countryField.classList.add("field-error");
       }
 
       const academicEntries = document.querySelectorAll(".academic-entry");
@@ -1106,15 +1013,9 @@
         passportExpiry: document.getElementById("passportExpiry").value,
 
         // Address Info (including city)
-        buildingCode: document.getElementById("buildingCode").value.trim(),
-        street: document.getElementById("street").value.trim(),
-        district: document.getElementById("district").value.trim(),
-        unitCode: document.getElementById("unitCode").value.trim(),
         city: document.getElementById("city").value.trim(),
-        state: document.getElementById("state").value.trim(),
-        postalCode: document.getElementById("postalCode").value.trim(),
-        additionalNumber: document.getElementById("additionalNumber").value.trim(),
         country: document.getElementById("country").value,
+        postalCode: document.getElementById("postalCode").value.trim(),
 
         // Uploads
         resumeUrl: document.getElementById("resumeUrl").value,
