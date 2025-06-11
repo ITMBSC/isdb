@@ -513,7 +513,7 @@
       <textarea id="businessRole" rows="4"></textarea>
 
       <label>What is your business’s current team size? *</label>
-      <input type="number" id="teamSize" min="0">
+      <input type="text" id="teamSize">
 
       <label>What is the social impact of your business, if any? *</label>
       <textarea id="socialImpact" rows="3"></textarea>
@@ -1059,6 +1059,151 @@
         resumeDisplay.classList.add("field-error");
       } else {
         resumeDisplay.classList.remove("field-error");
+      }
+
+      // Entrepreneurial Journey Entries Validation
+
+      // Video Biography (Loom) validation
+      const videoField = document.getElementById("videoBiographyLink");
+      const videoUrl = videoField.value.trim();
+      videoField.classList.remove("field-error");
+
+      if (!videoUrl) {
+        errors.push("Loom video biography link is required.");
+        videoField.classList.add("field-error");
+      } else if (!/^https:\/\/www\.loom\.com\/share\/[a-zA-Z0-9]+(\?.*)?$/.test(videoUrl)) {
+        errors.push("Please enter a valid Loom share link (e.g., https://www.loom.com/share/your-video-id).");
+        videoField.classList.add("field-error");
+      }
+
+      // Business Description
+      const businessDescField = document.getElementById("businessDescription");
+      const businessDesc = businessDescField.value.trim();
+      businessDescField.classList.remove("field-error");
+
+      if (!businessDesc) {
+        errors.push("Business description is required.");
+        businessDescField.classList.add("field-error");
+      } else if (businessDesc.length < 10 || businessDesc.length > 2000) {
+        errors.push("Business description must be between 10 and 2000 characters.");
+        businessDescField.classList.add("field-error");
+      }
+
+      // Your Role validation
+      const yourRoleField = document.getElementById("businessRole");
+      const yourRole = yourRoleField.value.trim();
+      yourRoleField.classList.remove("field-error");
+
+      if (!yourRole) {
+        errors.push("Please describe your role in the business.");
+        yourRoleField.classList.add("field-error");
+      } else if (yourRole.length < 10 || yourRole.length > 2000) {
+        errors.push("Your role must be between 10 and 2000 characters.");
+        yourRoleField.classList.add("field-error");
+      }
+
+      // Team size validation
+      const teamSizeField = document.getElementById("teamSize");
+      const teamSize = teamSizeField.value.trim();
+      teamSizeField.classList.remove("field-error");
+
+      if (!teamSize) {
+        errors.push("Team size is required.");
+        teamSizeField.classList.add("field-error");
+      } else if (teamSize.length < 2 || teamSize.length > 100) {
+        errors.push("Team size must be between 2 and 100 characters.");
+        teamSizeField.classList.add("field-error");
+      }
+
+      // Social impact validation
+      const socialImpactField = document.getElementById("socialImpact");
+      const socialImpact = socialImpactField.value.trim();
+      socialImpactField.classList.remove("field-error");
+
+      if (!socialImpact) {
+        errors.push("Please tell us about the social impact of your business.");
+        socialImpactField.classList.add("field-error");
+      } else if (socialImpact.length < 10 || socialImpact.length > 1000) {
+        errors.push("Social impact description must be between 10 and 1000 characters.");
+        socialImpactField.classList.add("field-error");
+      }
+
+      // Website validation
+      const websiteField = document.getElementById("businessWebsite");
+      const website = websiteField.value.trim();
+      websiteField.classList.remove("field-error");
+
+      if (!website) {
+        errors.push("Official website is required.");
+        websiteField.classList.add("field-error");
+      } else if (
+        !/^https?:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(\/\S*)?$/.test(website)
+      ) {
+        errors.push("Please enter a valid website URL (must start with http:// or https://).");
+        websiteField.classList.add("field-error");
+      }
+
+      // Business Impact validation
+      const businessImpactField = document.getElementById("businessImpact");
+      const businessImpact = businessImpactField.value.trim();
+      businessImpactField.classList.remove("field-error");
+
+      if (!businessImpact) {
+        errors.push("Please describe the goals you aim to achieve through this program.");
+        businessImpactField.classList.add("field-error");
+      } else if (businessImpact.length > 2000) {
+        errors.push("Program goals response is too long (max 2000 characters).");
+        businessImpactField.classList.add("field-error");
+      }
+
+      // Award Validation
+      const businessAwardsField = document.getElementById("businessAwards");
+      const businessAwards = businessAwardsField.value.trim();
+      businessAwardsField.classList.remove("field-error");
+
+      if (!businessAwards) {
+        errors.push("Please mention any awards or recognition your business has received.");
+        businessAwardsField.classList.add("field-error");
+      } else if (businessAwards.length > 2000) {
+        errors.push("Awards/recognition response is too long (max 2000 characters).");
+        businessAwardsField.classList.add("field-error");
+      }
+
+      // Business certificate validation
+      const businessCertHiddenField = document.getElementById("businessCertUrl");
+      const businessCertDisplayField = document.getElementById("businessCertDisplay");
+      const businessCert = businessCertHiddenField.value.trim();
+      businessCertDisplayField.classList.remove("field-error");
+
+      if (!businessCert) {
+        errors.push("Please upload your business registration certificate.");
+        businessCertDisplayField.classList.add("field-error");
+      }
+
+      // SDG Alignment validation
+      const sdgAlignmentField = document.getElementById("businessSdgs");
+      const sdgAlignment = sdgAlignmentField.value.trim();
+      sdgAlignmentField.classList.remove("field-error");
+
+      if (!sdgAlignment) {
+        errors.push("Please tell us if your business is aligned with the UN SDGs.");
+        sdgAlignmentField.classList.add("field-error");
+      } else if (sdgAlignment.length < 10 || sdgAlignment.length > 1000) {
+        errors.push("SDG alignment answer must be between 10 and 1000 characters.");
+        sdgAlignmentField.classList.add("field-error");
+      }
+
+      // Program Expectations validation
+      const programExpectationsField = document.getElementById("programExpectations");
+      const programExpectations = programExpectationsField.value.trim();
+      programExpectationsField.classList.remove("field-error");
+
+      if (!programExpectations) {
+        errors.push("Please share what you’d like to gain from this program.");
+        programExpectationsField.classList.add("field-error");
+      } else if (programExpectations.length < 10 || programExpectations.length > 1000) {
+        errors.push("Program expectations must be between 10 and 1000 characters.");
+        programExpectationsField.classList.add("field-error");
       }
 
       // Miscellaneous dropdowns
