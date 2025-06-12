@@ -215,6 +215,28 @@
       border-color: #bd1e2d !important;
       background-color: #fff5f5;
     }
+
+    .spinner {
+      margin-left: 10px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #555;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      animation: spin 0.6s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 
 </head>
@@ -589,7 +611,11 @@
         <ul id="errorList"></ul>
       </div>
 
-      <button type="submit">Submit Application</button>
+      <button id="submitBtn" type="submit">
+        Submit
+        <span id="submitSpinner" class="spinner" style="display: none;"></span>
+      </button>
+
     </form>
 
     <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px;">
@@ -1259,11 +1285,16 @@
     document.getElementById("applicationForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
+      const submitBtn = document.getElementById("submitBtn");
+      const spinner = document.getElementById("submitSpinner");
+
+      // Show spinner and disable button
+      submitBtn.disabled = true;
+      spinner.style.display = "inline-block";
+
       if (validateForm()) {
-        // 1. Collect and structure all form data
         const data = collectFormData();
 
-        // 2. Submit data to Power Automate
         try {
           const response = await fetch(endpoint, {
             method: "POST",
@@ -1285,7 +1316,12 @@
           alert("Submission failed. Please check your connection and try again.");
         }
       }
+
+      // Hide spinner and re-enable button regardless of outcome
+      submitBtn.disabled = false;
+      spinner.style.display = "none";
     });
+
 
     function collectFormData() {
       return {
