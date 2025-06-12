@@ -1033,11 +1033,10 @@
         yearsOfExperienceField.classList.remove("field-error");
       }
 
-
       // Linkedin validation
       const linkedinProfileField = document.getElementById("linkedinProfile");
       const linkedinProfile = linkedinProfileField.value.trim();
-      const linkedinRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/i;
+      const linkedinRegex = /^https:\/\/([a-zA-Z0-9\-]+\.)*linkedin\.com\/in\/[a-zA-Z0-9\-_%]+\/?$/;
 
       if (!linkedinProfile) {
         errors.push("LinkedIn profile is required.");
@@ -1231,8 +1230,6 @@
       } else {
         agreeDeclaration.classList.remove("field-error");
       }
-
-
 
       // Display errors in summary block
       const errorSummary = document.getElementById("errorSummary");
