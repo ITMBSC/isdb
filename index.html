@@ -431,7 +431,7 @@
         <option>More than 10 years</option>
       </select>
       <label>LinkedIn Profile *</label><input type="text" id="linkedinProfile" />
-      <label>Resume (PDF only) *</label>
+      <label>Resume (PDF or Image) *</label>
       <div class="upload-wrapper">
         <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
         <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume')">Upload</button>
@@ -485,7 +485,7 @@
       <label>Have you received any awards at the local, national, or international level? *</label>
       <textarea id="businessAwards" rows="4"></textarea>
 
-      <label>Upload your Business Registration Certificate (PDF) *</label>
+      <label>Upload your Business Registration Certificate (PDF or Image) *</label>
       <div class="upload-wrapper">
         <input type="text" id="businessCertDisplay" placeholder="No file uploaded" readonly>
         <button type="button"
@@ -572,7 +572,7 @@
       const client = filestack.init('ALTBAwlAkT2WmD9xeo3c5z'); // Replace with your API key
       client.picker({
         maxFiles: 1,
-        accept: ['.pdf'],
+        accept: ['application/pdf', 'image/jpeg', 'image/png'],
         onUploadDone: function (result) {
           const file = result.filesUploaded[0];
           const fileName = file.filename;
