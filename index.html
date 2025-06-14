@@ -1131,15 +1131,17 @@
       const website = websiteField.value.trim();
       websiteField.classList.remove("field-error");
 
+      // Allow optional protocol (http/https), optional www, and a valid domain
+      const websiteRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(\/\S*)?$/;
+
       if (!website) {
         errors.push("Official website is required.");
         websiteField.classList.add("field-error");
-      } else if (
-        !/^https?:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(\/\S*)?$/.test(website)
-      ) {
-        errors.push("Please enter a valid website URL (must start with http:// or https://).");
+      } else if (!websiteRegex.test(website)) {
+        errors.push("Please enter a valid website URL.");
         websiteField.classList.add("field-error");
       }
+
 
       // Business Impact validation
       const businessImpactField = document.getElementById("businessImpact");
@@ -1357,7 +1359,7 @@
 
     function getFormattedDateTime() {
       const now = new Date();
-      now.setHours(now.getHours() - 3); // Adjust for server-side shift
+      now.setHours(now.getHours());
 
       const pad = (n) => String(n).padStart(2, '0');
 
