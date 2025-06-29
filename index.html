@@ -300,7 +300,8 @@
         </div>
       </div>
 
-      <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode" placeholder="Postal Code" />
+      <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode"
+        placeholder="Postal Code" />
 
       <!-- Academic Information Section -->
       <h2>Academic Information</h2>
@@ -510,7 +511,8 @@
       <label>Tell us about your business <span class="required-star">*</label>
       <textarea id="businessDescription" rows="4"></textarea>
 
-      <label>Describe your role in the business, including your main responsibilities <span class="required-star">*</label>
+      <label>Describe your role in the business, including your main responsibilities <span
+          class="required-star">*</label>
       <textarea id="businessRole" rows="4"></textarea>
 
       <label>What is your business’s current team size? <span class="required-star">*</label>
@@ -522,10 +524,12 @@
       <label>Official Website or Online Presence <span class="required-star">*</label>
       <input type="url" id="businessWebsite">
 
-      <label>Please tell us about any impact, meaningful difference, or initiatives you have led <span class="required-star">*</label>
+      <label>Please tell us about any impact, meaningful difference, or initiatives you have led <span
+          class="required-star">*</label>
       <textarea id="businessImpact" rows="4"></textarea>
 
-      <label>Have you received any awards at the local, national, or international level? <span class="required-star">*</label>
+      <label>Have you received any awards at the local, national, or international level? <span
+          class="required-star">*</label>
       <textarea id="businessAwards" rows="4"></textarea>
 
       <label>Upload your Business Registration Certificate (PDF or Image) <span class="required-star">*</label>
@@ -536,7 +540,8 @@
       </div>
       <input type="hidden" id="businessCertUrl" name="businessCertUrl">
 
-      <label>Is your business aligned with the UN Sustainable Development Goals (SDGs)? <span class="required-star">*</label>
+      <label>Is your business aligned with the UN Sustainable Development Goals (SDGs)? <span
+          class="required-star">*</label>
       <textarea id="businessSdgs" rows="4"></textarea>
 
       <label>What would you like to gain from this program? <span class="required-star">*</label>
@@ -632,8 +637,10 @@
     const endpoint =
       "https://prod-94.westeurope.logic.azure.com:443/workflows/d49d7e8b4f65499ab91f5666a92dfeb4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q1hpWBhaibt1SIv4sOZ5g3T7gWjNs5PRRbSzhhGEcaU";
 
+    let errors = []; // Global error array
+
     function validateForm() {
-      const errors = [];
+      errors = []; // Reset each time
 
       // Full Name validation
       const fullNameField = document.getElementById("fullName");
@@ -1135,7 +1142,7 @@
       websiteField.classList.remove("field-error");
 
       // Allow optional protocol (http/https), optional www, and a valid domain
-      const websiteRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(\/\S*)?$/;
+      const websiteRegex = /^https?:\/\/([\w\-]+\.)*[\w\-]+\.[a-z]{2,}(\/[\w\-./?%&=]*)?$/i;
 
       if (!website) {
         errors.push("Official website is required.");
@@ -1236,6 +1243,10 @@
         agreeDeclaration.classList.remove("field-error");
       }
 
+      return displayErrorSummary();
+    }
+
+    function displayErrorSummary() {
       // Display errors in summary block
       const errorSummary = document.getElementById("errorSummary");
       const errorList = document.getElementById("errorList");
@@ -1282,13 +1293,23 @@
           if (response.ok || response.status === 0) {
             document.getElementById("applicationForm").style.display = "none";
             document.getElementById("thankYouMessage").style.display = "block";
-          } else {
+          }
+          else if (response.status === 409) {
+            errors.push("This email is already registered.");
+            emailField.classList.add("field-error");
+            displayErrorSummary();
+            submitBtn.disabled = false;
+            spinner.style.display = "none";
+            return;
+          }
+          else {
             console.error("Server responded with status:", response.status);
             alert("Something went wrong. Please try again.");
           }
         } catch (error) {
           console.error("Submission error:", error);
-          alert("Submission failed. Please check your connection and try again.");
+          errors.push("Submission failed. Please check your connection and try again.");
+          displayErrorSummary();
         }
       }
 
