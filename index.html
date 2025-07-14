@@ -941,8 +941,8 @@
         if (!gpaScore) {
           errors.push(`GPA Score is required.`);
           gpaScoreField.classList.add("field-error");
-        } else if (gpaScore.length < 1 || gpaScore.length > 15) {
-          errors.push(`GPA Score must be between 1 and 15 characters.`);
+        } else if (gpaScore.length < 1 || gpaScore.length > 200) {
+          errors.push(`GPA Score must be between 1 and 200 characters.`);
           gpaScoreField.classList.add("field-error");
         }
 
