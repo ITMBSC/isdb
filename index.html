@@ -1118,8 +1118,8 @@
       if (!teamSize) {
         errors.push("Team size is required.");
         teamSizeField.classList.add("field-error");
-      } else if (teamSize.length < 2 || teamSize.length > 100) {
-        errors.push("Team size must be between 2 and 100 characters.");
+      } else if (teamSize.length < 1 || teamSize.length > 200) {
+        errors.push("Number of employees must be at least 1 character and up to 200.");
         teamSizeField.classList.add("field-error");
       }
 
