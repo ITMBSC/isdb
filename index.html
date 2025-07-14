@@ -855,7 +855,7 @@
         if (!institution) {
           errors.push(`Institution is required.`);
           institutionField.classList.add("field-error");
-        } else if (!/^[a-zA-Z\s\-']+$/.test(institution)) {
+        } else if (!/^[\p{L}\p{M}0-9\s\-’'.&,()]+$/u.test(institution)) {
           errors.push(`Institution name contains invalid characters.`);
           institutionField.classList.add("field-error");
         }
