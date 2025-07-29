@@ -1092,8 +1092,8 @@
       if (!businessDesc) {
         errors.push("Business description is required.");
         businessDescField.classList.add("field-error");
-      } else if (businessDesc.length < 10 || businessDesc.length > 1000) {
-        errors.push("Business description must be between 10 and 1000 characters.");
+      } else if (businessDesc.length < 10 || businessDesc.length > 255) {
+        errors.push("Business description must be between 10 and 255 characters.");
         businessDescField.classList.add("field-error");
       }
 
@@ -1105,8 +1105,8 @@
       if (!yourRole) {
         errors.push("Please describe your role in the business.");
         yourRoleField.classList.add("field-error");
-      } else if (yourRole.length < 10 || yourRole.length > 1000) {
-        errors.push("Your role must be between 10 and 1000 characters.");
+      } else if (yourRole.length < 10 || yourRole.length > 255) {
+        errors.push("Your role must be between 10 and 255 characters.");
         yourRoleField.classList.add("field-error");
       }
 
@@ -1131,8 +1131,8 @@
       if (!socialImpact) {
         errors.push("Please tell us about the social impact of your business.");
         socialImpactField.classList.add("field-error");
-      } else if (socialImpact.length < 10 || socialImpact.length > 1000) {
-        errors.push("Social impact description must be between 10 and 1000 characters.");
+      } else if (socialImpact.length < 10 || socialImpact.length > 255) {
+        errors.push("Social impact description must be between 10 and 255 characters.");
         socialImpactField.classList.add("field-error");
       }
 
@@ -1161,8 +1161,8 @@
       if (!businessImpact) {
         errors.push("Please describe the goals you aim to achieve through this program.");
         businessImpactField.classList.add("field-error");
-      } else if (businessImpact.length > 1000) {
-        errors.push("Program goals response is too long (max 1000 characters).");
+      } else if (businessImpact.length > 255) {
+        errors.push("Program goals response is too long (max 255 characters).");
         businessImpactField.classList.add("field-error");
       }
 
@@ -1174,8 +1174,8 @@
       if (!businessAwards) {
         errors.push("Please mention any awards or recognition your business has received.");
         businessAwardsField.classList.add("field-error");
-      } else if (businessAwards.length > 1000) {
-        errors.push("Awards/recognition response is too long (max 1000 characters).");
+      } else if (businessAwards.length > 255) {
+        errors.push("Awards/recognition response is too long (max 255 characters).");
         businessAwardsField.classList.add("field-error");
       }
 
@@ -1198,8 +1198,8 @@
       if (!sdgAlignment) {
         errors.push("Please tell us if your business is aligned with the UN SDGs.");
         sdgAlignmentField.classList.add("field-error");
-      } else if (sdgAlignment.length < 10 || sdgAlignment.length > 1000) {
-        errors.push("SDG alignment answer must be between 10 and 1000 characters.");
+      } else if (sdgAlignment.length < 10 || sdgAlignment.length > 255) {
+        errors.push("SDG alignment answer must be between 10 and 255 characters.");
         sdgAlignmentField.classList.add("field-error");
       }
 
@@ -1211,8 +1211,8 @@
       if (!programExpectations) {
         errors.push("Please share what you’d like to gain from this program.");
         programExpectationsField.classList.add("field-error");
-      } else if (programExpectations.length < 10 || programExpectations.length > 1000) {
-        errors.push("Program expectations must be between 10 and 1000 characters.");
+      } else if (programExpectations.length < 10 || programExpectations.length > 255) {
+        errors.push("Program expectations must be between 10 and 255 characters.");
         programExpectationsField.classList.add("field-error");
       }
 
