@@ -250,1799 +250,1773 @@
 
   <div class="container">
     <!-- Application Dates Info Section -->
+
     <div style="background-color: #f0f0f0; padding: 15px; margin-bottom: 20px; border-left: 5px solid #660066;">
       <p style="margin: 0; font-size: 16px;">
-        <strong>Application Start Date:</strong> <span style="font-weight: 600;">July 21<sup>st</sup>, 2025</span><br>
-        <strong>Application End Date:</strong> <span style="font-weight: 600;">September 15<sup>th</sup>, 2025</span>
+        <strong>Application Start Date:</strong> <span style="font-weight: 600;">March 8<sup>st</sup>, 2026</span><br>
+        <strong>Application End Date:</strong> <span style="font-weight: 600;">April 16<sup>th</sup>, 2026</span>
       </p>
     </div>
 
     <form id="applicationForm">
-      <h2>Personal Information</h2>
-      <label>Full Name <span class="required-star">*</label>
-      <input type="text" id="fullName" />
+        <h2>Personal Information</h2>
+        <label>Full Name <span class="required-star">*</label>
+        <input type="text" id="fullName" />
 
-      <label>Email <span class="required-star">*</label>
-      <input type="text" id="email" placeholder="you@example.com" />
+        <label>Email <span class="required-star">*</label>
+        <input type="text" id="email" placeholder="you@example.com" />
 
-      <label>Phone Number <span class="required-star">*</label>
-      <small>Format: CountryCodeXXXXXXXXX (e.g., 9665XXXXXXXX)</small>
-      <input type="text" id="phone" placeholder="9665XXXXXXXX" />
+        <label>Phone Number <span class="required-star">*</label>
+        <small>Format: CountryCodeXXXXXXXXX (e.g., 9665XXXXXXXX)</small>
+        <input type="text" id="phone" placeholder="9665XXXXXXXX" />
 
-      <label>Date of Birth <span class="required-star">*</label>
-      <input type="date" id="dob" />
+        <label>Date of Birth <span class="required-star">*</label>
+        <input type="date" id="dob" />
 
-      <label>Gender <span class="required-star">*</label>
-      <select id="gender">
-        <option value="">Select</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-
-      <label>Nationality <span class="required-star">*</label>
-      <select id="nationality"></select>
-
-      <label>National ID Number (optional)</label>
-      <input type="text" id="idNumber">
-
-      <label>National ID Expiry Date (optional)</label>
-      <input type="date" id="idExpiry">
-
-      <label>Passport Number <span class="required-star">*</label>
-      <input type="text" id="passportNumber" />
-
-      <label>Passport Country <span class="required-star">*</label>
-      <select id="passportCountry">
-      </select>
-
-      <label>Passport Expiry Date <span class="required-star">*</label>
-      <input type="date" id="passportExpiry">
-
-      <label>Upload ID or Passport (PDF or Image) <span class="required-star">*</label>
-      <div class="upload-wrapper">
-        <input type="text" id="idDocDisplay" placeholder="No file uploaded" readonly>
-        <button type="button" onclick="uploadFile('idDocUrl', 'idDocDisplay', 'ID/Passport')">Upload</button>
-      </div>
-      <input type="hidden" id="idDocUrl" name="idDocUrl">
-
-      <h2>Address Information</h2>
-      <div style="display: flex; gap: 10px">
-        <div style="flex: 1">
-          <label>City <span class="required-star">*</label><input type="text" id="city" placeholder="City" />
-        </div>
-        <div style="flex: 1">
-          <label>Country <span class="required-star">*</label>
-          <select id="country">
-            <option value="">-- Select Country --</option>
-          </select>
-        </div>
-      </div>
-
-      <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode"
-        placeholder="Postal Code" />
-
-      <!-- Academic Information Section -->
-      <h2>Academic Information</h2>
-      <!-- Static first entry (not removable) -->
-      <div class="academic-entry static-entry">
-        <label>Educational Institution <span class="required-star">*</label>
-        <input type="text" class="academicInstitution">
-
-        <label>Level of Education <span class="required-star">*</label>
-        <select class="educationLevel">
-          <option value="">Select</option>
-          <option>High School</option>
-          <option>Diploma</option>
-          <option>Bachelor</option>
-          <option>Masters</option>
-          <option>PhD</option>
+        <label>Gender <span class="required-star">*</label>
+        <select id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
         </select>
 
-        <label>Field/Major <span class="required-star">*</label>
-        <input type="text" class="fieldMajor">
+        <label>Nationality <span class="required-star">*</label>
+        <select id="nationality"></select>
 
-        <label>Location of Study <span class="required-star">*</label>
-        <input type="text" class="studyLocation">
+        <label>National ID Number (optional)</label>
+        <input type="text" id="idNumber">
 
-        <label>Start Date <span class="required-star">*</label>
-        <input type="date" class="educationStartDate">
+        <label>National ID Expiry Date (optional)</label>
+        <input type="date" id="idExpiry">
 
-        <label>End Date <span class="required-star">*</label>
-        <input type="date" class="educationEndDate">
+        <label>Passport Number <span class="required-star">*</label>
+        <input type="text" id="passportNumber" />
 
-        <label>GPA Scale <span class="required-star">*</label>
-        <select class="gpaScale">
-          <option value="">Select</option>
-          <option>4.0 Scale</option>
-          <option>5.0 Scale</option>
-          <option>100 (Percentage)</option>
-          <option>10-Point Scale</option>
-          <option>Letter Grade (A to F)</option>
-          <option>UK Scale</option>
-          <option>UK Masters Scale</option>
-          <option>Others</option>
+        <label>Passport Country <span class="required-star">*</label>
+        <select id="passportCountry">
         </select>
 
-        <label>GPA Score <span class="required-star">*</label>
-        <input type="text" class="gpaScore">
+        <label>Passport Expiry Date <span class="required-star">*</label>
+        <input type="date" id="passportExpiry">
 
-        <hr />
-      </div>
-
-      <!-- Where additional entries go -->
-      <div id="academicListContainer"></div>
-
-      <template id="academicTemplate">
-        <div class="academic-entry">
-          <label>Educational Institution <span class="required-star">*</label>
-          <input type="text" class="academicInstitution">
-
-          <label>Level of Education <span class="required-star">*</label>
-          <select class="educationLevel">
-            <option value="">Select</option>
-            <option>High School</option>
-            <option>Diploma</option>
-            <option>Bachelor</option>
-            <option>Masters</option>
-            <option>PhD</option>
-          </select>
-
-          <label>Field/Major <span class="required-star">*</label>
-          <input type="text" class="fieldMajor">
-
-          <label>Location of Study <span class="required-star">*</label>
-          <input type="text" class="studyLocation">
-
-          <label>Start Date <span class="required-star">*</label>
-          <input type="date" class="educationStartDate">
-
-          <label>End Date <span class="required-star">*</label>
-          <input type="date" class="educationEndDate">
-
-          <label>GPA Scale <span class="required-star">*</label>
-          <select class="gpaScale">
-            <option value="">Select</option>
-            <option>4.0 Scale</option>
-            <option>5.0 Scale</option>
-            <option>100 (Percentage)</option>
-            <option>10-Point Scale</option>
-            <option>Letter Grade (A to F)</option>
-            <option>UK Scale</option>
-            <option>UK Masters Scale</option>
-            <option>Others</option>
-          </select>
-
-          <label>GPA Score <span class="required-star">*</label>
-          <input type="text" class="gpaScore">
-
-          <button type="button" class="removeAcademicBtn styled-btn">Remove Entry</button>
-          <hr />
+        <label>Upload ID or Passport (PDF or Image, Max 5 MB)<span class="required-star">*</label>
+        <div class="upload-wrapper">
+            <input type="text" id="idDocDisplay" placeholder="No file uploaded" readonly>
+            <button type="button" onclick="uploadFile('idDocUrl', 'idDocDisplay', 'ID/Passport')">Upload</button>
         </div>
-      </template>
+        <input type="hidden" id="idDocUrl" name="idDocUrl">
 
-      <button type="button" id="addAcademicBtn" class="styled-btn">Add Academic Entry</button>
-
-      <label for="englishProficiency">English Proficiency Level <span class="required-star">*</label>
-      <select id="englishProficiency">
-        <option value="">Select</option>
-        <option>Beginner</option>
-        <option>Early Intermediate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Proficient</option>
-      </select>
-
-      <!-- Experience Information Section -->
-      <h2>Work Experience</h2>
-
-      <!-- Initial static entry -->
-      <div class="experience-entry">
-        <label>Company Name <span class="required-star">*</label><input type="text" class="companyName" />
-        <label>Job Title <span class="required-star">*</label><input type="text" class="jobTitle" />
-        <label>Location of Work <span class="required-star">*</label><input type="text" class="workLocation" />
-        <label>Start Date <span class="required-star">*</label><input type="date" class="workStartDate" />
-        <div class="endDateContainer">
-          <label>End Date</label>
-          <input type="date" class="workEndDate" />
+        <h2>Address Information</h2>
+        <div style="display: flex; gap: 10px">
+            <div style="flex: 1">
+                <label>City <span class="required-star">*</label><input type="text" id="city" placeholder="City" />
+            </div>
+            <div style="flex: 1">
+                <label>Country <span class="required-star">*</label>
+                <select id="country">
+                    <option value="">-- Select Country --</option>
+                </select>
+            </div>
         </div>
 
-        <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
-        <hr />
-      </div>
+        <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode"
+                                                                       placeholder="Postal Code" />
 
-      <!-- Where additional entries go -->
-      <div id="experienceListContainer"></div>
+        <!-- Academic Information Section -->
+        <h2>Academic Information</h2>
+        <!-- Static first entry (not removable) -->
+        <div class="academic-entry static-entry">
+            <label>Educational Institution <span class="required-star">*</label>
+            <input type="text" class="academicInstitution">
 
-      <template id="experienceTemplate">
+            <label>Level of Education <span class="required-star">*</label>
+            <select class="educationLevel">
+                <option value="">Select</option>
+                <option>High School</option>
+                <option>Diploma</option>
+                <option>Bachelor</option>
+                <option>Master</option>
+                <option>PhD</option>
+            </select>
+
+            <label>Field/Major <span class="required-star">*</label>
+            <input type="text" class="fieldMajor">
+
+            <label>Location of Study <span class="required-star">*</label>
+            <Select  class="studyLocation"></Select>
+
+            <label>Start Date <span class="required-star">*</label>
+            <input type="date" class="educationStartDate">
+
+            <label>End Date <span class="required-star">*</label>
+            <input type="date" class="educationEndDate">
+
+            <label>GPA Scale <span class="required-star">*</label>
+            <select class="gpaScale">
+                <option value="">Select</option>
+                <option>4.0 Scale</option>
+                <option>5.0 Scale</option>
+                <option>100 (Percentage)</option>
+                <option>10-Point Scale</option>
+                <option>Letter Grade (A to F)</option>
+                <option>UK Scale</option>
+                <option>UK Masters Scale</option>
+                <option>Others</option>
+            </select>
+
+            <label>GPA Score <span class="required-star">*</label>
+            <input type="text" class="gpaScore">
+
+            <hr />
+        </div>
+
+        <!-- Where additional entries go -->
+        <div id="academicListContainer"></div>
+
+        <template id="academicTemplate">
+            <div class="academic-entry">
+                <label>Educational Institution <span class="required-star">*</label>
+                <input type="text" class="academicInstitution">
+
+                <label>Level of Education <span class="required-star">*</label>
+                <select class="educationLevel">
+                    <option value="">Select</option>
+                    <option>High School</option>
+                    <option>Diploma</option>
+                    <option>Bachelor</option>
+                    <option>Master</option>
+                    <option>PhD</option>
+                </select>
+
+                <label>Field/Major <span class="required-star">*</label>
+                <input type="text" class="fieldMajor">
+
+                <label>Location of Study <span class="required-star">*</label>
+                <Select class="studyLocation"></Select>
+
+                <label>Start Date <span class="required-star">*</label>
+                <input type="date" class="educationStartDate">
+
+                <label>End Date <span class="required-star">*</label>
+                <input type="date" class="educationEndDate">
+
+                <label>GPA Scale <span class="required-star">*</label>
+                <select class="gpaScale">
+                    <option value="">Select</option>
+                    <option>4.0 Scale</option>
+                    <option>5.0 Scale</option>
+                    <option>100 (Percentage)</option>
+                    <option>10-Point Scale</option>
+                    <option>Letter Grade (A to F)</option>
+                    <option>UK Scale</option>
+                    <option>UK Masters Scale</option>
+                    <option>Others</option>
+                </select>
+
+                <label>GPA Score <span class="required-star">*</label>
+                <input type="text" class="gpaScore">
+
+                <button type="button" class="removeAcademicBtn styled-btn">Remove Entry</button>
+                <hr />
+            </div>
+        </template>
+
+        <button type="button" id="addAcademicBtn" class="styled-btn">Add Academic Entry</button>
+
+        <label for="englishProficiency">English Proficiency Level <span class="required-star">*</label>
+        <select id="englishProficiency">
+            <option value="">Select</option>
+            <option>Beginner</option>
+            <option>Early Intermediate</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+            <option>Proficient</option>
+        </select>
+
+        <!-- Experience Information Section -->
+        <h2>Work Experience</h2>
+
+        <!-- Initial static entry -->
         <div class="experience-entry">
-          <label>Company Name <span class="required-star">*</label>
-          <input type="text" class="companyName">
+            <label>Company Name <span class="required-star">*</label><input type="text" class="companyName" />
+            <label>Job Title <span class="required-star">*</label><input type="text" class="jobTitle" />
+            <!--
+               <label>Location of Work <span class="required-star">*</label>
+               <input type="text" class="workLocation" />
+    -->
+            <label>Location of Work <span class="required-star">*</label>
+            <select class="workLocation" >
+            </select>
 
-          <label>Job Title <span class="required-star">*</label>
-          <input type="text" class="jobTitle">
+            <label>Start Date <span class="required-star">*</label><input type="date" class="workStartDate" />
+            <div class="endDateContainer">
+                <label>End Date</label>
+                <input type="date" class="workEndDate" />
+            </div>
 
-          <label>Location of Work <span class="required-star">*</label>
-          <input type="text" class="workLocation">
-
-          <label>Start Date <span class="required-star">*</label>
-          <input type="date" class="workStartDate">
-
-          <div class="endDateContainer">
-            <label>End Date</label>
-            <input type="date" class="workEndDate" />
-          </div>
-
-
-          <label>
-            <input type="checkbox" class="currentlyWorking"> Currently Working Here
-          </label>
-
-          <button type="button" class="removeExperienceBtn styled-btn">Remove Entry</button>
-          <hr />
+            <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
+            <hr />
         </div>
-      </template>
 
-      <button type="button" id="addExperienceBtn" class="styled-btn">Add Experience Entry</button>
+        <!-- Where additional entries go -->
+        <div id="experienceListContainer"></div>
 
-      <label>Years of Experience <span class="required-star">*</label>
-      <select id="experienceYears">
-        <option value="">Select</option>
-        <option>1–3 years</option>
-        <option>3–5 years</option>
-        <option>5–10 years</option>
-        <option>More than 10 years</option>
-      </select>
-      <label>LinkedIn Profile <span class="required-star">*</label><input type="text" id="linkedinProfile" />
-      <label>Resume (PDF or Image) <span class="required-star">*</label>
-      <div class="upload-wrapper">
-        <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
-        <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume')">Upload</button>
-      </div>
-      <input type="hidden" id="resumeUrl" name="resumeUrl">
+        <template id="experienceTemplate">
+            <div class="experience-entry">
+                <label>Company Name <span class="required-star">*</label>
+                <input type="text" class="companyName">
 
-      <h2>Entrepreneurial Journey & Business Insight</h2>
-      <p><strong>Instructions:</strong> This is your chance to showcase your journey and business insight through a
-        short 2–3 minute video. Your video will be reviewed by MBSC and IsDB, so make sure it is clear, professional,
-        and well-lit. Speak clearly, and avoid distractions. Follow the guide below:</p>
+                <label>Job Title <span class="required-star">*</label>
+                <input type="text" class="jobTitle">
 
-      <ul>
-        <li><strong>Start with an Introduction:</strong> State your full name and current role in your venture.</li>
-        <li><strong>Talk About Your Venture:</strong> Describe your business, achievements, traction, and growth
-          metrics.</li>
-        <li><strong>Mention Your Passion and Focus:</strong> What drives you as an entrepreneur?</li>
-        <li><strong>Share Your Impact:</strong> What difference is your business making in society or the market?</li>
-        <li><strong>Wrap Up:</strong> Share why you’re applying and why this program is meaningful to you.</li>
-      </ul>
+                <label>Location of Work <span class="required-star">*</label>
+                <select class="workLocation"></select>
 
-      <p><strong>📹 How to record:</strong> You can use <a href="https://www.loom.com/" target="_blank">Loom</a> to
-        easily record your video.</p>
-      <ol>
-        <li>Go to <a href="https://www.loom.com/" target="_blank">loom.com</a> and sign up or log in.</li>
-        <li>Click "New Video" and choose "Screen + Camera" or "Camera Only".</li>
-        <li>Record your video using the tips above. Keep it under 3 minutes.</li>
-        <li>Copy the link after uploading and paste it below.</li>
-      </ol>
+                <label>Start Date <span class="required-star">*</label>
+                <input type="date" class="workStartDate">
 
-      <label for="videoBiographyLink">Video Biography Link (Loom URL) <span class="required-star">*</label>
-      <input type="url" id="videoBiographyLink" placeholder="https://www.loom.com/share/...">
+                <div class="endDateContainer">
+                    <label>End Date</label>
+                    <input type="date" class="workEndDate" />
+                </div>
 
-      <label>Tell us about your business <span class="required-star">*</label>
-      <textarea id="businessDescription" rows="4"></textarea>
 
-      <label>Describe your role in the business, including your main responsibilities <span
-          class="required-star">*</label>
-      <textarea id="businessRole" rows="4"></textarea>
+                <label>
+                    <input type="checkbox" class="currentlyWorking"> Currently Working Here
+                </label>
 
-      <label>What is your business’s current team size? <span class="required-star">*</label>
-      <input type="text" id="teamSize">
+                <button type="button" class="removeExperienceBtn styled-btn">Remove Entry</button>
+                <hr />
+            </div>
+        </template>
 
-      <label>What is the social impact of your business? <span class="required-star">*</label>
-      <textarea id="socialImpact" rows="3"></textarea>
+        <button type="button" id="addExperienceBtn" class="styled-btn">Add Experience Entry</button>
 
-      <label>Official Website or Online Presence <span class="required-star">*</label>
-      <input type="url" id="businessWebsite">
+        <label>Years of Experience <span class="required-star">*</label>
+        <select id="experienceYears">
+            <option value="">Select</option>
+            <option>1–3 years</option>
+            <option>3–5 years</option>
+            <option>5–10 years</option>
+            <option>More than 10 years</option>
+        </select>
+        <label>LinkedIn Profile <span class="required-star">*</label><input type="text" id="linkedinProfile" />
+         <label>Resume (PDF only, max 5 MB) <span class="required-star">*</label>
+        <div class="upload-wrapper">
+            <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
+            <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume', true)">Upload</button>
+        </div>
+        <input type="hidden" id="resumeUrl" name="resumeUrl">
 
-      <label>Please tell us about any impact, meaningful difference, or initiatives you have led <span
-          class="required-star">*</label>
-      <textarea id="businessImpact" rows="4"></textarea>
+        <h2>Entrepreneurial Journey & Business Insight</h2>
+        <p>
+            <strong>Instructions:</strong> This is your chance to showcase your journey and business insight through a
+            short 2–3 minute video. Your video will be reviewed by MBSC and IsDB, so make sure it is clear, professional,
+            and well-lit. Speak clearly, and avoid distractions. Follow the guide below:
+        </p>
 
-      <label>Have you received any awards at the local, national, or international level? <span
-          class="required-star">*</label>
-      <textarea id="businessAwards" rows="4"></textarea>
+        <ul>
+            <li><strong>Start with an Introduction:</strong> State your full name and current role in your venture.</li>
+            <li>
+                <strong>Talk About Your Venture:</strong> Describe your business, achievements, traction, and growth
+                metrics.
+            </li>
+            <li><strong>Mention Your Passion and Focus:</strong> What drives you as an entrepreneur?</li>
+            <li><strong>Share Your Impact:</strong> What difference is your business making in society or the market?</li>
+            <li><strong>Wrap Up:</strong> Share why you’re applying and why this program is meaningful to you.</li>
+        </ul>
 
-      <label>Upload your Business Registration Certificate (PDF or Image) <span class="required-star">*</label>
-      <div class="upload-wrapper">
-        <input type="text" id="businessCertDisplay" placeholder="No file uploaded" readonly>
-        <button type="button"
-          onclick="uploadFile('businessCertUrl', 'businessCertDisplay', 'Business Certificate')">Upload</button>
-      </div>
-      <input type="hidden" id="businessCertUrl" name="businessCertUrl">
+        <p>
+            <strong>📹 How to record:</strong> You can use <a href="https://www.loom.com/" target="_blank">Loom</a> to
+            easily record your video.
+        </p>
+        <ol>
+            <li>Go to <a href="https://www.loom.com/" target="_blank">loom.com</a> and sign up or log in.</li>
+            <li>Click "New Video" and choose "Screen + Camera" or "Camera Only".</li>
+            <li>Record your video using the tips above. Keep it under 3 minutes.</li>
+            <li>Copy the link after uploading and paste it below.</li>
+        </ol>
 
-      <label>Is your business aligned with the UN Sustainable Development Goals (SDGs)? <span
-          class="required-star">*</label>
-      <textarea id="businessSdgs" rows="4"></textarea>
-
-      <label>What would you like to gain from this program? <span class="required-star">*</label>
-      <textarea id="programExpectations" rows="4"></textarea>
+        <label for="videoBiographyLink">Video Biography Link (Loom URL) <span class="required-star">*</label>
+        <input type="url" id="videoBiographyLink" placeholder="https://www.loom.com/share/...">
 
 
 
-      <h2>Miscellaneous</h2>
+        <!-- this -->
+        <label>Please describe your leadership potential or demonstrated leadership experience? <span class="required-star">*</label>
+<textarea id="businessDescription" rows="4"></textarea>
+        <!-- this -->
+        <label>How many people do you currently manage or are responsible for? <span class="required-star">*</label>
+        <input type="text" id="teamSize">
+        <!-- this -->
+        <label>
+            Describe your role in the organization you are currently working for or previously worked for? <span class="required-star">*
+        </label>
+<textarea id="businessRole" rows="4"></textarea>
 
-      <label>Are you available during the program dates mentioned? <span class="required-star">*</label>
-      <select id="availableDuringProgram">
-        <option value="">Select</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
+        <!-- this -->
+        <label>What would you like to gain from this program? <span class="required-star">*</label>
+<textarea id="programExpectations" rows="4"></textarea>
 
-      <label>Have you ever been enrolled in an entrepreneurship program, either
-        currently or in the past? <span class="required-star">*</label>
-      <select id="enrolledInEntrepreneurship">
-        <option value="">Select</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
 
-      <label>How did you hear about this program? <span class="required-star">*</label>
-      <select id="howDidYouHear">
-        <option value="">Select</option>
-        <option>MBSC Website</option>
-        <option>IsDBI Website</option>
-        <option>Search Engine</option>
-        <option>Social Media</option>
-        <option>Word of Mouth</option>
-        <option>Referral (Family, Friends, or Colleagues)</option>
-        <option>Other</option>
-      </select>
 
-      <label>Do you have any types of disability? <span class="required-star">*</label>
-      <select id="hasDisability">
-        <option value="">Select</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
+        <!--
 
-      <label><input type="checkbox" id="declaration" /> I declare that
-        all the information provided is true and correct and I understand that
-        any false information would disqualify my application from the
-        program.</label>
+        <label>What is the social impact of your business? <span class="required-star">*</label>
+        <textarea id="socialImpact" rows="3"></textarea>
 
-      <div id="errorSummary" class="error-summary" style="display: none;">
-        <h3>Please fix the following errors:</h3>
-        <ul id="errorList"></ul>
-      </div>
+        <label>Official Website or Online Presence <span class="required-star">*</label>
+        <input type="url" id="businessWebsite">
 
-      <button id="submitBtn" type="submit">
-        Submit
-        <span id="submitSpinner" class="spinner" style="display: none;"></span>
-      </button>
+        <label>
+            Please tell us about any impact, meaningful difference, or initiatives you have led <span class="required-star">*
+        </label>
+        <textarea id="businessImpact" rows="4"></textarea>
+
+        <label>
+            Have you received any awards at the local, national, or international level? <span class="required-star">*
+        </label>
+        <textarea id="businessAwards" rows="4"></textarea>
+
+        <label>Upload your Business Registration Certificate (PDF or Image) <span class="required-star">*</label>
+        <div class="upload-wrapper">
+            <input type="text" id="businessCertDisplay" placeholder="No file uploaded" readonly>
+            <button type="button"
+                    onclick="uploadFile('businessCertUrl', 'businessCertDisplay', 'Business Certificate')">
+                Upload
+            </button>
+        </div>
+        <input type="hidden" id="businessCertUrl" name="businessCertUrl">
+
+        <label>
+            Is your business aligned with the UN Sustainable Development Goals (SDGs)? <span class="required-star">*
+        </label>
+        <textarea id="businessSdgs" rows="4"></textarea>
+
+        -->
+
+        <h2>Miscellaneous</h2>
+
+        <label>Are you available during the program dates mentioned? <span class="required-star">*</label>
+        <select id="availableDuringProgram">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>
+            Have you ever been enrolled in an entrepreneurship program, either
+            currently or in the past? <span class="required-star">*
+        </label>
+        <select id="enrolledInEntrepreneurship">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>How did you hear about this program? <span class="required-star">*</label>
+        <select id="howDidYouHear">
+            <option value="">Select</option>
+            <option>MBSC Website</option>
+            <option>IsDBI Website</option>
+            <option>Search Engine</option>
+            <option>Social Media</option>
+            <option>Word of Mouth</option>
+            <option>Referral (Family, Friends, or Colleagues)</option>
+            <option>Other</option>
+        </select>
+
+        <label>Do you have any types of disability? <span class="required-star">*</label>
+        <select id="hasDisability">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>
+            <input type="checkbox" id="declaration" /> I declare that
+            all the information provided is true and correct and I understand that
+            any false information would disqualify my application from the
+            program.
+        </label>
+
+        <div id="errorSummary" class="error-summary" style="display: none;">
+            <h3>Please fix the following errors:</h3>
+            <ul id="errorList"></ul>
+        </div>
+
+        <button id="submitBtn" type="submit">
+            Submit
+            <span id="submitSpinner" class="spinner" style="display: none;"></span>
+        </button>
 
     </form>
 
-    <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px;">
-      <h2>Thank you for your application!</h2>
-      <p>We have received your submission, and our team will begin reviewing it shortly.</p>
-    </div>
+        <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px;">
+          <h2>Thank you for your application!</h2>
+          <p>We have received your submission, and our team will begin reviewing it shortly.</p>
+        </div>
 
-  </div>
+      </div>
 
-  <footer>
-    &copy; 2025 Prince Mohammed Bin Salman College. All rights reserved.
-  </footer>
+      <footer>
+        &copy; 2025 Prince Mohammed Bin Salman College. All rights reserved.
+      </footer>
 
-  <script>
-    const filestackClient = filestack.init("ALTBAwlAkT2WmD9xeo3c5z");
+      <script>
+        const filestackClient = filestack.init("ALTBAwlAkT2WmD9xeo3c5z");
 
-    function uploadFile(hiddenFieldId, displayFieldId, fileLabel) {
-      const client = filestack.init('ALTBAwlAkT2WmD9xeo3c5z'); // Replace with your API key
-      client.picker({
-        maxFiles: 1,
-        accept: ['application/pdf', 'image/jpeg', 'image/png'],
-        onUploadDone: function (result) {
-          const file = result.filesUploaded[0];
-          const fileName = file.filename;
-          const fileUrl = file.url;
+        function uploadFile(hiddenFieldId, displayFieldId, fileLabel, onlyPdf = false) {
+          const client = filestack.init('ALTBAwlAkT2WmD9xeo3c5z'); // Replace with your API key
+          client.picker({
+              maxFiles: 1,
+              maxSize: 5 * 1024 * 1024,      // ⭐ 5 MB
+              accept: onlyPdf ? ['application/pdf'] : ['application/pdf', 'image/jpeg', 'image/png'],
+            onUploadDone: function (result) {
+              const file = result.filesUploaded[0];
+              const fileName = file.filename;
+              const fileUrl = file.url;
 
-          document.getElementById(hiddenFieldId).value = fileUrl;
-          document.getElementById(displayFieldId).value = fileLabel + " Uploaded";
-          document.getElementById(displayFieldId).classList.add("clickable");
-          document.getElementById(displayFieldId).onclick = () => window.open(fileUrl, "_blank");
-        }
-      }).open();
-    }
-
-    const endpoint =
-      "https://prod-94.westeurope.logic.azure.com:443/workflows/d49d7e8b4f65499ab91f5666a92dfeb4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q1hpWBhaibt1SIv4sOZ5g3T7gWjNs5PRRbSzhhGEcaU";
-
-    let errors = []; // Global error array
-
-    function validateForm() {
-      errors = []; // Reset each time
-
-      // Full Name validation
-      const fullNameField = document.getElementById("fullName");
-      const fullName = fullNameField.value.trim();
-      fullNameField.classList.remove("field-error");
-
-      if (!fullName) {
-        errors.push("Full Name is required.");
-        fullNameField.classList.add("field-error");
-      }
-
-      // Email validation
-      const emailField = document.getElementById("email");
-      const email = emailField.value.trim();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      emailField.classList.remove("field-error");
-
-      if (!email) {
-        errors.push("Email is required.");
-        emailField.classList.add("field-error");
-      } else if (!emailPattern.test(email)) {
-        errors.push("Please enter a valid email address.");
-        emailField.classList.add("field-error");
-      }
-
-      // Phone number validation
-      const phoneField = document.getElementById("phone");
-      const phone = phoneField.value.trim();
-      const phonePattern = /^\d+$/; // Digits only
-      phoneField.classList.remove("field-error");
-
-      if (!phone) {
-        errors.push("Phone number is required.");
-        phoneField.classList.add("field-error");
-      } else if (!phonePattern.test(phone)) {
-        errors.push("Phone number must contain digits only.");
-        phoneField.classList.add("field-error");
-      } else if (phone.startsWith("0")) {
-        errors.push("Phone number must not start with 0.");
-        phoneField.classList.add("field-error");
-      } else if (phone.length < 8 || phone.length > 15) {
-        errors.push("Phone number must be between 8 and 15 digits long.");
-        phoneField.classList.add("field-error");
-      }
-
-      // Date of Birth validation
-      const dobField = document.getElementById("dob");
-      const dob = dobField.value.trim();
-      dobField.classList.remove("field-error");
-
-      if (!dob) {
-        errors.push("Date of birth is required.");
-        dobField.classList.add("field-error");
-      } else {
-        const dobDate = new Date(dob);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Reset time for accurate comparison
-
-        if (dobDate >= today) {
-          errors.push("Date of birth must be in the past.");
-          dobField.classList.add("field-error");
-        }
-      }
-
-      // Gender validation
-      const genderField = document.getElementById("gender");
-      const gender = genderField.value;
-      genderField.classList.remove("field-error");
-
-      if (!gender) {
-        errors.push("Gender is required.");
-        genderField.classList.add("field-error");
-      }
-
-      // Nationality validation
-      const nationalityField = document.getElementById("nationality");
-      const nationality = nationalityField.value;
-      nationalityField.classList.remove("field-error");
-
-      if (!nationality) {
-        errors.push("Nationality is required.");
-        nationalityField.classList.add("field-error");
-      }
-
-      // ID Number validation (optional)
-      const idNumberField = document.getElementById("idNumber");
-      const idNumber = idNumberField.value.trim();
-      idNumberField.classList.remove("field-error");
-
-      if (idNumber) {
-        if (!/^\d+$/.test(idNumber)) {
-          errors.push("ID Number must contain digits only.");
-          idNumberField.classList.add("field-error");
-        } else if (idNumber.length < 7 || idNumber.length > 13) {
-          errors.push("ID Number must be between 7 and 13 digits.");
-          idNumberField.classList.add("field-error");
-        }
-      }
-
-      // ID Expiry Date validation (optional)
-      const idExpiryField = document.getElementById("idExpiry");
-      const idExpiry = idExpiryField.value;
-      idExpiryField.classList.remove("field-error");
-
-      if (idExpiry) {
-        const expiryDate = new Date(idExpiry);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        if (expiryDate <= today) {
-          errors.push("ID Expiry Date must be in the future.");
-          idExpiryField.classList.add("field-error");
-        }
-      }
-
-
-      // Passport Number validation
-      const passportNumberField = document.getElementById("passportNumber");
-      const passportNumber = passportNumberField.value.trim();
-      passportNumberField.classList.remove("field-error");
-
-      if (!passportNumber) {
-        errors.push("Passport Number is required.");
-        passportNumberField.classList.add("field-error");
-      } else if (!/^[A-Za-z0-9]{5,15}$/.test(passportNumber)) {
-        errors.push("Passport Number must be 5–15 characters, letters and/or digits.");
-        passportNumberField.classList.add("field-error");
-      }
-
-      // Passport Country validation
-      const passportCountryField = document.getElementById("passportCountry");
-      const passportCountry = passportCountryField.value;
-      passportCountryField.classList.remove("field-error");
-
-      if (!passportCountry) {
-        errors.push("Please select your passport country.");
-        passportCountryField.classList.add("field-error");
-      }
-
-      // Passport Expiry Date validation
-      const passportExpiryField = document.getElementById("passportExpiry");
-      const passportExpiry = passportExpiryField.value;
-      passportExpiryField.classList.remove("field-error");
-
-      if (!passportExpiry) {
-        errors.push("Passport expiry date is required.");
-        passportExpiryField.classList.add("field-error");
-      } else {
-        const expiryDate = new Date(passportExpiry);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Normalize for comparison
-
-        if (expiryDate <= today) {
-          errors.push("Passport expiry date must be in the future.");
-          passportExpiryField.classList.add("field-error");
-        }
-      }
-
-      // ID Document Upload validation
-      const idDocDisplayField = document.getElementById("idDocDisplay");
-      idDocDisplayField.classList.remove("field-error");
-
-      if (!document.getElementById("idDocUrl").value) {
-        errors.push("Please upload your ID document.");
-        idDocDisplayField.classList.add("field-error");
-      }
-
-      // City validation
-      const cityField = document.getElementById("city");
-      const city = cityField.value.trim();
-      cityField.classList.remove("field-error");
-
-      if (!city) {
-        errors.push("City is required.");
-        cityField.classList.add("field-error");
-      } else if (!/^[a-zA-Z\s\'\-]{2,50}$/.test(city)) {
-        errors.push("City must be 2–50 characters and can include letters, spaces, apostrophes, and hyphens.");
-        cityField.classList.add("field-error");
-      }
-
-      // Country validation
-      const countryField = document.getElementById("country");
-      const country = countryField.value;
-      countryField.classList.remove("field-error");
-
-      if (!country) {
-        errors.push("Country selection is required.");
-        countryField.classList.add("field-error");
-      }
-
-      // Postal code validation
-      const postalCodeField = document.getElementById("postalCode");
-      const postalCode = postalCodeField.value.trim();
-      postalCodeField.classList.remove("field-error");
-
-      if (!postalCode) {
-        errors.push("Postal code is required.");
-        postalCodeField.classList.add("field-error");
-      } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(postalCode)) {
-        errors.push("Postal code must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
-        postalCodeField.classList.add("field-error");
-      }
-
-      const academicEntries = document.querySelectorAll(".academic-entry");
-      academicEntries.forEach((entry, index) => {
-
-        // Institution validation
-        const institutionField = entry.querySelector(".academicInstitution");
-        const institution = institutionField.value.trim();
-        institutionField.classList.remove("field-error");
-
-        if (!institution) {
-          errors.push(`Institution is required.`);
-          institutionField.classList.add("field-error");
-        } else if (!/^[\p{L}\p{M}0-9\s\-’'.&,()]+$/u.test(institution)) {
-          errors.push(`Institution name contains invalid characters.`);
-          institutionField.classList.add("field-error");
+              document.getElementById(hiddenFieldId).value = fileUrl;
+              document.getElementById(displayFieldId).value = fileLabel + " Uploaded";
+              document.getElementById(displayFieldId).classList.add("clickable");
+              document.getElementById(displayFieldId).onclick = () => window.open(fileUrl, "_blank");
+            }
+          }).open();
         }
 
-        // Education Level validation
-        const levelField = entry.querySelector(".educationLevel");
-        const level = levelField.value;
-        levelField.classList.remove("field-error");
+        const endpoint =
+          "https://prod-94.westeurope.logic.azure.com:443/workflows/d49d7e8b4f65499ab91f5666a92dfeb4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q1hpWBhaibt1SIv4sOZ5g3T7gWjNs5PRRbSzhhGEcaU";
 
-        if (!level) {
-          errors.push(`Education level is required.`);
-          levelField.classList.add("field-error");
-        }
+        let errors = []; // Global error array
 
-        // Field/Major validation
-        const majorField = entry.querySelector(".fieldMajor");
-        const major = majorField.value.trim();
-        majorField.classList.remove("field-error");
+        function validateForm() {
+          errors = []; // Reset each time
 
-        if (!major) {
-          errors.push(`Field/Major is required.`);
-          majorField.classList.add("field-error");
-        } else if (major.length < 2 || major.length > 100) {
-          errors.push(`Field/Major must be between 2 and 100 characters.`);
-          majorField.classList.add("field-error");
-        }
+          // Full Name validation
+          const fullNameField = document.getElementById("fullName");
+          const fullName = fullNameField.value.trim();
+          fullNameField.classList.remove("field-error");
 
-        // Location of Study validation
-        const locationField = entry.querySelector(".studyLocation");
-        const location = locationField.value.trim();
-        locationField.classList.remove("field-error");
-
-        if (!location) {
-          errors.push(`Location of Study is required.`);
-          locationField.classList.add("field-error");
-        } else if (location.length < 2 || location.length > 100) {
-          errors.push(`Location of Study must be between 2 and 100 characters.`);
-          locationField.classList.add("field-error");
-        }
-
-        // Start Date and End Date validation
-        const startDateField = entry.querySelector(".educationStartDate");
-        const endDateField = entry.querySelector(".educationEndDate");
-        const startDate = startDateField.value;
-        const endDate = endDateField.value;
-
-        startDateField.classList.remove("field-error");
-        endDateField.classList.remove("field-error");
-
-        if (!startDate) {
-          errors.push(`Start Date is required.`);
-          startDateField.classList.add("field-error");
-        }
-
-        if (!endDate) {
-          errors.push(`End Date is required.`);
-          endDateField.classList.add("field-error");
-        }
-
-        if (startDate && endDate) {
-          const start = new Date(startDate);
-          const end = new Date(endDate);
-          if (start >= end) {
-            errors.push(`End Date must be after Start Date.`);
-            startDateField.classList.add("field-error");
-            endDateField.classList.add("field-error");
+          if (!fullName) {
+            errors.push("Full Name is required.");
+            fullNameField.classList.add("field-error");
           }
-        }
 
-        // GPA Scale validation
-        const gpaScaleField = entry.querySelector(".gpaScale");
-        gpaScaleField.classList.remove("field-error");
-        if (!gpaScaleField.value) {
-          errors.push(`GPA Scale is required.`);
-          gpaScaleField.classList.add("field-error");
-        }
+          // Email validation
+          const emailField = document.getElementById("email");
+          const email = emailField.value.trim();
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          emailField.classList.remove("field-error");
 
-        // GPA Score validation
-        const gpaScoreField = entry.querySelector(".gpaScore");
-        const gpaScore = gpaScoreField.value.trim();
-        gpaScoreField.classList.remove("field-error");
-
-        if (!gpaScore) {
-          errors.push(`GPA Score is required.`);
-          gpaScoreField.classList.add("field-error");
-        } else if (gpaScore.length < 1 || gpaScore.length > 200) {
-          errors.push(`GPA Score must be between 1 and 200 characters.`);
-          gpaScoreField.classList.add("field-error");
-        }
-
-      });
-
-
-      // English Proficiency validation
-      const englishProficiencyField = document.getElementById("englishProficiency");
-      const englishProficiency = englishProficiencyField.value;
-      englishProficiencyField.classList.remove("field-error");
-
-      if (!englishProficiency) {
-        errors.push("English proficiency level is required.");
-        englishProficiencyField.classList.add("field-error");
-      }
-
-      // Experience Entries Validation
-      const experienceEntries = document.querySelectorAll(".experience-entry");
-      experienceEntries.forEach(entry => {
-
-        // Company validation
-        const companyField = entry.querySelector(".companyName");
-        const company = companyField.value.trim();
-        companyField.classList.remove("field-error");
-
-        if (!company) {
-          errors.push("Company name is required.");
-          companyField.classList.add("field-error");
-        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(company)) {
-          errors.push("Company name must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
-          companyField.classList.add("field-error");
-        }
-
-        // Job Title validation
-        const jobTitleField = entry.querySelector(".jobTitle");
-        const jobTitle = jobTitleField.value.trim();
-        jobTitleField.classList.remove("field-error");
-
-        if (!jobTitle) {
-          errors.push("Job Title is required.");
-          jobTitleField.classList.add("field-error");
-        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(jobTitle)) {
-          errors.push("Job Title must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
-          jobTitleField.classList.add("field-error");
-        }
-
-        // Location of Work validation
-        const locationField = entry.querySelector(".workLocation");
-        const location = locationField.value.trim();
-        locationField.classList.remove("field-error");
-
-        if (!location) {
-          errors.push("Location of Work is required.");
-          locationField.classList.add("field-error");
-        } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(location)) {
-          errors.push("Location of Work must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
-          locationField.classList.add("field-error");
-        }
-
-        // Start Date validation
-        const startDateField = entry.querySelector(".workStartDate");
-        const startDate = startDateField.value;
-        startDateField.classList.remove("field-error");
-
-        if (!startDate) {
-          errors.push("Work Start Date is required.");
-          startDateField.classList.add("field-error");
-        }
-
-        // End Date (conditionally validated)
-        const endDateFieldContainer = entry.querySelector(".endDateContainer");
-        const endDateField = entry.querySelector(".workEndDate");
-        const endDate = endDateField.value;
-        const currentlyWorking = entry.querySelector(".currentlyWorking").checked;
-
-        endDateField.classList.remove("field-error");
-
-        if (!currentlyWorking) {
-          if (!endDate) {
-            errors.push("Work End Date is required unless 'Currently Working' is selected.");
-            endDateField.classList.add("field-error");
-          } else if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
-            errors.push("Work End Date must be after the Start Date.");
-            endDateField.classList.add("field-error");
+          if (!email) {
+            errors.push("Email is required.");
+            emailField.classList.add("field-error");
+          } else if (!emailPattern.test(email)) {
+            errors.push("Please enter a valid email address.");
+            emailField.classList.add("field-error");
           }
-        }
+
+          // Phone number validation
+          const phoneField = document.getElementById("phone");
+          const phone = phoneField.value.trim();
+          const phonePattern = /^\d+$/; // Digits only
+          phoneField.classList.remove("field-error");
+
+          if (!phone) {
+            errors.push("Phone number is required.");
+            phoneField.classList.add("field-error");
+          } else if (!phonePattern.test(phone)) {
+            errors.push("Phone number must contain digits only.");
+            phoneField.classList.add("field-error");
+          } else if (phone.startsWith("0")) {
+            errors.push("Phone number must not start with 0.");
+            phoneField.classList.add("field-error");
+          } else if (phone.length < 8 || phone.length > 15) {
+            errors.push("Phone number must be between 8 and 15 digits long.");
+            phoneField.classList.add("field-error");
+          }
+
+          // Date of Birth validation
+          const dobField = document.getElementById("dob");
+          const dob = dobField.value.trim();
+          dobField.classList.remove("field-error");
+
+          if (!dob) {
+            errors.push("Date of birth is required.");
+            dobField.classList.add("field-error");
+          } else {
+            const dobDate = new Date(dob);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time for accurate comparison
+
+            if (dobDate >= today) {
+              errors.push("Date of birth must be in the past.");
+              dobField.classList.add("field-error");
+            }
+          }
+
+          // Gender validation
+          const genderField = document.getElementById("gender");
+          const gender = genderField.value;
+          genderField.classList.remove("field-error");
+
+          if (!gender) {
+            errors.push("Gender is required.");
+            genderField.classList.add("field-error");
+          }
+
+          // Nationality validation
+          const nationalityField = document.getElementById("nationality");
+          const nationality = nationalityField.value;
+          nationalityField.classList.remove("field-error");
+
+          if (!nationality) {
+            errors.push("Nationality is required.");
+            nationalityField.classList.add("field-error");
+          }
+
+          // ID Number validation (optional)
+          const idNumberField = document.getElementById("idNumber");
+          const idNumber = idNumberField.value.trim();
+          idNumberField.classList.remove("field-error");
+
+          if (idNumber) {
+            if (!/^\d+$/.test(idNumber)) {
+              errors.push("ID Number must contain digits only.");
+              idNumberField.classList.add("field-error");
+            } else if (idNumber.length < 7 || idNumber.length > 13) {
+              errors.push("ID Number must be between 7 and 13 digits.");
+              idNumberField.classList.add("field-error");
+            }
+          }
+
+          // ID Expiry Date validation (optional)
+          const idExpiryField = document.getElementById("idExpiry");
+          const idExpiry = idExpiryField.value;
+          idExpiryField.classList.remove("field-error");
+
+          if (idExpiry) {
+            const expiryDate = new Date(idExpiry);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (expiryDate <= today) {
+              errors.push("ID Expiry Date must be in the future.");
+              idExpiryField.classList.add("field-error");
+            }
+          }
 
 
-      });
+          // Passport Number validation
+          const passportNumberField = document.getElementById("passportNumber");
+          const passportNumber = passportNumberField.value.trim();
+          passportNumberField.classList.remove("field-error");
 
+          if (!passportNumber) {
+            errors.push("Passport Number is required.");
+            passportNumberField.classList.add("field-error");
+          } else if (!/^[A-Za-z0-9]{5,15}$/.test(passportNumber)) {
+            errors.push("Passport Number must be 5–15 characters, letters and/or digits.");
+            passportNumberField.classList.add("field-error");
+          }
 
-      // Years of experience validation
-      const yearsOfExperienceField = document.getElementById("experienceYears");
-      if (!yearsOfExperienceField.value) {
-        errors.push("Years of experience is required.");
-        yearsOfExperienceField.classList.add("field-error");
-      } else {
-        yearsOfExperienceField.classList.remove("field-error");
-      }
+          // Passport Country validation
+          const passportCountryField = document.getElementById("passportCountry");
+          const passportCountry = passportCountryField.value;
+          passportCountryField.classList.remove("field-error");
 
-      // Linkedin validation
-      const linkedinProfileField = document.getElementById("linkedinProfile");
-      const linkedinProfile = linkedinProfileField.value.trim();
-      const linkedinRegex = /^https:\/\/([a-zA-Z0-9\-]+\.)*linkedin\.com\/in\/[a-zA-Z0-9\-_%]+\/?$/;
+          if (!passportCountry) {
+            errors.push("Please select your passport country.");
+            passportCountryField.classList.add("field-error");
+          }
 
-      if (!linkedinProfile) {
-        errors.push("LinkedIn profile is required.");
-        linkedinProfileField.classList.add("field-error");
-      } else if (!linkedinRegex.test(linkedinProfile)) {
-        errors.push("Please enter a valid LinkedIn profile URL.");
-        linkedinProfileField.classList.add("field-error");
-      } else {
-        linkedinProfileField.classList.remove("field-error");
-      }
+          // Passport Expiry Date validation
+          const passportExpiryField = document.getElementById("passportExpiry");
+          const passportExpiry = passportExpiryField.value;
+          passportExpiryField.classList.remove("field-error");
 
-      // Resume Upload (same pattern as ID upload)
-      const resumeUrl = document.getElementById("resumeUrl").value;
-      const resumeDisplay = document.getElementById("resumeDisplay");
+          if (!passportExpiry) {
+            errors.push("Passport expiry date is required.");
+            passportExpiryField.classList.add("field-error");
+          } else {
+            const expiryDate = new Date(passportExpiry);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Normalize for comparison
 
-      if (!resumeUrl) {
-        errors.push("Please upload your Resume (PDF only).");
-        resumeDisplay.classList.add("field-error");
-      } else {
-        resumeDisplay.classList.remove("field-error");
-      }
+            if (expiryDate <= today) {
+              errors.push("Passport expiry date must be in the future.");
+              passportExpiryField.classList.add("field-error");
+            }
+          }
 
-      // Entrepreneurial Journey Entries Validation
+          // ID Document Upload validation
+          const idDocDisplayField = document.getElementById("idDocDisplay");
+          idDocDisplayField.classList.remove("field-error");
 
-      // Video Biography (Loom) validation
-      const videoField = document.getElementById("videoBiographyLink");
-      const videoUrl = videoField.value.trim();
-      videoField.classList.remove("field-error");
+          if (!document.getElementById("idDocUrl").value) {
+            errors.push("Please upload your ID document.");
+            idDocDisplayField.classList.add("field-error");
+          }
 
-      if (!videoUrl) {
-        errors.push("Loom video biography link is required.");
-        videoField.classList.add("field-error");
-      } else if (!/^https:\/\/www\.loom\.com\/share\/[a-zA-Z0-9]+(\?.*)?$/.test(videoUrl)) {
-        errors.push("Please enter a valid Loom share link (e.g., https://www.loom.com/share/your-video-id).");
-        videoField.classList.add("field-error");
-      }
+          // City validation
+          const cityField = document.getElementById("city");
+          const city = cityField.value.trim();
+          cityField.classList.remove("field-error");
 
-      // Business Description
-      const businessDescField = document.getElementById("businessDescription");
-      const businessDesc = businessDescField.value.trim();
-      businessDescField.classList.remove("field-error");
+          if (!city) {
+            errors.push("City is required.");
+            cityField.classList.add("field-error");
+          } else if (!/^[a-zA-Z\s\'\-]{2,50}$/.test(city)) {
+            errors.push("City must be 2–50 characters and can include letters, spaces, apostrophes, and hyphens.");
+            cityField.classList.add("field-error");
+          }
 
-      if (!businessDesc) {
-        errors.push("Business description is required.");
-        businessDescField.classList.add("field-error");
-      } else if (businessDesc.length < 10 || businessDesc.length > 255) {
-        errors.push("Business description must be between 10 and 255 characters.");
-        businessDescField.classList.add("field-error");
-      }
+          // Country validation
+          const countryField = document.getElementById("country");
+          const country = countryField.value;
+          countryField.classList.remove("field-error");
 
-      // Your Role validation
-      const yourRoleField = document.getElementById("businessRole");
-      const yourRole = yourRoleField.value.trim();
-      yourRoleField.classList.remove("field-error");
+          if (!country) {
+            errors.push("Country selection is required.");
+            countryField.classList.add("field-error");
+          }
 
-      if (!yourRole) {
-        errors.push("Please describe your role in the business.");
-        yourRoleField.classList.add("field-error");
-      } else if (yourRole.length < 10 || yourRole.length > 255) {
-        errors.push("Your role must be between 10 and 255 characters.");
-        yourRoleField.classList.add("field-error");
-      }
+          // Postal code validation
+          const postalCodeField = document.getElementById("postalCode");
+          const postalCode = postalCodeField.value.trim();
+          postalCodeField.classList.remove("field-error");
 
-      // Team size validation
-      const teamSizeField = document.getElementById("teamSize");
-      const teamSize = teamSizeField.value.trim();
-      teamSizeField.classList.remove("field-error");
+          if (!postalCode) {
+            errors.push("Postal code is required.");
+            postalCodeField.classList.add("field-error");
+          } else if (!/^[a-zA-Z0-9\s\-]{3,12}$/.test(postalCode)) {
+            errors.push("Postal code must be 3–12 characters and can include letters, numbers, spaces, and hyphens.");
+            postalCodeField.classList.add("field-error");
+          }
 
-      if (!teamSize) {
-        errors.push("Team size is required.");
-        teamSizeField.classList.add("field-error");
-      } else if (teamSize.length < 1 || teamSize.length > 200) {
-        errors.push("Number of employees must be at least 1 character and up to 200.");
-        teamSizeField.classList.add("field-error");
-      }
+          const academicEntries = document.querySelectorAll(".academic-entry");
+          academicEntries.forEach((entry, index) => {
 
-      // Social impact validation
-      const socialImpactField = document.getElementById("socialImpact");
-      const socialImpact = socialImpactField.value.trim();
-      socialImpactField.classList.remove("field-error");
+            // Institution validation
+            const institutionField = entry.querySelector(".academicInstitution");
+            const institution = institutionField.value.trim();
+            institutionField.classList.remove("field-error");
 
-      if (!socialImpact) {
-        errors.push("Please tell us about the social impact of your business.");
-        socialImpactField.classList.add("field-error");
-      } else if (socialImpact.length < 10 || socialImpact.length > 255) {
-        errors.push("Social impact description must be between 10 and 255 characters.");
-        socialImpactField.classList.add("field-error");
-      }
+            if (!institution) {
+              errors.push(`Institution is required.`);
+              institutionField.classList.add("field-error");
+            } else if (!/^[\p{L}\p{M}0-9\s\-’'.&,()]+$/u.test(institution)) {
+              errors.push(`Institution name contains invalid characters.`);
+              institutionField.classList.add("field-error");
+            }
 
-      // Website validation
-      const websiteField = document.getElementById("businessWebsite");
-      const website = websiteField.value.trim();
-      websiteField.classList.remove("field-error");
+            // Education Level validation
+            const levelField = entry.querySelector(".educationLevel");
+            const level = levelField.value;
+            levelField.classList.remove("field-error");
 
-      // Allow optional protocol (http/https), optional www, and a valid domain
-      const websiteRegex = /^https?:\/\/([\w\-]+\.)*[\w\-]+\.[a-z]{2,}(\/[\w\-./?%&=]*)?$/i;
+            if (!level) {
+              errors.push(`Education level is required.`);
+              levelField.classList.add("field-error");
+            }
 
-      if (!website) {
-        errors.push("Official website is required.");
-        websiteField.classList.add("field-error");
-      } else if (!websiteRegex.test(website)) {
-        errors.push("Please enter a valid website URL.");
-        websiteField.classList.add("field-error");
-      }
+            // Field/Major validation
+            const majorField = entry.querySelector(".fieldMajor");
+            const major = majorField.value.trim();
+            majorField.classList.remove("field-error");
 
+            if (!major) {
+              errors.push(`Field/Major is required.`);
+              majorField.classList.add("field-error");
+            } else if (major.length < 2 || major.length > 100) {
+              errors.push(`Field/Major must be between 2 and 100 characters.`);
+              majorField.classList.add("field-error");
+            }
 
-      // Business Impact validation
-      const businessImpactField = document.getElementById("businessImpact");
-      const businessImpact = businessImpactField.value.trim();
-      businessImpactField.classList.remove("field-error");
+            // Location of Study validation
+            const locationField = entry.querySelector(".studyLocation");
+            const location = locationField.value.trim();
+            locationField.classList.remove("field-error");
 
-      if (!businessImpact) {
-        errors.push("Please describe the goals you aim to achieve through this program.");
-        businessImpactField.classList.add("field-error");
-      } else if (businessImpact.length > 255) {
-        errors.push("Program goals response is too long (max 255 characters).");
-        businessImpactField.classList.add("field-error");
-      }
+            if (!location) {
+              errors.push(`Location of Study is required.`);
+              locationField.classList.add("field-error");
+            } else if (location.length < 2 || location.length > 100) {
+              errors.push(`Location of Study must be between 2 and 100 characters.`);
+              locationField.classList.add("field-error");
+            }
 
-      // Award Validation
-      const businessAwardsField = document.getElementById("businessAwards");
-      const businessAwards = businessAwardsField.value.trim();
-      businessAwardsField.classList.remove("field-error");
+            // Start Date and End Date validation
+            const startDateField = entry.querySelector(".educationStartDate");
+            const endDateField = entry.querySelector(".educationEndDate");
+            const startDate = startDateField.value;
+            const endDate = endDateField.value;
 
-      if (!businessAwards) {
-        errors.push("Please mention any awards or recognition your business has received.");
-        businessAwardsField.classList.add("field-error");
-      } else if (businessAwards.length > 255) {
-        errors.push("Awards/recognition response is too long (max 255 characters).");
-        businessAwardsField.classList.add("field-error");
-      }
+            startDateField.classList.remove("field-error");
+            endDateField.classList.remove("field-error");
 
-      // Business certificate validation
-      const businessCertHiddenField = document.getElementById("businessCertUrl");
-      const businessCertDisplayField = document.getElementById("businessCertDisplay");
-      const businessCert = businessCertHiddenField.value.trim();
-      businessCertDisplayField.classList.remove("field-error");
+            if (!startDate) {
+              errors.push(`Start Date is required.`);
+              startDateField.classList.add("field-error");
+            }
 
-      if (!businessCert) {
-        errors.push("Please upload your business registration certificate.");
-        businessCertDisplayField.classList.add("field-error");
-      }
+            if (!endDate) {
+              errors.push(`End Date is required.`);
+              endDateField.classList.add("field-error");
+            }
 
-      // SDG Alignment validation
-      const sdgAlignmentField = document.getElementById("businessSdgs");
-      const sdgAlignment = sdgAlignmentField.value.trim();
-      sdgAlignmentField.classList.remove("field-error");
+            if (startDate && endDate) {
+              const start = new Date(startDate);
+              const end = new Date(endDate);
+              if (start >= end) {
+                errors.push(`End Date must be after Start Date.`);
+                startDateField.classList.add("field-error");
+                endDateField.classList.add("field-error");
+              }
+            }
 
-      if (!sdgAlignment) {
-        errors.push("Please tell us if your business is aligned with the UN SDGs.");
-        sdgAlignmentField.classList.add("field-error");
-      } else if (sdgAlignment.length < 10 || sdgAlignment.length > 255) {
-        errors.push("SDG alignment answer must be between 10 and 255 characters.");
-        sdgAlignmentField.classList.add("field-error");
-      }
+            // GPA Scale validation
+            const gpaScaleField = entry.querySelector(".gpaScale");
+            gpaScaleField.classList.remove("field-error");
+            if (!gpaScaleField.value) {
+              errors.push(`GPA Scale is required.`);
+              gpaScaleField.classList.add("field-error");
+            }
 
-      // Program Expectations validation
-      const programExpectationsField = document.getElementById("programExpectations");
-      const programExpectations = programExpectationsField.value.trim();
-      programExpectationsField.classList.remove("field-error");
+            // GPA Score validation
+            const gpaScoreField = entry.querySelector(".gpaScore");
+            const gpaScore = gpaScoreField.value.trim();
+            gpaScoreField.classList.remove("field-error");
 
-      if (!programExpectations) {
-        errors.push("Please share what you’d like to gain from this program.");
-        programExpectationsField.classList.add("field-error");
-      } else if (programExpectations.length < 10 || programExpectations.length > 255) {
-        errors.push("Program expectations must be between 10 and 255 characters.");
-        programExpectationsField.classList.add("field-error");
-      }
+            if (!gpaScore) {
+              errors.push(`GPA Score is required.`);
+              gpaScoreField.classList.add("field-error");
+            } else if (gpaScore.length < 1 || gpaScore.length > 200) {
+              errors.push(`GPA Score must be between 1 and 200 characters.`);
+              gpaScoreField.classList.add("field-error");
+            }
 
-      // Miscellaneous dropdowns
-      const miscFields = [
-        { id: "availableDuringProgram", label: "Availability during the program" },
-        { id: "enrolledInEntrepreneurship", label: "Previous participation status" },
-        { id: "howDidYouHear", label: "How did you hear about the program" },
-        { id: "hasDisability", label: "Disability status" },
-      ];
-
-      miscFields.forEach(field => {
-        const element = document.getElementById(field.id);
-        if (!element.value) {
-          errors.push(`${field.label} is required.`);
-          element.classList.add("field-error");
-        } else {
-          element.classList.remove("field-error");
-        }
-      });
-
-      // Declaration checkbox
-      const agreeDeclaration = document.getElementById("declaration");
-      if (!agreeDeclaration.checked) {
-        errors.push("You must agree to the declaration.");
-        agreeDeclaration.classList.add("field-error");
-      } else {
-        agreeDeclaration.classList.remove("field-error");
-      }
-
-      return displayErrorSummary();
-    }
-
-    function displayErrorSummary() {
-      // Display errors in summary block
-      const errorSummary = document.getElementById("errorSummary");
-      const errorList = document.getElementById("errorList");
-      errorList.innerHTML = "";
-
-      if (errors.length > 0) {
-        errors.forEach(err => {
-          const li = document.createElement("li");
-          li.textContent = err;
-          errorList.appendChild(li);
-        });
-        errorSummary.style.display = "block";
-        return false; // Prevent submission
-      } else {
-        errorSummary.style.display = "none";
-        return true; // Allow submission
-      }
-    }
-
-
-
-    document.getElementById("applicationForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const submitBtn = document.getElementById("submitBtn");
-      const spinner = document.getElementById("submitSpinner");
-
-      // Show spinner and disable button
-      submitBtn.disabled = true;
-      spinner.style.display = "inline-block";
-
-      if (validateForm()) {
-        const data = collectFormData();
-
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
           });
 
-          if (response.ok || response.status === 0) {
-            document.getElementById("applicationForm").style.display = "none";
-            document.getElementById("thankYouMessage").style.display = "block";
+
+          // English Proficiency validation
+          const englishProficiencyField = document.getElementById("englishProficiency");
+          const englishProficiency = englishProficiencyField.value;
+          englishProficiencyField.classList.remove("field-error");
+
+          if (!englishProficiency) {
+            errors.push("English proficiency level is required.");
+            englishProficiencyField.classList.add("field-error");
           }
-          else if (response.status === 409) {
-            errors.push("This email is already registered.");
-            emailField.classList.add("field-error");
-            displayErrorSummary();
-            submitBtn.disabled = false;
-            spinner.style.display = "none";
-            return;
+
+          // Experience Entries Validation
+          const experienceEntries = document.querySelectorAll(".experience-entry");
+          experienceEntries.forEach(entry => {
+
+            // Company validation
+            const companyField = entry.querySelector(".companyName");
+            const company = companyField.value.trim();
+            companyField.classList.remove("field-error");
+
+            if (!company) {
+              errors.push("Company name is required.");
+              companyField.classList.add("field-error");
+            } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(company)) {
+              errors.push("Company name must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+              companyField.classList.add("field-error");
+            }
+
+            // Job Title validation
+            const jobTitleField = entry.querySelector(".jobTitle");
+            const jobTitle = jobTitleField.value.trim();
+            jobTitleField.classList.remove("field-error");
+
+            if (!jobTitle) {
+              errors.push("Job Title is required.");
+              jobTitleField.classList.add("field-error");
+            } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(jobTitle)) {
+              errors.push("Job Title must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+              jobTitleField.classList.add("field-error");
+            }
+
+            // Location of Work validation
+            const locationField = entry.querySelector(".workLocation");
+            const location = locationField.value.trim();
+            locationField.classList.remove("field-error");
+
+            if (!location) {
+              errors.push("Location of Work is required.");
+              locationField.classList.add("field-error");
+            } else if (!/^[a-zA-Z0-9\s\-\&\.\,\@\(\)\#\/\+\'\"]{3,200}$/.test(location)) {
+              errors.push("Location of Work must be 3–200 characters and can include letters, numbers, spaces, and symbols (- & . , @ () # / +).");
+              locationField.classList.add("field-error");
+            }
+
+            // Start Date validation
+            const startDateField = entry.querySelector(".workStartDate");
+            const startDate = startDateField.value;
+            startDateField.classList.remove("field-error");
+
+            if (!startDate) {
+              errors.push("Work Start Date is required.");
+              startDateField.classList.add("field-error");
+            }
+
+            // End Date (conditionally validated)
+            const endDateFieldContainer = entry.querySelector(".endDateContainer");
+            const endDateField = entry.querySelector(".workEndDate");
+            const endDate = endDateField.value;
+            const currentlyWorking = entry.querySelector(".currentlyWorking").checked;
+
+            endDateField.classList.remove("field-error");
+
+            if (!currentlyWorking) {
+              if (!endDate) {
+                errors.push("Work End Date is required unless 'Currently Working' is selected.");
+                endDateField.classList.add("field-error");
+              } else if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
+                errors.push("Work End Date must be after the Start Date.");
+                endDateField.classList.add("field-error");
+              }
+            }
+
+
+          });
+
+
+          // Years of experience validation
+          const yearsOfExperienceField = document.getElementById("experienceYears");
+          if (!yearsOfExperienceField.value) {
+            errors.push("Years of experience is required.");
+            yearsOfExperienceField.classList.add("field-error");
+          } else {
+            yearsOfExperienceField.classList.remove("field-error");
           }
-          else {
-            console.error("Server responded with status:", response.status);
-            alert("Something went wrong. Please try again.");
+
+          // Linkedin validation
+          const linkedinProfileField = document.getElementById("linkedinProfile");
+          const linkedinProfile = linkedinProfileField.value.trim();
+          const linkedinRegex = /^https:\/\/([a-zA-Z0-9\-]+\.)*linkedin\.com\/in\/[a-zA-Z0-9\-_%]+\/?$/;
+
+          if (!linkedinProfile) {
+            errors.push("LinkedIn profile is required.");
+            linkedinProfileField.classList.add("field-error");
+          } else if (!linkedinRegex.test(linkedinProfile)) {
+            errors.push("Please enter a valid LinkedIn profile URL.");
+            linkedinProfileField.classList.add("field-error");
+          } else {
+            linkedinProfileField.classList.remove("field-error");
           }
-        } catch (error) {
-          console.error("Submission error:", error);
-          errors.push("Submission failed. Please check your connection and try again.");
-          displayErrorSummary();
+
+          // Resume Upload (same pattern as ID upload)
+          const resumeUrl = document.getElementById("resumeUrl").value;
+          const resumeDisplay = document.getElementById("resumeDisplay");
+
+          if (!resumeUrl) {
+            errors.push("Please upload your Resume (PDF only).");
+            resumeDisplay.classList.add("field-error");
+          } else {
+            resumeDisplay.classList.remove("field-error");
+          }
+
+          // Entrepreneurial Journey Entries Validation
+
+          // Video Biography (Loom) validation
+          const videoField = document.getElementById("videoBiographyLink");
+          const videoUrl = videoField.value.trim();
+          videoField.classList.remove("field-error");
+
+          if (!videoUrl) {
+            errors.push("Loom video biography link is required.");
+            videoField.classList.add("field-error");
+          } else if (!/^https:\/\/www\.loom\.com\/share\/[a-zA-Z0-9]+(\?.*)?$/.test(videoUrl)) {
+            errors.push("Please enter a valid Loom share link (e.g., https://www.loom.com/share/your-video-id).");
+            videoField.classList.add("field-error");
+          }
+
+          // Business Description
+          const businessDescField = document.getElementById("businessDescription");
+          const businessDesc = businessDescField.value.trim();
+          businessDescField.classList.remove("field-error");
+
+          if (!businessDesc) {
+            //errors.push("Business description is required.");
+            errors.push("Leadership potential description is required.");
+            businessDescField.classList.add("field-error");
+          } else if (businessDesc.length < 10 || businessDesc.length > 255) {
+            errors.push("Business description must be between 10 and 255 characters.");
+            businessDescField.classList.add("field-error");
+          }
+
+          // Your Role validation
+          const yourRoleField = document.getElementById("businessRole");
+          const yourRole = yourRoleField.value.trim();
+          yourRoleField.classList.remove("field-error");
+
+          if (!yourRole) {
+              //   errors.push("Please describe your role in the business.");
+             errors.push("Please describe your role in the organization.");
+
+            yourRoleField.classList.add("field-error");
+          } else if (yourRole.length < 10 || yourRole.length > 255) {
+            errors.push("Your role must be between 10 and 255 characters.");
+            yourRoleField.classList.add("field-error");
+          }
+
+          // Team size validation
+          const teamSizeField = document.getElementById("teamSize");
+          const teamSize = teamSizeField.value.trim();
+          teamSizeField.classList.remove("field-error");
+
+            if (!teamSize) {
+            errors.push("Team size is required.");
+            teamSizeField.classList.add("field-error");
+          } else if (teamSize.length < 1 || teamSize.length > 200) {
+            errors.push("Number of employees must be at least 1 character and up to 200.");
+            teamSizeField.classList.add("field-error");
+          }
+
+          // Social impact validation
+         // const socialImpactField = document.getElementById("socialImpact");
+         // const socialImpact = socialImpactField.value.trim();
+         // socialImpactField.classList.remove("field-error");
+/*
+          if (!socialImpact) {
+            errors.push("Please tell us about the social impact of your business.");
+            socialImpactField.classList.add("field-error");
+          } else if (socialImpact.length < 10 || socialImpact.length > 255) {
+            errors.push("Social impact description must be between 10 and 255 characters.");
+            socialImpactField.classList.add("field-error");
+          }
+          */
+          // Website validation
+       // const websiteField = document.getElementById("businessWebsite");
+     //     const website = websiteField.value.trim();
+       //   websiteField.classList.remove("field-error");
+
+          // Allow optional protocol (http/https), optional www, and a valid domain
+        //  const websiteRegex = /^https?:\/\/([\w\-]+\.)*[\w\-]+\.[a-z]{2,}(\/[\w\-./?%&=]*)?$/i;
+
+        //  if (!website) {
+      //      errors.push("Official website is required.");
+       //     websiteField.classList.add("field-error");
+      //    } else if (!websiteRegex.test(website)) {
+      //      errors.push("Please enter a valid website URL.");
+      //      websiteField.classList.add("field-error");
+      //    }
+
+
+          // Business Impact validation
+          //const businessImpactField = document.getElementById("businessImpact");
+          //const businessImpact = businessImpactField.value.trim();
+         // businessImpactField.classList.remove("field-error");
+
+         // if (!businessImpact) {
+          //  errors.push("Please describe the goals you aim to achieve through this program.");
+         //   businessImpactField.classList.add("field-error");
+         // } else if (businessImpact.length > 255) {
+          //  errors.push("Program goals response is too long (max 255 characters).");
+         //   businessImpactField.classList.add("field-error");
+        //  }
+
+          // Award Validation
+         /* const businessAwardsField = document.getElementById("businessAwards");
+          const businessAwards = businessAwardsField.value.trim();
+          businessAwardsField.classList.remove("field-error");
+
+          if (!businessAwards) {
+            errors.push("Please mention any awards or recognition your business has received.");
+            businessAwardsField.classList.add("field-error");
+          } else if (businessAwards.length > 255) {
+            errors.push("Awards/recognition response is too long (max 255 characters).");
+            businessAwardsField.classList.add("field-error");
+          }
+          */
+
+          // Business certificate validation
+         // const businessCertHiddenField = document.getElementById("businessCertUrl");
+         // const businessCertDisplayField = document.getElementById("businessCertDisplay");
+        //  const businessCert = businessCertHiddenField.value.trim();
+        //  businessCertDisplayField.classList.remove("field-error");
+
+         // if (!businessCert) {
+           // errors.push("Please upload your business registration certificate.");
+            //businessCertDisplayField.classList.add("field-error");
+          //}
+
+          // SDG Alignment validation
+        /*  const sdgAlignmentField = document.getElementById("businessSdgs");
+          const sdgAlignment = sdgAlignmentField.value.trim();
+          sdgAlignmentField.classList.remove("field-error");
+
+          if (!sdgAlignment) {
+            errors.push("Please tell us if your business is aligned with the UN SDGs.");
+            sdgAlignmentField.classList.add("field-error");
+          } else if (sdgAlignment.length < 10 || sdgAlignment.length > 255) {
+            errors.push("SDG alignment answer must be between 10 and 255 characters.");
+            sdgAlignmentField.classList.add("field-error");
+          }
+          */
+
+          // Program Expectations validation
+          const programExpectationsField = document.getElementById("programExpectations");
+          const programExpectations = programExpectationsField.value.trim();
+          programExpectationsField.classList.remove("field-error");
+
+          if (!programExpectations) {
+            errors.push("Please share what you’d like to gain from this program.");
+            programExpectationsField.classList.add("field-error");
+          } else if (programExpectations.length < 10 || programExpectations.length > 255) {
+            errors.push("Program expectations must be between 10 and 255 characters.");
+            programExpectationsField.classList.add("field-error");
+          }
+
+          // Miscellaneous dropdowns
+          const miscFields = [
+            { id: "availableDuringProgram", label: "Availability during the program" },
+            { id: "enrolledInEntrepreneurship", label: "Previous participation status" },
+            { id: "howDidYouHear", label: "How did you hear about the program" },
+            { id: "hasDisability", label: "Disability status" },
+          ];
+
+          miscFields.forEach(field => {
+            const element = document.getElementById(field.id);
+            if (!element.value) {
+              errors.push(`${field.label} is required.`);
+              element.classList.add("field-error");
+            } else {
+              element.classList.remove("field-error");
+            }
+          });
+
+          // Declaration checkbox
+          const agreeDeclaration = document.getElementById("declaration");
+          if (!agreeDeclaration.checked) {
+            errors.push("You must agree to the declaration.");
+            agreeDeclaration.classList.add("field-error");
+          } else {
+            agreeDeclaration.classList.remove("field-error");
+          }
+
+          return displayErrorSummary();
         }
-      }
 
-      // Hide spinner and re-enable button regardless of outcome
-      submitBtn.disabled = false;
-      spinner.style.display = "none";
-    });
+        function displayErrorSummary() {
+          // Display errors in summary block
+          const errorSummary = document.getElementById("errorSummary");
+          const errorList = document.getElementById("errorList");
+          errorList.innerHTML = "";
 
-
-    function collectFormData() {
-      return {
-        // Personal Info
-        fullName: document.getElementById("fullName").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        phone: document.getElementById("phone").value.trim(),
-        dob: document.getElementById("dob").value,
-        gender: document.getElementById("gender").value,
-        nationality: document.getElementById("nationality").value,
-        idNumber: document.getElementById("idNumber").value.trim(),
-        idExpiry: document.getElementById("idExpiry").value,
-        passportNumber: document.getElementById("passportNumber").value.trim(),
-        passportCountry: document.getElementById("passportCountry").value,
-        passportExpiry: document.getElementById("passportExpiry").value,
-
-        // Address Info (including city)
-        city: document.getElementById("city").value.trim(),
-        country: document.getElementById("country").value,
-        postalCode: document.getElementById("postalCode").value.trim(),
-
-        // Uploads
-        resumeUrl: document.getElementById("resumeUrl").value,
-        idDocUrl: document.getElementById("idDocUrl").value,
-        businessCertUrl: document.getElementById("businessCertUrl").value,
-
-        // Academic Info
-        academicList: collectAcademicEntries(),
-        englishProficiency: document.getElementById("englishProficiency").value,
-
-        // Experience Info
-        experienceList: collectExperienceEntries(),
-        experienceYears: document.getElementById("experienceYears").value,
-        linkedinProfile: document.getElementById("linkedinProfile").value.trim(),
-
-        // Video
-        videoUrl: document.getElementById("videoBiographyLink").value.trim(),
-
-        // Business Insight
-        businessDescription: document.getElementById("businessDescription").value.trim(),
-        yourRole: document.getElementById("businessRole").value.trim(),
-        teamSize: document.getElementById("teamSize").value,
-        socialImpact: document.getElementById("socialImpact").value.trim(),
-        onlinePresence: document.getElementById("businessWebsite").value.trim(),
-        sdgAlignment: document.getElementById("businessSdgs").value.trim(),
-        programGoals: document.getElementById("programExpectations").value.trim(),
-        businessImpact: document.getElementById("businessImpact").value.trim(),
-        businessAwards: document.getElementById("businessAwards").value.trim(),
-
-        // Miscellaneous
-        availableDuringProgram: document.getElementById("availableDuringProgram").value,
-        participatedBefore: document.getElementById("enrolledInEntrepreneurship").value,
-        heardAboutProgram: document.getElementById("howDidYouHear").value,
-        hasDisability: document.getElementById("hasDisability").value,
-
-        // Declaration
-        agreeDeclaration: document.getElementById("declaration").checked,
-
-        // Submit date
-        submitDate: getFormattedDateTime()
-      };
-    }
-
-    function getFormattedDateTime() {
-      const now = new Date();
-      now.setHours(now.getHours());
-
-      const pad = (n) => String(n).padStart(2, '0');
-
-      const year = now.getFullYear();
-      const month = pad(now.getMonth() + 1);
-      const day = pad(now.getDate());
-
-      const hours = pad(now.getHours());
-      const minutes = pad(now.getMinutes());
-      const seconds = pad(now.getSeconds());
-
-      return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-    }
-
-    const countryList = [
-      "Saudi Arabia",
-      "Afghanistan",
-      "Åland Islands",
-      "Albania",
-      "Algeria",
-      "American Samoa",
-      "Andorra",
-      "Angola",
-      "Anguilla",
-      "Antarctica",
-      "Antigua and Barbuda",
-      "Argentina",
-      "Armenia",
-      "Aruba",
-      "Australia",
-      "Austria",
-      "Azerbaijan",
-      "Bahamas",
-      "Bahrain",
-      "Bangladesh",
-      "Barbados",
-      "Belarus",
-      "Belgium",
-      "Belize",
-      "Benin",
-      "Bermuda",
-      "Bhutan",
-      "Bolivia (Plurinational State of)",
-      "Bonaire, Sint Eustatius and Saba",
-      "Bosnia and Herzegovina",
-      "Botswana",
-      "Bouvet Island",
-      "Brazil",
-      "British Indian Ocean Territory",
-      "Brunei Darussalam",
-      "Bulgaria",
-      "Burkina Faso",
-      "Burundi",
-      "Cabo Verde",
-      "Cambodia",
-      "Cameroon",
-      "Canada",
-      "Cayman Islands",
-      "Central African Republic",
-      "Chad",
-      "Chile",
-      "China",
-      "Christmas Island",
-      "Cocos (Keeling) Islands",
-      "Colombia",
-      "Comoros",
-      "Congo (Democratic Republic of the)",
-      "Congo (Republic of the)",
-      "Cook Islands",
-      "Costa Rica",
-      "Côte d'Ivoire",
-      "Croatia",
-      "Cuba",
-      "Curaçao",
-      "Cyprus",
-      "Czech Republic",
-      "Denmark",
-      "Djibouti",
-      "Dominica",
-      "Dominican Republic",
-      "Ecuador",
-      "Egypt",
-      "El Salvador",
-      "Equatorial Guinea",
-      "Eritrea",
-      "Estonia",
-      "Ethiopia",
-      "Falkland Islands (Malvinas)",
-      "Faroe Islands",
-      "Fiji",
-      "Finland",
-      "France",
-      "French Guiana",
-      "French Polynesia",
-      "French Southern Territories",
-      "Gabon",
-      "Gambia",
-      "Georgia",
-      "Germany",
-      "Ghana",
-      "Gibraltar",
-      "Greece",
-      "Greenland",
-      "Grenada",
-      "Guadeloupe",
-      "Guam",
-      "Guatemala",
-      "Guernsey",
-      "Guinea",
-      "Guinea-Bissau",
-      "Guyana",
-      "Haiti",
-      "Heard Island and McDonald Islands",
-      "Honduras",
-      "Hong Kong",
-      "Hungary",
-      "Iceland",
-      "India",
-      "Indonesia",
-      "Iran",
-      "Iraq",
-      "Ireland",
-      "Isle of Man",
-      "Zimbabwe",
-      "Italy",
-      "Jamaica",
-      "Japan",
-      "Jersey",
-      "Jordan",
-      "Kazakhstan",
-      "Kenya",
-      "Kiribati",
-      "Korea (Democratic People's Republic of)",
-      "Korea (Republic of)",
-      "Kuwait",
-      "Kyrgyzstan",
-      "Lao People's Democratic Republic",
-      "Latvia",
-      "Lebanon",
-      "Lesotho",
-      "Liberia",
-      "Libya",
-      "Liechtenstein",
-      "Lithuania",
-      "Luxembourg",
-      "Macao",
-      "Macedonia (the former Yugoslav Republic of)",
-      "Madagascar",
-      "Malawi",
-      "Malaysia",
-      "Maldives",
-      "Mali",
-      "Malta",
-      "Marshall Islands",
-      "Martinique",
-      "Mauritania",
-      "Mauritius",
-      "Mayotte",
-      "Mexico",
-      "Micronesia (Federated States of)",
-      "Moldova (Republic of)",
-      "Monaco",
-      "Mongolia",
-      "Montenegro",
-      "Montserrat",
-      "Morocco",
-      "Mozambique",
-      "Myanmar",
-      "Namibia",
-      "Nauru",
-      "Nepal",
-      "Netherlands",
-      "New Caledonia",
-      "New Zealand",
-      "Nicaragua",
-      "Niger",
-      "Nigeria",
-      "Niue",
-      "Norfolk Island",
-      "Northern Mariana Islands",
-      "Norway",
-      "Oman",
-      "Pakistan",
-      "Palau",
-      "Panama",
-      "Papua New Guinea",
-      "Paraguay",
-      "Peru",
-      "Philippines",
-      "Pitcairn",
-      "Poland",
-      "Portugal",
-      "Puerto Rico",
-      "Qatar",
-      "Réunion",
-      "Romania",
-      "Russian Federation",
-      "Rwanda",
-      "Saint Barthélemy",
-      "Saint Helena, Ascension and Tristan da Cunha",
-      "Saint Kitts and Nevis",
-      "Saint Lucia",
-      "Saint Martin (French part)",
-      "Saint Pierre and Miquelon",
-      "Saint Vincent and the Grenadines",
-      "Samoa",
-      "San Marino",
-      "Sao Tome and Principe",
-      "Senegal",
-      "Serbia",
-      "Seychelles",
-      "Sierra Leone",
-      "Singapore",
-      "Sint Maarten (Dutch part)",
-      "Slovakia",
-      "Slovenia",
-      "Solomon Islands",
-      "Somalia",
-      "South Africa",
-      "South Georgia and the South Sandwich Islands",
-      "South Sudan",
-      "Spain",
-      "Sri Lanka",
-      "State of Palestine",
-      "Sudan",
-      "Suriname",
-      "Svalbard and Jan Mayen",
-      "Swaziland",
-      "Sweden",
-      "Switzerland",
-      "Syrian Arab Republic",
-      "Taiwan, Province of China",
-      "Tajikistan",
-      "Tanzania, United Republic of",
-      "Thailand",
-      "Timor-Leste",
-      "Togo",
-      "Tokelau",
-      "Tonga",
-      "Trinidad and Tobago",
-      "Tunisia",
-      "Turkey",
-      "Turkmenistan",
-      "Turks and Caicos Islands",
-      "Tuvalu",
-      "Uganda",
-      "Ukraine",
-      "United Arab Emirates",
-      "United Kingdom of Great Britain and Northern Ireland",
-      "United States Minor Outlying Islands",
-      "United States of America",
-      "Uruguay",
-      "Uzbekistan",
-      "Vanuatu",
-      "Vatican City State",
-      "Venezuela (Bolivarian Republic of)",
-      "Vietnam",
-      "Virgin Islands (British)",
-      "Virgin Islands (U.S.)",
-      "Wallis and Futuna",
-      "Western Sahara",
-      "Yemen",
-      "Zambia"
-    ];
-
-    const nationalityList = [
-      "Saudi",
-      "Afghan",
-      "Åland Island",
-      "Albanian",
-      "Algerian",
-      "American Samoan",
-      "Andorran",
-      "Angolan",
-      "Anguillan",
-      "Antarctic",
-      "Antiguan or Barbudan",
-      "Argentine",
-      "Armenian",
-      "Aruban",
-      "Australian",
-      "Austrian",
-      "Azerbaijani",
-      "Bahamian",
-      "Bahraini",
-      "Bangladeshi",
-      "Barbadian",
-      "Belarusian",
-      "Belgian",
-      "Belizean",
-      "Beninese",
-      "Bermudian",
-      "Bhutanese",
-      "Bolivian",
-      "Bonaire",
-      "Bosnian or Herzegovinian",
-      "Motswana",
-      "Bouvet Island",
-      "Brazilian",
-      "BIOT",
-      "Bruneian",
-      "Bulgarian",
-      "Burkinabé",
-      "Burundian",
-      "Cabo Verdean",
-      "Cambodian",
-      "Cameroonian",
-      "Canadian",
-      "Caymanian",
-      "Central African",
-      "Chadian",
-      "Chilean",
-      "Chinese",
-      "Christmas Island",
-      "Cocos Island",
-      "Colombian",
-      "Comoran",
-      "Congolese",
-      "Cook Island",
-      "Costa Rican",
-      "Ivorian",
-      "Croatian",
-      "Cuban",
-      "Curaçaoan",
-      "Cypriot",
-      "Czech",
-      "Danish",
-      "Djiboutian",
-      "Dominican",
-      "Ecuadorian",
-      "Egyptian",
-      "Salvadoran",
-      "Equatorial Guinean",
-      "Eritrean",
-      "Estonian",
-      "Ethiopian",
-      "Falkland Island",
-      "Faroese",
-      "Fijian",
-      "Finnish",
-      "French",
-      "French Guianese",
-      "French Polynesian",
-      "French Southern Territories",
-      "Gabonese",
-      "Gambian",
-      "Georgian",
-      "German",
-      "Ghanaian",
-      "Gibraltar",
-      "Greek",
-      "Greenlandic",
-      "Grenadian",
-      "Guadeloupe",
-      "Guamanian",
-      "Guatemalan",
-      "Channel Island",
-      "Guinean",
-      "Bissau-Guinean",
-      "Guyanese",
-      "Haitian",
-      "Heard Island or McDonald Islands",
-      "Honduran",
-      "Hong Kong",
-      "Hungarian",
-      "Icelandic",
-      "Indian",
-      "Indonesian",
-      "Iranian",
-      "Iraqi",
-      "Irish",
-      "Manx",
-      "Zimbabwean",
-      "Italian",
-      "Jamaican",
-      "Japanese",
-      "New Jerseyans",
-      "Jordanian",
-      "Kazakhstani",
-      "Kenyan",
-      "I-Kiribati",
-      "North Korean",
-      "South Korean",
-      "Kuwaiti",
-      "Kyrgyzstani",
-      "Lao",
-      "Latvian",
-      "Lebanese",
-      "Basotho",
-      "Liberian",
-      "Libyan",
-      "Liechtenstein",
-      "Lithuanian",
-      "Luxembourg",
-      "Macanese",
-      "Macedonian",
-      "Malagasy",
-      "Malawian",
-      "Malaysian",
-      "Maldivian",
-      "Malian",
-      "Maltese",
-      "Marshallese",
-      "Martiniquais",
-      "Mauritanian",
-      "Mauritian",
-      "Mahoran",
-      "Mexican",
-      "Micronesian",
-      "Moldovan",
-      "Monégasque",
-      "Mongolian",
-      "Montenegrin",
-      "Montserratian",
-      "Moroccan",
-      "Mozambican",
-      "Burmese",
-      "Namibian",
-      "Nauruan",
-      "Nepali",
-      "Dutch",
-      "New Caledonian",
-      "New Zealand",
-      "Nicaraguan",
-      "Nigerien",
-      "Nigerian",
-      "Niuean",
-      "Norfolk Island",
-      "Northern Marianan",
-      "Norwegian",
-      "Omani",
-      "Pakistani",
-      "Palauan",
-      "Panamanian",
-      "Papua New Guinean",
-      "Paraguayan",
-      "Peruvian",
-      "Philippine",
-      "Pitcairn Island",
-      "Polish",
-      "Portuguese",
-      "Puerto Rican",
-      "Qatari",
-      "Réunionese",
-      "Romanian",
-      "Russian",
-      "Rwandan",
-      "Barthélemois",
-      "Saint Helenian",
-      "Kittitian or Nevisian",
-      "Saint Lucian",
-      "Saint-Martinoise",
-      "Saint-Pierrais or Miquelonnais",
-      "Saint Vincentian",
-      "Samoan",
-      "Sammarinese",
-      "São Toméan",
-      "Senegalese",
-      "Serbian",
-      "Seychellois",
-      "Sierra Leonean",
-      "Singaporean",
-      "Sint Maarten",
-      "Slovak",
-      "Slovenian",
-      "Solomon Island",
-      "Somali",
-      "South African",
-      "South Georgia or South Sandwich Islands",
-      "South Sudanese",
-      "Spanish",
-      "Sri Lankan",
-      "Palestinian",
-      "Sudanese",
-      "Surinamese",
-      "Svalbard",
-      "Swazi",
-      "Swedish",
-      "Swiss",
-      "Syrian",
-      "Taiwanese",
-      "Tajikistani",
-      "Tanzanian",
-      "Thai",
-      "Timorese",
-      "Togolese",
-      "Tokelauan",
-      "Tongan",
-      "Trinidadian or Tobagonian",
-      "Tunisian",
-      "Turkish",
-      "Turkmen",
-      "Turks and Caicos Island",
-      "Tuvaluan",
-      "Ugandan",
-      "Ukrainian",
-      "Emirati",
-      "British",
-      "American Islander",
-      "American",
-      "Uruguayan",
-      "Uzbekistani",
-      "Ni-Vanuatu",
-      "Vatican",
-      "Venezuelan",
-      "Vietnamese",
-      "British Virgin Island",
-      "U.S. Virgin Island",
-      "Wallis and Futuna",
-      "Sahrawi",
-      "Yemeni",
-      "Zambian"
-    ];
-
-    function populateDropdown(dropdownId, options) {
-      const select = document.getElementById(dropdownId);
-      select.innerHTML = '<option value="">Select</option>';
-      options.forEach(value => {
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = value;
-        select.appendChild(option);
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      populateDropdown("country", countryList);          // For contact info
-      populateDropdown("passportCountry", countryList);  // For passport
-      populateDropdown("nationality", nationalityList);  // New dropdown for nationality
-    });
-
-    const academicList = [];
-
-    const addBtn = document.getElementById("addAcademicBtn");
-    const container = document.getElementById("academicListContainer");
-    const template = document.getElementById("academicTemplate");
-
-    // Add new academic entry
-    addBtn.addEventListener("click", () => {
-      const clone = template.content.cloneNode(true);
-
-      clone.querySelector(".removeAcademicBtn").addEventListener("click", (e) => {
-        e.target.closest(".academic-entry").remove();
-      });
-
-      container.appendChild(clone);
-    });
-
-    // Collect all entries for submission
-    function collectAcademicEntries() {
-      const entries = document.querySelectorAll(".academic-entry");
-      const list = [];
-
-      entries.forEach(entry => {
-        list.push({
-          institution: entry.querySelector(".academicInstitution").value.trim(),
-          level: entry.querySelector(".educationLevel").value,
-          major: entry.querySelector(".fieldMajor").value.trim(),
-          location: entry.querySelector(".studyLocation").value.trim(),
-          startDate: entry.querySelector(".educationStartDate").value,
-          endDate: entry.querySelector(".educationEndDate").value,
-          gpaScale: entry.querySelector(".gpaScale").value,
-          gpaScore: entry.querySelector(".gpaScore").value
-        });
-      });
-
-      return list;
-    }
-
-    const experienceList = [];
-
-    const addExperienceBtn = document.getElementById("addExperienceBtn");
-    const experienceContainer = document.getElementById("experienceListContainer");
-    const experienceTemplate = document.getElementById("experienceTemplate");
-
-    // Setup logic for a single entry
-    function setupExperienceEntry(entry) {
-      const checkbox = entry.querySelector(".currentlyWorking");
-      const endDateField = entry.querySelector(".endDateContainer");
-
-      function toggleEndDate() {
-        if (checkbox.checked) {
-          endDateField.style.display = "none";
-          const input = endDateField.querySelector(".workEndDate");
-          if (input) input.value = "Current"; // Set value to "Current"
-        } else {
-          endDateField.style.display = "block";
-          const input = endDateField.querySelector(".workEndDate");
-          if (input && input.value === "Current") input.value = ""; // Reset if needed
+          if (errors.length > 0) {
+            errors.forEach(err => {
+              const li = document.createElement("li");
+              li.textContent = err;
+              errorList.appendChild(li);
+            });
+            errorSummary.style.display = "block";
+            return false; // Prevent submission
+          } else {
+            errorSummary.style.display = "none";
+            return true; // Allow submission
+          }
         }
-      }
-
-      if (checkbox && endDateField) {
-        checkbox.addEventListener("change", toggleEndDate);
-        toggleEndDate(); // Initialize state
-      }
-    }
 
 
-    // 1️⃣ Initialize existing (static) entry
-    document.querySelectorAll(".experience-entry").forEach(setupExperienceEntry);
 
-    // 2️⃣ Initialize for new entries
-    addExperienceBtn.addEventListener("click", () => {
-      const clone = experienceTemplate.content.cloneNode(true);
+        document.getElementById("applicationForm").addEventListener("submit", async function (e) {
+          e.preventDefault();
 
-      // Add remove button logic
-      clone.querySelector(".removeExperienceBtn").addEventListener("click", (e) => {
-        e.target.closest(".experience-entry").remove();
-      });
+          const submitBtn = document.getElementById("submitBtn");
+          const spinner = document.getElementById("submitSpinner");
 
-      // Append and setup toggle
-      experienceContainer.appendChild(clone);
-      setupExperienceEntry(experienceContainer.lastElementChild);
-    });
+          // Show spinner and disable button
+          submitBtn.disabled = true;
+          spinner.style.display = "inline-block";
+            console.log(collectFormData())
+          if (validateForm()) {
+            const data = collectFormData();
+           
+            try {
+              const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+              });
 
-    // Function to collect data
-    function collectExperienceEntries() {
-      const entries = document.querySelectorAll(".experience-entry");
-      const list = [];
+              if (response.ok || response.status === 0) {
+                document.getElementById("applicationForm").style.display = "none";
+                document.getElementById("thankYouMessage").style.display = "block";
+              }
+              else if (response.status === 409) {
+                errors.push("This email is already registered.");
+                emailField.classList.add("field-error");
+                displayErrorSummary();
+                submitBtn.disabled = false;
+                spinner.style.display = "none";
+                return;
+              }
+              else {
+                console.error("Server responded with status:", response.status);
+                alert("Something went wrong. Please try again.");
+              }
+            } catch (error) {
+              console.error("Submission error:", error);
+              errors.push("Submission failed. Please check your connection and try again.");
+              displayErrorSummary();
+            }
+          }
 
-      entries.forEach(entry => {
-        const checkbox = entry.querySelector(".currentlyWorking").checked;
-        const endDate = checkbox ? "Current" : entry.querySelector(".workEndDate").value;
-
-        list.push({
-          company: entry.querySelector(".companyName").value.trim(),
-          title: entry.querySelector(".jobTitle").value.trim(),
-          location: entry.querySelector(".workLocation").value.trim(),
-          startDate: entry.querySelector(".workStartDate").value,
-          endDate: endDate,
-          currentlyWorking: checkbox
+          // Hide spinner and re-enable button regardless of outcome
+          submitBtn.disabled = false;
+          spinner.style.display = "none";
         });
-      });
-
-      return list;
-    }
 
 
+        function collectFormData() {
+          return {
+            // Personal Info
+            fullName: document.getElementById("fullName").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            dob: document.getElementById("dob").value,
+            gender: document.getElementById("gender").value,
+            nationality: document.getElementById("nationality").value,
+            idNumber: document.getElementById("idNumber").value.trim(),
+            idExpiry: document.getElementById("idExpiry").value,
+            passportNumber: document.getElementById("passportNumber").value.trim(),
+            passportCountry: document.getElementById("passportCountry").value,
+            passportExpiry: document.getElementById("passportExpiry").value,
 
-  </script>
-</body>
+            // Address Info (including city)
+            city: document.getElementById("city").value.trim(),
+            country: document.getElementById("country").value,
+            postalCode: document.getElementById("postalCode").value.trim(),
 
-</html>
+            // Uploads
+            resumeUrl: document.getElementById("resumeUrl").value,
+            idDocUrl: document.getElementById("idDocUrl").value,
+            //businessCertUrl: document.getElementById("businessCertUrl").value,
+
+            // Academic Info
+            academicList: collectAcademicEntries(),
+            englishProficiency: document.getElementById("englishProficiency").value,
+
+            // Experience Info
+            experienceList: collectExperienceEntries(),
+            experienceYears: document.getElementById("experienceYears").value,
+            linkedinProfile: document.getElementById("linkedinProfile").value.trim(),
+
+            // Video
+            videoUrl: document.getElementById("videoBiographyLink").value.trim(),
+
+            // Business Insight
+            businessDescription: document.getElementById("businessDescription").value.trim(),
+            yourRole: document.getElementById("businessRole").value.trim(),
+            teamSize: document.getElementById("teamSize").value,
+          //  socialImpact: document.getElementById("socialImpact").value.trim(),
+         //   onlinePresence: document.getElementById("businessWebsite").value.trim(),
+          //  sdgAlignment: document.getElementById("businessSdgs").value.trim(),
+            programGoals: document.getElementById("programExpectations").value.trim(),
+          //  businessImpact: document.getElementById("businessImpact").value.trim(),
+           // businessAwards: document.getElementById("businessAwards").value.trim(),
+
+            // Miscellaneous
+            availableDuringProgram: document.getElementById("availableDuringProgram").value,
+            participatedBefore: document.getElementById("enrolledInEntrepreneurship").value,
+            heardAboutProgram: document.getElementById("howDidYouHear").value,
+            hasDisability: document.getElementById("hasDisability").value,
+
+            // Declaration
+            agreeDeclaration: document.getElementById("declaration").checked,
+
+            // Submit date
+            submitDate: getFormattedDateTime()
+          };
+        }
+
+        function getFormattedDateTime() {
+          const now = new Date();
+          now.setHours(now.getHours());
+
+          const pad = (n) => String(n).padStart(2, '0');
+
+          const year = now.getFullYear();
+          const month = pad(now.getMonth() + 1);
+          const day = pad(now.getDate());
+
+          const hours = pad(now.getHours());
+          const minutes = pad(now.getMinutes());
+          const seconds = pad(now.getSeconds());
+
+          return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+        }
+
+          const countryList = [
+              "Saudi Arabia",
+              "Afghanistan",
+              "Albania",
+              "Algeria",
+              "Andorra",
+              "Angola",
+              "Antigua and Barbuda",
+              "Argentina",
+              "Armenia",
+              "Australia",
+              "Austria",
+              "Azerbaijan",
+              "Bahamas",
+              "Bahrain",
+              "Bangladesh",
+              "Barbados",
+              "Belarus",
+              "Belgium",
+              "Belize",
+              "Benin",
+              "Bhutan",
+              "Bolivia",
+              "Bosnia and Herzegovina",
+              "Botswana",
+              "Brazil",
+              "Brunei",
+              "Bulgaria",
+              "Burkina Faso",
+              "Burundi",
+              "Cabo Verde",
+              "Cambodia",
+              "Cameroon",
+              "Canada",
+              "Central African Republic",
+              "Chad",
+              "Chile",
+              "China",
+              "Colombia",
+              "Comoros",
+              "Congo",
+              "Costa Rica",
+              "Côte d’Ivoire",
+              "Croatia",
+              "Cuba",
+              "Cyprus",
+              "Czech Republic",
+              "Denmark",
+              "Djibouti",
+              "Dominica",
+              "Dominican Republic",
+              "Ecuador",
+              "Egypt",
+              "El Salvador",
+              "Equatorial Guinea",
+              "Eritrea",
+              "Estonia",
+              "Eswatini",
+              "Ethiopia",
+              "Fiji",
+              "Finland",
+              "France",
+              "Gabon",
+              "Gambia",
+              "Georgia",
+              "Germany",
+              "Ghana",
+              "Greece",
+              "Grenada",
+              "Guatemala",
+              "Guinea",
+              "Guinea-Bissau",
+              "Guyana",
+              "Haiti",
+              "Honduras",
+              "Hungary",
+              "Iceland",
+              "India",
+              "Indonesia",
+              "Iran",
+              "Iraq",
+              "Ireland",
+              "Italy",
+              "Jamaica",
+              "Japan",
+              "Jordan",
+              "Kazakhstan",
+              "Kenya",
+              "Kiribati",
+              "Kosovo",
+              "Kuwait",
+              "Kyrgyzstan",
+              "Laos",
+              "Latvia",
+              "Lebanon",
+              "Lesotho",
+              "Liberia",
+              "Libya",
+              "Liechtenstein",
+              "Lithuania",
+              "Luxembourg",
+              "Madagascar",
+              "Malawi",
+              "Malaysia",
+              "Maldives",
+              "Mali",
+              "Malta",
+              "Marshall Islands",
+              "Mauritania",
+              "Mauritius",
+              "Mexico",
+              "Micronesia",
+              "Moldova",
+              "Monaco",
+              "Mongolia",
+              "Montenegro",
+              "Morocco",
+              "Mozambique",
+              "Myanmar",
+              "Namibia",
+              "Nauru",
+              "Nepal",
+              "Netherlands",
+              "New Zealand",
+              "Nicaragua",
+              "Niger",
+              "Nigeria",
+              "North Korea",
+              "North Macedonia",
+              "Norway",
+              "Oman",
+              "Pakistan",
+              "Palau",
+              "Palestine",
+              "Panama",
+              "Papua New Guinea",
+              "Paraguay",
+              "Peru",
+              "Philippines",
+              "Poland",
+              "Portugal",
+              "Qatar",
+              "Romania",
+              "Russia",
+              "Rwanda",
+              "Saint Kitts and Nevis",
+              "Saint Lucia",
+              "Saint Vincent and the Grenadines",
+              "Samoa",
+              "San Marino",
+              "São Tomé and Príncipe",
+              "Senegal",
+              "Serbia",
+              "Seychelles",
+              "Sierra Leone",
+              "Singapore",
+              "Slovakia",
+              "Slovenia",
+              "Solomon Islands",
+              "Somalia",
+              "South Africa",
+              "South Korea",
+              "South Sudan",
+              "Spain",
+              "Sri Lanka",
+              "Sudan",
+              "Suriname",
+              "Sweden",
+              "Switzerland",
+              "Syria",
+              "Tajikistan",
+              "Tanzania",
+              "Thailand",
+              "Timor-Leste",
+              "Togo",
+              "Tonga",
+              "Trinidad and Tobago",
+              "Tunisia",
+              "Turkey",
+              "Turkmenistan",
+              "Tuvalu",
+              "Uganda",
+              "Ukraine",
+              "United Arab Emirates",
+              "United Kingdom",
+              "United States",
+              "Uruguay",
+              "Uzbekistan",
+              "Vanuatu",
+              "Vatican City",
+              "Venezuela",
+              "Vietnam",
+              "Yemen",
+              "Zambia",
+              "Zimbabwe"
+          ];
+
+          const nationalityList = [
+              "Saudi",
+              "Afghan",
+              "Albanian",
+              "Algerian",
+              "Andorran",
+              "Angolan",
+              "Antiguan or Barbudan",
+              "Argentine",
+              "Armenian",
+              "Australian",
+              "Austrian",
+              "Azerbaijani",
+              "Bahamian",
+              "Bahraini",
+              "Bangladeshi",
+              "Barbadian",
+              "Belarusian",
+              "Belgian",
+              "Belizean",
+              "Beninese",
+              "Bhutanese",
+              "Bolivian",
+              "Bosnian or Herzegovinian",
+              "Botswanan",
+              "Brazilian",
+              "Bruneian",
+              "Bulgarian",
+              "Burkinabé",
+              "Burundian",
+              "Cabo Verdean",
+              "Cambodian",
+              "Cameroonian",
+              "Canadian",
+              "Central African",
+              "Chadian",
+              "Chilean",
+              "Chinese",
+              "Colombian",
+              "Comoran",
+              "Congolese",
+              "Costa Rican",
+              "Ivorian",
+              "Croatian",
+              "Cuban",
+              "Cypriot",
+              "Czech",
+              "Danish",
+              "Djiboutian",
+              "Dominican",
+              "Dutch",
+              "Ecuadorian",
+              "Egyptian",
+              "Salvadoran",
+              "Emirati",
+              "Equatorial Guinean",
+              "Eritrean",
+              "Estonian",
+              "Swazi",
+              "Ethiopian",
+              "Fijian",
+              "Finnish",
+              "French",
+              "Gabonese",
+              "Gambian",
+              "Georgian",
+              "German",
+              "Ghanaian",
+              "Greek",
+              "Grenadian",
+              "Guatemalan",
+              "Guinean",
+              "Bissau-Guinean",
+              "Guyanese",
+              "Haitian",
+              "Honduran",
+              "Hungarian",
+              "Icelandic",
+              "Indian",
+              "Indonesian",
+              "Iranian",
+              "Iraqi",
+              "Irish",
+              "Italian",
+              "Jamaican",
+              "Japanese",
+              "Jordanian",
+              "Kazakhstani",
+              "Kenyan",
+              "Kosovar",
+              "Kuwaiti",
+              "Kyrgyzstani",
+              "Lao",
+              "Latvian",
+              "Lebanese",
+              "Liberian",
+              "Libyan",
+              "Liechtensteiner",
+              "Lithuanian",
+              "Luxembourgish",
+              "Malagasy",
+              "Malawian",
+              "Malaysian",
+              "Maldivian",
+              "Malian",
+              "Maltese",
+              "Marshallese",
+              "Mauritanian",
+              "Mauritian",
+              "Mexican",
+              "Micronesian",
+              "Moldovan",
+              "Monégasque",
+              "Mongolian",
+              "Montenegrin",
+              "Moroccan",
+              "Mozambican",
+              "Namibian",
+              "Nauruan",
+              "Nepali",
+              "New Zealander",
+              "Nicaraguan",
+              "Nigerien",
+              "Nigerian",
+              "North Korean",
+              "North Macedonian",
+              "Norwegian",
+              "Omani",
+              "Pakistani",
+              "Palauan",
+              "Palestinian",
+              "Panamanian",
+              "Papua New Guinean",
+              "Paraguayan",
+              "Peruvian",
+              "Philippine",
+              "Polish",
+              "Portuguese",
+              "Qatari",
+              "Romanian",
+              "Russian",
+              "Rwandan",
+              "Saint Kitts and Nevis",
+              "Saint Lucian",
+              "Saint Vincentian",
+              "Samoan",
+              "Sammarinese",
+              "São Toméan",
+              "Senegalese",
+              "Serbian",
+              "Seychellois",
+              "Sierra Leonean",
+              "Singaporean",
+              "Slovak",
+              "Slovenian",
+              "Solomon Islander",
+              "Somali",
+              "South African",
+              "South Korean",
+              "South Sudanese",
+              "Spanish",
+              "Sri Lankan",
+              "Sudanese",
+              "Surinamese",
+              "Swedish",
+              "Swiss",
+              "Syrian",
+              "Tajikistani",
+              "Tanzanian",
+              "Thai",
+              "Timorese",
+              "Togolese",
+              "Tongan",
+              "Trinidadian or Tobagonian",
+              "Tunisian",
+              "Turkish",
+              "Turkmen",
+              "Tuvaluan",
+              "Ugandan",
+              "Ukrainian",
+              "Uruguayan",
+              "Uzbekistani",
+              "Ni-Vanuatu",
+              "Vatican citizen",
+              "Venezuelan",
+              "Vietnamese",
+              "Yemeni",
+              "Zambian",
+              "Zimbabwean"
+          ];
+
+
+          // Generates dropdown list items from the specified Id.
+          function populateDropdown(dropdownId, options, hasDefault = true) {
+              const select = document.getElementById(dropdownId);
+              if (hasDefault) {
+                  select.innerHTML = '<option value="">Select</option>';
+              }
+          options.forEach(value => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = value;
+            select.appendChild(option);
+          });
+          }
+
+          // Generates dropdown list items from the specified class type.
+          // Can be used for template fields based on the provided class type.
+          function populateDropdownByClass(className, options, hasDefault = true) {
+              const selects = document.querySelectorAll(`.${className}`);
+
+              selects.forEach(select => {
+
+                  if (hasDefault) {
+                      select.innerHTML = '<option value="">Select</option>';
+                  }
+
+                  options.forEach(value => {
+                      const option = document.createElement("option");
+                      option.value = value;
+                      option.textContent = value;
+                      select.appendChild(option);
+                  });
+              });
+          }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          populateDropdown("country", countryList, false); // for countries
+          populateDropdownByClass("workLocation", countryList, false);        // for work location countries
+          populateDropdownByClass("studyLocation", countryList, false);          // for study location countries
+          populateDropdown("passportCountry", countryList, false);  // For passport
+          populateDropdown("nationality", nationalityList, false);  // New dropdown for nationality
+        });
+
+        const academicList = [];
+
+        const addBtn = document.getElementById("addAcademicBtn");
+        const container = document.getElementById("academicListContainer");
+        const template = document.getElementById("academicTemplate");
+
+        // Add new academic entry
+        addBtn.addEventListener("click", () => {
+          const clone = template.content.cloneNode(true);
+
+          clone.querySelector(".removeAcademicBtn").addEventListener("click", (e) => {
+            e.target.closest(".academic-entry").remove();
+          });
+
+            container.appendChild(clone);
+            // Builds dropdown options for selecting study location countries.
+            refreshDropdownsInContainer(container, ".studyLocation", countryList, false)
+
+        });
+
+        // Collect all entries for submission
+        function collectAcademicEntries() {
+          const entries = document.querySelectorAll(".academic-entry");
+          const list = [];
+
+          entries.forEach(entry => {
+            list.push({
+              institution: entry.querySelector(".academicInstitution").value.trim(),
+              level: entry.querySelector(".educationLevel").value,
+              major: entry.querySelector(".fieldMajor").value.trim(),
+              location: entry.querySelector(".studyLocation").value.trim(),
+              startDate: entry.querySelector(".educationStartDate").value,
+              endDate: entry.querySelector(".educationEndDate").value,
+              gpaScale: entry.querySelector(".gpaScale").value,
+              gpaScore: entry.querySelector(".gpaScore").value
+            });
+          });
+
+          return list;
+        }
+
+        const experienceList = [];
+
+        const addExperienceBtn = document.getElementById("addExperienceBtn");
+        const experienceContainer = document.getElementById("experienceListContainer");
+        const experienceTemplate = document.getElementById("experienceTemplate");
+
+        // Setup logic for a single entry
+        function setupExperienceEntry(entry) {
+          const checkbox = entry.querySelector(".currentlyWorking");
+          const endDateField = entry.querySelector(".endDateContainer");
+
+          function toggleEndDate() {
+            if (checkbox.checked) {
+              endDateField.style.display = "none";
+              const input = endDateField.querySelector(".workEndDate");
+              if (input) input.value = "Current"; // Set value to "Current"
+            } else {
+              endDateField.style.display = "block";
+              const input = endDateField.querySelector(".workEndDate");
+              if (input && input.value === "Current") input.value = ""; // Reset if needed
+            }
+          }
+
+          if (checkbox && endDateField) {
+            checkbox.addEventListener("change", toggleEndDate);
+            toggleEndDate(); // Initialize state
+          }
+        }
+
+
+        // 1️⃣ Initialize existing (static) entry
+          document.querySelectorAll(".experience-entry").forEach(setupExperienceEntry);
+
+          function refreshDropdownsInContainer(container, selector, options, hasDefault = true) {
+              container.querySelectorAll(selector).forEach(select => {
+                  const selected = select.value;
+                  if (hasDefault) {
+                      select.innerHTML = '<option value="">Select</option>';
+                  }
+                  for (const v of options) {
+                      const opt = document.createElement("option");
+                      opt.value = v;
+                      opt.textContent = v;
+                      select.appendChild(opt);
+                  }
+
+                  if (options.includes(selected)) select.value = selected;
+              });
+          }
+
+        // 2️⃣ Initialize for new entries
+        addExperienceBtn.addEventListener("click", () => {
+          const clone = experienceTemplate.content.cloneNode(true);
+
+          // Add remove button logic
+          clone.querySelector(".removeExperienceBtn").addEventListener("click", (e) => {
+            e.target.closest(".experience-entry").remove();
+          });
+
+          // Append and setup toggle
+          experienceContainer.appendChild(clone);
+            setupExperienceEntry(experienceContainer.lastElementChild);
+            // Builds dropdown options for selecting work location countries.
+            refreshDropdownsInContainer(experienceContainer, ".workLocation", countryList, false)
+        });
+
+        // Function to collect data
+        function collectExperienceEntries() {
+          const entries = document.querySelectorAll(".experience-entry");
+          const list = [];
+
+          entries.forEach(entry => {
+            const checkbox = entry.querySelector(".currentlyWorking").checked;
+            const endDate = checkbox ? "Current" : entry.querySelector(".workEndDate").value;
+
+            list.push({
+              company: entry.querySelector(".companyName").value.trim(),
+              title: entry.querySelector(".jobTitle").value.trim(),
+              location: entry.querySelector(".workLocation").value.trim(),
+              startDate: entry.querySelector(".workStartDate").value,
+              endDate: endDate,
+              currentlyWorking: checkbox
+            });
+          });
+
+          return list;
+        }
+
+
+
+      </script>
+    </body>
+
+    </html>
