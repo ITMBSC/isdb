@@ -126,12 +126,19 @@
       margin: 30px auto 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eee;
-      margin-top: 40px;
-    }
+      footer {
+          text-align: center;
+          padding: 20px;
+          background: #eee;
+          margin-top: 40px;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          padding: 15px;
+          background-color: #f5f5f5;
+      }
 
     .styled-btn {
       background: #2d2d7c;
@@ -249,347 +256,352 @@
 
 
   <div class="container">
-    <!-- Application Dates Info Section -->
+      <!-- Application Dates Info Section -->
 
-    <div style="background-color: #f0f0f0; padding: 15px; margin-bottom: 20px; border-left: 5px solid #660066;">
-      <p style="margin: 0; font-size: 16px;">
-        <strong>Application Start Date:</strong> <span style="font-weight: 600;">March 8<sup>th</sup>, 2026</span><br>
-        <strong>Application End Date:</strong> <span style="font-weight: 600;">May 14<sup>th</sup>, 2026</span>
-      </p>
-    </div>
+      <div style="background-color: #f0f0f0; padding: 15px; margin-bottom: 20px; border-left: 5px solid #660066;">
+          <p style="margin: 0; font-size: 16px;">
+              <strong>Applications are now closed..</strong> 
+          </p>
+      </div> 
+      <div style="background-color: #f0f0f0; padding: 15px; margin-bottom: 20px; border-left: 5px solid #660066; display:none;" >
+          <p style="margin: 0; font-size: 16px;">
+              <strong>Applications are now closed</strong> <span style="font-weight: 600;">March 8<sup>th</sup>, 2026</span><br>
+              <strong>Application End Date:</strong> <span style="font-weight: 600;">May 14<sup>th</sup>, 2026</span>
+          </p>
+      </div>
 
-    <form id="applicationForm">
-        <h2>Personal Information</h2>
-        <label>Full Name <span class="required-star">*</label>
-        <input type="text" id="fullName" />
+      <form id="applicationForm" style="display:none">
+          <h2>Personal Information</h2>
+          <label>Full Name <span class="required-star">*</label>
+          <input type="text" id="fullName" />
 
-        <label>Email <span class="required-star">*</label>
-        <input type="text" id="email" placeholder="you@example.com" />
+          <label>Email <span class="required-star">*</label>
+          <input type="text" id="email" placeholder="you@example.com" />
 
-        <label>Phone Number <span class="required-star">*</label>
-        <small>Format: CountryCodeXXXXXXXXX (e.g., 9665XXXXXXXX)</small>
-        <input type="text" id="phone" placeholder="9665XXXXXXXX" />
+          <label>Phone Number <span class="required-star">*</label>
+          <small>Format: CountryCodeXXXXXXXXX (e.g., 9665XXXXXXXX)</small>
+          <input type="text" id="phone" placeholder="9665XXXXXXXX" />
 
-        <label>Date of Birth <span class="required-star">*</label>
-        <input type="date" id="dob" />
+          <label>Date of Birth <span class="required-star">*</label>
+          <input type="date" id="dob" />
 
-        <label>Gender <span class="required-star">*</label>
-        <select id="gender">
-            <option value="">Select</option>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
+          <label>Gender <span class="required-star">*</label>
+          <select id="gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+          </select>
 
-        <label>Nationality <span class="required-star">*</label>
-        <select id="nationality"></select>
+          <label>Nationality <span class="required-star">*</label>
+          <select id="nationality"></select>
 
-        <label>National ID Number (optional)</label>
-        <input type="text" id="idNumber">
+          <label>National ID Number (optional)</label>
+          <input type="text" id="idNumber">
 
-        <label>National ID Expiry Date (optional)</label>
-        <input type="date" id="idExpiry">
+          <label>National ID Expiry Date (optional)</label>
+          <input type="date" id="idExpiry">
 
-        <label>Passport Number <span class="required-star">*</label>
-        <input type="text" id="passportNumber" />
+          <label>Passport Number <span class="required-star">*</label>
+          <input type="text" id="passportNumber" />
 
-        <label>Passport Country <span class="required-star">*</label>
-        <select id="passportCountry">
-        </select>
+          <label>Passport Country <span class="required-star">*</label>
+          <select id="passportCountry">
+          </select>
 
-        <label>Passport Expiry Date <span class="required-star">*</label>
-        <input type="date" id="passportExpiry">
+          <label>Passport Expiry Date <span class="required-star">*</label>
+          <input type="date" id="passportExpiry">
 
-        <label>Upload ID or Passport (PDF or Image, Max 5 MB)<span class="required-star">*</label>
-        <div class="upload-wrapper">
-            <input type="text" id="idDocDisplay" placeholder="No file uploaded" readonly>
-            <button type="button" onclick="uploadFile('idDocUrl', 'idDocDisplay', 'ID/Passport')">Upload</button>
-        </div>
-        <input type="hidden" id="idDocUrl" name="idDocUrl">
+          <label>Upload ID or Passport (PDF or Image, Max 5 MB)<span class="required-star">*</label>
+          <div class="upload-wrapper">
+              <input type="text" id="idDocDisplay" placeholder="No file uploaded" readonly>
+              <button type="button" onclick="uploadFile('idDocUrl', 'idDocDisplay', 'ID/Passport')">Upload</button>
+          </div>
+          <input type="hidden" id="idDocUrl" name="idDocUrl">
 
-        <h2>Address Information</h2>
-        <div style="display: flex; gap: 10px">
-            <div style="flex: 1">
-                <label>City <span class="required-star">*</label><input type="text" id="city" placeholder="City" />
-            </div>
-            <div style="flex: 1">
-                <label>Country <span class="required-star">*</label>
-                <select id="country">
-                    <!--  <option value="">-- Select Country --</option> -->
-                </select>
-            </div>
-        </div>
+          <h2>Address Information</h2>
+          <div style="display: flex; gap: 10px">
+              <div style="flex: 1">
+                  <label>City <span class="required-star">*</label><input type="text" id="city" placeholder="City" />
+              </div>
+              <div style="flex: 1">
+                  <label>Country <span class="required-star">*</label>
+                  <select id="country">
+                      <!--  <option value="">-- Select Country --</option> -->
+                  </select>
+              </div>
+          </div>
 
-        <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode"
-                                                                       placeholder="Postal Code" />
+          <label>Postal Code <span class="required-star">*</label><input type="text" id="postalCode"
+                                                                         placeholder="Postal Code" />
 
-        <!-- Academic Information Section -->
-        <h2>Academic Information</h2>
-        <!-- Static first entry (not removable) -->
-        <div class="academic-entry static-entry">
-            <label>Educational Institution <span class="required-star">*</label>
-            <input type="text" class="academicInstitution">
+          <!-- Academic Information Section -->
+          <h2>Academic Information</h2>
+          <!-- Static first entry (not removable) -->
+          <div class="academic-entry static-entry">
+              <label>Educational Institution <span class="required-star">*</label>
+              <input type="text" class="academicInstitution">
 
-            <label>Level of Education <span class="required-star">*</label>
-            <select class="educationLevel">
-                <option value="">Select</option>
-                <option>High School</option>
-                <option>Diploma</option>
-                <option>Bachelor</option>
-                <option>Master</option>
-                <option>PhD</option>
-            </select>
+              <label>Level of Education <span class="required-star">*</label>
+              <select class="educationLevel">
+                  <option value="">Select</option>
+                  <option>High School</option>
+                  <option>Diploma</option>
+                  <option>Bachelor</option>
+                  <option>Master</option>
+                  <option>PhD</option>
+              </select>
 
-            <label>Field/Major <span class="required-star">*</label>
-            <input type="text" class="fieldMajor">
+              <label>Field/Major <span class="required-star">*</label>
+              <input type="text" class="fieldMajor">
 
-            <label>Location of Study <span class="required-star">*</label>
-            <Select  class="studyLocation"></Select>
+              <label>Location of Study <span class="required-star">*</label>
+              <Select class="studyLocation"></Select>
 
-            <label>Start Date <span class="required-star">*</label>
-            <input type="date" class="educationStartDate">
+              <label>Start Date <span class="required-star">*</label>
+              <input type="date" class="educationStartDate">
 
-            <label>End Date <span class="required-star">*</label>
-            <input type="date" class="educationEndDate">
+              <label>End Date <span class="required-star">*</label>
+              <input type="date" class="educationEndDate">
 
-            <label>GPA Scale <span class="required-star">*</label>
-            <select class="gpaScale">
-                <option value="">Select</option>
-                <option>4.0 Scale</option>
-                <option>5.0 Scale</option>
-                <option>100 (Percentage)</option>
-                <option>10-Point Scale</option>
-                <option>Letter Grade (A to F)</option>
-                <option>UK Scale</option>
-                <option>UK Masters Scale</option>
-                <option>Others</option>
-            </select>
+              <label>GPA Scale <span class="required-star">*</label>
+              <select class="gpaScale">
+                  <option value="">Select</option>
+                  <option>4.0 Scale</option>
+                  <option>5.0 Scale</option>
+                  <option>100 (Percentage)</option>
+                  <option>10-Point Scale</option>
+                  <option>Letter Grade (A to F)</option>
+                  <option>UK Scale</option>
+                  <option>UK Masters Scale</option>
+                  <option>Others</option>
+              </select>
 
-            <label>GPA Score <span class="required-star">*</label>
-            <input type="text" class="gpaScore">
+              <label>GPA Score <span class="required-star">*</label>
+              <input type="text" class="gpaScore">
 
-            <hr />
-        </div>
+              <hr />
+          </div>
 
-        <!-- Where additional entries go -->
-        <div id="academicListContainer"></div>
+          <!-- Where additional entries go -->
+          <div id="academicListContainer"></div>
 
-        <template id="academicTemplate">
-            <div class="academic-entry">
-                <label>Educational Institution <span class="required-star">*</label>
-                <input type="text" class="academicInstitution">
+          <template id="academicTemplate">
+              <div class="academic-entry">
+                  <label>Educational Institution <span class="required-star">*</label>
+                  <input type="text" class="academicInstitution">
 
-                <label>Level of Education <span class="required-star">*</label>
-                <select class="educationLevel">
-                    <option value="">Select</option>
-                    <option>High School</option>
-                    <option>Diploma</option>
-                    <option>Bachelor</option>
-                    <option>Master</option>
-                    <option>PhD</option>
-                </select>
+                  <label>Level of Education <span class="required-star">*</label>
+                  <select class="educationLevel">
+                      <option value="">Select</option>
+                      <option>High School</option>
+                      <option>Diploma</option>
+                      <option>Bachelor</option>
+                      <option>Master</option>
+                      <option>PhD</option>
+                  </select>
 
-                <label>Field/Major <span class="required-star">*</label>
-                <input type="text" class="fieldMajor">
+                  <label>Field/Major <span class="required-star">*</label>
+                  <input type="text" class="fieldMajor">
 
-                <label>Location of Study <span class="required-star">*</label>
-                <Select class="studyLocation"></Select>
+                  <label>Location of Study <span class="required-star">*</label>
+                  <Select class="studyLocation"></Select>
 
-                <label>Start Date <span class="required-star">*</label>
-                <input type="date" class="educationStartDate">
+                  <label>Start Date <span class="required-star">*</label>
+                  <input type="date" class="educationStartDate">
 
-                <label>End Date <span class="required-star">*</label>
-                <input type="date" class="educationEndDate">
+                  <label>End Date <span class="required-star">*</label>
+                  <input type="date" class="educationEndDate">
 
-                <label>GPA Scale <span class="required-star">*</label>
-                <select class="gpaScale">
-                    <option value="">Select</option>
-                    <option>4.0 Scale</option>
-                    <option>5.0 Scale</option>
-                    <option>100 (Percentage)</option>
-                    <option>10-Point Scale</option>
-                    <option>Letter Grade (A to F)</option>
-                    <option>UK Scale</option>
-                    <option>UK Masters Scale</option>
-                    <option>Others</option>
-                </select>
+                  <label>GPA Scale <span class="required-star">*</label>
+                  <select class="gpaScale">
+                      <option value="">Select</option>
+                      <option>4.0 Scale</option>
+                      <option>5.0 Scale</option>
+                      <option>100 (Percentage)</option>
+                      <option>10-Point Scale</option>
+                      <option>Letter Grade (A to F)</option>
+                      <option>UK Scale</option>
+                      <option>UK Masters Scale</option>
+                      <option>Others</option>
+                  </select>
 
-                <label>GPA Score <span class="required-star">*</label>
-                <input type="text" class="gpaScore">
+                  <label>GPA Score <span class="required-star">*</label>
+                  <input type="text" class="gpaScore">
 
-                <button type="button" class="removeAcademicBtn styled-btn">Remove Entry</button>
-                <hr />
-            </div>
-        </template>
+                  <button type="button" class="removeAcademicBtn styled-btn">Remove Entry</button>
+                  <hr />
+              </div>
+          </template>
 
-        <button type="button" id="addAcademicBtn" class="styled-btn">Add Academic Entry</button>
+          <button type="button" id="addAcademicBtn" class="styled-btn">Add Academic Entry</button>
 
-        <label for="englishProficiency">English Proficiency Level <span class="required-star">*</label>
-        <select id="englishProficiency">
-            <option value="">Select</option>
-            <option>Beginner</option>
-            <option>Early Intermediate</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-            <option>Proficient</option>
-        </select>
+          <label for="englishProficiency">English Proficiency Level <span class="required-star">*</label>
+          <select id="englishProficiency">
+              <option value="">Select</option>
+              <option>Beginner</option>
+              <option>Early Intermediate</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+              <option>Proficient</option>
+          </select>
 
-        <!-- Experience Information Section -->
-        <h2>Work Experience</h2>
+          <!-- Experience Information Section -->
+          <h2>Work Experience</h2>
 
-        <!-- Initial static entry -->
-        <div class="experience-entry">
-            <label>Company Name <span class="required-star">*</label><input type="text" class="companyName" />
-            <label>Job Title <span class="required-star">*</label><input type="text" class="jobTitle" />
-            <!--
-               <label>Location of Work <span class="required-star">*</label>
-               <input type="text" class="workLocation" />
-    -->
-            <label>Location of Work <span class="required-star">*</label>
-            <select class="workLocation" >
-            </select>
+          <!-- Initial static entry -->
+          <div class="experience-entry">
+              <label>Company Name <span class="required-star">*</label><input type="text" class="companyName" />
+              <label>Job Title <span class="required-star">*</label><input type="text" class="jobTitle" />
+              <!--
+                       <label>Location of Work <span class="required-star">*</label>
+                       <input type="text" class="workLocation" />
+            -->
+              <label>Location of Work <span class="required-star">*</label>
+              <select class="workLocation">
+              </select>
 
-            <label>Start Date <span class="required-star">*</label><input type="date" class="workStartDate" />
-            <div class="endDateContainer">
-                <label>End Date</label>
-                <input type="date" class="workEndDate" />
-            </div>
+              <label>Start Date <span class="required-star">*</label><input type="date" class="workStartDate" />
+              <div class="endDateContainer">
+                  <label>End Date</label>
+                  <input type="date" class="workEndDate" />
+              </div>
 
-            <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
-            <hr />
-        </div>
+              <label><input type="checkbox" class="currentlyWorking" /> Currently Working Here</label>
+              <hr />
+          </div>
 
-        <!-- Where additional entries go -->
-        <div id="experienceListContainer"></div>
+          <!-- Where additional entries go -->
+          <div id="experienceListContainer"></div>
 
-        <template id="experienceTemplate">
-            <div class="experience-entry">
-                <label>Company Name <span class="required-star">*</label>
-                <input type="text" class="companyName">
+          <template id="experienceTemplate">
+              <div class="experience-entry">
+                  <label>Company Name <span class="required-star">*</label>
+                  <input type="text" class="companyName">
 
-                <label>Job Title <span class="required-star">*</label>
-                <input type="text" class="jobTitle">
+                  <label>Job Title <span class="required-star">*</label>
+                  <input type="text" class="jobTitle">
 
-                <label>Location of Work <span class="required-star">*</label>
-                <select class="workLocation"></select>
+                  <label>Location of Work <span class="required-star">*</label>
+                  <select class="workLocation"></select>
 
-                <label>Start Date <span class="required-star">*</label>
-                <input type="date" class="workStartDate">
+                  <label>Start Date <span class="required-star">*</label>
+                  <input type="date" class="workStartDate">
 
-                <div class="endDateContainer">
-                    <label>End Date</label>
-                    <input type="date" class="workEndDate" />
-                </div>
-
-
-                <label>
-                    <input type="checkbox" class="currentlyWorking"> Currently Working Here
-                </label>
-
-                <button type="button" class="removeExperienceBtn styled-btn">Remove Entry</button>
-                <hr />
-            </div>
-        </template>
-
-        <button type="button" id="addExperienceBtn" class="styled-btn">Add Experience Entry</button>
-
-        <label>Years of Experience <span class="required-star">*</label>
-        <select id="experienceYears">
-            <option value="">Select</option>
-            <option>1–3 years</option>
-            <option>3–5 years</option>
-            <option>5–10 years</option>
-            <option>More than 10 years</option>
-        </select>
-        <label>LinkedIn Profile <span class="required-star">*</label><input type="text" id="linkedinProfile" />
-         <label>Resume (PDF only, max 5 MB) <span class="required-star">*</label>
-        <div class="upload-wrapper">
-            <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
-            <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume', true)">Upload</button>
-        </div>
-        <input type="hidden" id="resumeUrl" name="resumeUrl">
-
-        <h2>Leadership Journey & Impact</h2>
-        <p>
-            <strong>Instructions:</strong> This is your chance to showcase your journey and business insight through a
-            short 2–3 minute video. Your video will be reviewed by MBSC and IsDB, so make sure it is clear, professional,
-            and well-lit. Speak clearly, and avoid distractions. Follow the guide below:
-        </p>
-
-        <ul>
-            <li>
-                <strong>Start with an introduction</strong>
-                <ul style="list-style-type: circle;">
-                    <li>State your full Name</li>
-                    <li>Mention <strong>your current role</strong> in the organization or venture, and your background</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Talk About Your Leadership Potential</strong>
-                <ul style="list-style-type: circle;">
-                    <li>Describe your leadership experience, the actions you demonstrated, and the specific problem your leadership helped resolve</li>
-                    <li>Highlight key <strong>achievements</strong>, such as milestones, partnerships, or growth metrics</li>
-                </ul>
-                </li>
-            <li>
-                <strong>Mention Your Passion and Focus</strong>
-                <ul style="list-style-type: circle;">
-                    <li>What drives you as a leader?</li>
-                    <li>What areas do you focus on in your business (e.g., innovation, operations, customer experience)?</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Share Your Impact</strong>
-                <ul style="list-style-type: circle;">
-                    <li>Briefly explain how your leadership has made <strong>a difference</strong>, is currently making a difference, or aims to <strong>create an impact</strong> in the future.</li>
-                    <li>Mention the <strong>audience</strong>, market, or communities you've served</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Wrap Up</strong>
-                <ul style="list-style-type: circle;">
-                    <li>Share what attracted you to this specific program</li>
-                    <li>Mention why it's relevant to your current journey</li>
-                    <li>End with a warm, professional closing</li>
-                </ul>
-            </li>
-           
-        </ul>
-
-        <p>
-            <strong>📹 How to record:</strong> You can use <a href="https://www.loom.com/" target="_blank">Loom</a> to
-            easily record your video.
-        </p>
-        <ol>
-            <li>Go to <a href="https://www.loom.com/" target="_blank">loom.com</a> and sign up or log in.</li>
-            <li>Click "New Video" and choose "Screen + Camera" or "Camera Only".</li>
-            <li>Record your video using the tips above. Keep it under 3 minutes.</li>
-            <li>Copy the link after uploading and paste it below.</li>
-        </ol>
-
-        <label for="videoBiographyLink">Video Biography Link (Loom URL) <span class="required-star">*</label>
-        <input type="url" id="videoBiographyLink" placeholder="https://www.loom.com/share/...">
+                  <div class="endDateContainer">
+                      <label>End Date</label>
+                      <input type="date" class="workEndDate" />
+                  </div>
 
 
+                  <label>
+                      <input type="checkbox" class="currentlyWorking"> Currently Working Here
+                  </label>
 
-        <!-- this -->
-        <label>Please describe your leadership potential or demonstrated leadership experience? <span class="required-star">*</label>
+                  <button type="button" class="removeExperienceBtn styled-btn">Remove Entry</button>
+                  <hr />
+              </div>
+          </template>
+
+          <button type="button" id="addExperienceBtn" class="styled-btn">Add Experience Entry</button>
+
+          <label>Years of Experience <span class="required-star">*</label>
+          <select id="experienceYears">
+              <option value="">Select</option>
+              <option>1–3 years</option>
+              <option>3–5 years</option>
+              <option>5–10 years</option>
+              <option>More than 10 years</option>
+          </select>
+          <label>LinkedIn Profile <span class="required-star">*</label><input type="text" id="linkedinProfile" />
+          <label>Resume (PDF only, max 5 MB) <span class="required-star">*</label>
+          <div class="upload-wrapper">
+              <input type="text" id="resumeDisplay" placeholder="No file uploaded" readonly>
+              <button type="button" onclick="uploadFile('resumeUrl', 'resumeDisplay', 'Resume', true)">Upload</button>
+          </div>
+          <input type="hidden" id="resumeUrl" name="resumeUrl">
+
+          <h2>Leadership Journey & Impact</h2>
+          <p>
+              <strong>Instructions:</strong> This is your chance to showcase your journey and business insight through a
+              short 2–3 minute video. Your video will be reviewed by MBSC and IsDB, so make sure it is clear, professional,
+              and well-lit. Speak clearly, and avoid distractions. Follow the guide below:
+          </p>
+
+          <ul>
+              <li>
+                  <strong>Start with an introduction</strong>
+                  <ul style="list-style-type: circle;">
+                      <li>State your full Name</li>
+                      <li>Mention <strong>your current role</strong> in the organization or venture, and your background</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Talk About Your Leadership Potential</strong>
+                  <ul style="list-style-type: circle;">
+                      <li>Describe your leadership experience, the actions you demonstrated, and the specific problem your leadership helped resolve</li>
+                      <li>Highlight key <strong>achievements</strong>, such as milestones, partnerships, or growth metrics</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Mention Your Passion and Focus</strong>
+                  <ul style="list-style-type: circle;">
+                      <li>What drives you as a leader?</li>
+                      <li>What areas do you focus on in your business (e.g., innovation, operations, customer experience)?</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Share Your Impact</strong>
+                  <ul style="list-style-type: circle;">
+                      <li>Briefly explain how your leadership has made <strong>a difference</strong>, is currently making a difference, or aims to <strong>create an impact</strong> in the future.</li>
+                      <li>Mention the <strong>audience</strong>, market, or communities you've served</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Wrap Up</strong>
+                  <ul style="list-style-type: circle;">
+                      <li>Share what attracted you to this specific program</li>
+                      <li>Mention why it's relevant to your current journey</li>
+                      <li>End with a warm, professional closing</li>
+                  </ul>
+              </li>
+
+          </ul>
+
+          <p>
+              <strong>📹 How to record:</strong> You can use <a href="https://www.loom.com/" target="_blank">Loom</a> to
+              easily record your video.
+          </p>
+          <ol>
+              <li>Go to <a href="https://www.loom.com/" target="_blank">loom.com</a> and sign up or log in.</li>
+              <li>Click "New Video" and choose "Screen + Camera" or "Camera Only".</li>
+              <li>Record your video using the tips above. Keep it under 3 minutes.</li>
+              <li>Copy the link after uploading and paste it below.</li>
+          </ol>
+
+          <label for="videoBiographyLink">Video Biography Link (Loom URL) <span class="required-star">*</label>
+          <input type="url" id="videoBiographyLink" placeholder="https://www.loom.com/share/...">
+
+
+
+          <!-- this -->
+          <label>Please describe your leadership potential or demonstrated leadership experience? <span class="required-star">*</label>
 <textarea id="businessDescription" rows="4"></textarea>
-        <!-- this -->
-        <label>How many people do you currently manage or are responsible for? <span class="required-star">*</label>
-        <input type="text" id="teamSize">
-        <!-- this -->
-        <label>
-            Describe your role in the organization you are currently working for or previously worked for? <span class="required-star">*
-        </label>
+          <!-- this -->
+          <label>How many people do you currently manage or are responsible for? <span class="required-star">*</label>
+          <input type="text" id="teamSize">
+          <!-- this -->
+          <label>
+              Describe your role in the organization you are currently working for or previously worked for? <span class="required-star">*
+          </label>
 <textarea id="businessRole" rows="4"></textarea>
 
-        <!-- this -->
-        <label>What would you like to gain from this program? <span class="required-star">*</label>
+          <!-- this -->
+          <label>What would you like to gain from this program? <span class="required-star">*</label>
 <textarea id="programExpectations" rows="4"></textarea>
 
 
 
-        <!--
+          <!--
 
         <label>What is the social impact of your business? <span class="required-star">*</label>
         <textarea id="socialImpact" rows="3"></textarea>
@@ -624,69 +636,69 @@
 
         -->
 
-        <h2>Miscellaneous</h2>
+          <h2>Miscellaneous</h2>
 
-        <label>Are you available during the program dates mentioned? <span class="required-star">*</label>
-        <select id="availableDuringProgram">
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+          <label>Are you available during the program dates mentioned? <span class="required-star">*</label>
+          <select id="availableDuringProgram">
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+          </select>
 
-        <label>
-            Have you ever been enrolled in an entrepreneurship program, either
-            currently or in the past? <span class="required-star">*
-        </label>
-        <select id="enrolledInEntrepreneurship">
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+          <label>
+              Have you ever been enrolled in an entrepreneurship program, either
+              currently or in the past? <span class="required-star">*
+          </label>
+          <select id="enrolledInEntrepreneurship">
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+          </select>
 
-        <label>How did you hear about this program? <span class="required-star">*</label>
-        <select id="howDidYouHear">
-            <option value="">Select</option>
-            <option>MBSC Website</option>
-            <option>IsDBI Website</option>
-            <option>Search Engine</option>
-            <option>Social Media</option>
-            <option>Word of Mouth</option>
-            <option>Referral (Family, Friends, or Colleagues)</option>
-            <option>Other</option>
-        </select>
+          <label>How did you hear about this program? <span class="required-star">*</label>
+          <select id="howDidYouHear">
+              <option value="">Select</option>
+              <option>MBSC Website</option>
+              <option>IsDBI Website</option>
+              <option>Search Engine</option>
+              <option>Social Media</option>
+              <option>Word of Mouth</option>
+              <option>Referral (Family, Friends, or Colleagues)</option>
+              <option>Other</option>
+          </select>
 
-        <label>Do you have any types of disability? <span class="required-star">*</label>
-        <select id="hasDisability">
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+          <label>Do you have any types of disability? <span class="required-star">*</label>
+          <select id="hasDisability">
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+          </select>
 
-        <label>
-            <input type="checkbox" id="declaration" /> I declare that
-            all the information provided is true and correct and I understand that
-            any false information would disqualify my application from the
-            program.
-        </label>
+          <label>
+              <input type="checkbox" id="declaration" /> I declare that
+              all the information provided is true and correct and I understand that
+              any false information would disqualify my application from the
+              program.
+          </label>
 
-        <div id="errorSummary" class="error-summary" style="display: none;">
-            <h3>Please fix the following errors:</h3>
-            <ul id="errorList"></ul>
-        </div>
+          <div id="errorSummary" class="error-summary" style="display: none;">
+              <h3>Please fix the following errors:</h3>
+              <ul id="errorList"></ul>
+          </div>
 
-        <button id="submitBtn" type="submit">
-            Submit
-            <span id="submitSpinner" class="spinner" style="display: none;"></span>
-        </button>
+          <button id="submitBtn" type="submit">
+              Submit
+              <span id="submitSpinner" class="spinner" style="display: none;"></span>
+          </button>
 
-    </form>
+      </form>
 
-        <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px;">
+      <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px;">
           <h2>Thank you for your application!</h2>
           <p>We have received your submission, and our team will begin reviewing it shortly.</p>
-        </div>
-
       </div>
+
+  </div>
 
       <footer>
         &copy; 2025 Prince Mohammed Bin Salman College. All rights reserved.
